@@ -1,6 +1,6 @@
-//mensaje Bienvenida
+/*//mensaje Bienvenida
 alert(
-  "Gracias por acceder al Sistema de reserva de entradas al Parque Tecno ☼\nA continuación le pediremos algunos datos para iniciar el proceso:"
+  "Gracias por acceder al Sistema Parque Tec ☼\nA continuación le pediremos algunos datos para iniciar el proceso:"
 );
 
 //Ingreso Nombre y dni del comprador
@@ -120,3 +120,272 @@ function validarDatoStr(dato) {
     alert("Ingrese solo texto válido");
   }
 }
+
+*/
+
+
+
+//Listado Remeras
+let remeraAgua = {id: 1001, nombre: "Remera Agua", modelo: ["xx", "xy", "ch"], talle: ["xs", "s", "m", "l", "xl", "xxl"], precio: 7000};
+
+let remeraAire = {id: 1002, nombre: "Remera Aire", modelo: ["xx", "xy", "ch"], talle: ["xs", "s", "m", "l", "xl", "xxl"], precio: 7000}
+
+let remeraTierra = {id: 1003, nombre: "Remera Tierra", modelo: ["xx", "xy", "ch"], talle: ["xs", "s", "m", "l", "xl", "xxl"], precio: 7000}
+
+let remeraFuego = {id: 1004, nombre: "Remera Fuego", modelo: ["xx", "xy", "ch"], talle: ["xs", "s", "m", "l", "xl", "xxl"], precio: 7000}
+
+let remeraLuz = {id: 1005, nombre: "Remera Luz", modelo: ["xx", "xy", "ch"], talle: ["xs", "s", "m", "l", "xl", "xxl"], precio: 7000}
+
+let remeraSombra = {id: 1006, nombre: "Remera Sombra", modelo: ["xx", "xy", "ch"], talle: ["xs", "s", "m", "l", "xl", "xxl"], precio: 7000}
+
+let remeraNature = {id: 1007, nombre: "Remera Nature", modelo: ["xx", "xy", "ch"], talle: ["xs", "s", "m", "l", "xl", "xxl"], precio: 7000}
+
+let remeraSol = {id: 1008, nombre: "Remera Sol", modelo: ["xx", "xy", "ch"], talle: ["xs", "s", "m", "l", "xl", "xxl"], precio: 7000}
+
+//listado de Remeras
+let remeras = [remeraAgua, remeraAire, remeraFuego, remeraLuz, remeraSombra, remeraTierra, remeraNature, remeraSol];
+
+console.log(remeras)
+
+console.log(remeraAgua.modelo[1]);
+
+
+
+let carrito = []
+
+
+
+//ID productos
+
+let remerasIDs = {};
+
+
+
+
+//STOCK
+
+
+let stockRemeras = {};
+
+stockRemeras["Remera Agua"] = {
+  "xx": {
+    "xs": 5,
+    "s": 5,
+    "m": 5,
+    "l": 5,
+    "xl": 5,
+    "xxl": 5
+  },
+  "xy": {
+    "xs": 5,
+    "s": 5,
+    "m": 5,
+    "l": 5,
+    "xl": 5,
+    "xxl": 5
+  },
+  "ch": {
+    "xs": 5,
+    "s": 5,
+    "m": 5,
+    "l": 5,
+    "xl": 5,
+    "xxl": 5
+  }
+};
+
+stockRemeras["Remera Tierra"] = {
+  "xx": {
+    "xs": 5,
+    "s": 5,
+    "m": 5,
+    "l": 5,
+    "xl": 5,
+    "xxl": 5
+  },
+  "xy": {
+    "xs": 5,
+    "s": 5,
+    "m": 5,
+    "l": 5,
+    "xl": 5,
+    "xxl": 5
+  },
+  "ch": {
+    "xs": 5,
+    "s": 5,
+    "m": 5,
+    "l": 5,
+    "xl": 5,
+    "xxl": 5
+  }
+};
+
+stockRemeras["Remera Fuego"] = {
+  "xx": {
+    "xs": 5,
+    "s": 5,
+    "m": 5,
+    "l": 5,
+    "xl": 5,
+    "xxl": 5
+  },
+  "xy": {
+    "xs": 5,
+    "s": 5,
+    "m": 5,
+    "l": 5,
+    "xl": 5,
+    "xxl": 5
+  },
+  "ch": {
+    "xs": 5,
+    "s": 5,
+    "m": 5,
+    "l": 5,
+    "xl": 5,
+    "xxl": 5
+  }
+};
+
+stockRemeras["Remera Luz"] = {
+  "xx": {
+    "xs": 5,
+    "s": 5,
+    "m": 5,
+    "l": 5,
+    "xl": 5,
+    "xxl": 5
+  },
+  "xy": {
+    "xs": 5,
+    "s": 5,
+    "m": 5,
+    "l": 5,
+    "xl": 5,
+    "xxl": 5
+  },
+  "ch": {
+    "xs": 5,
+    "s": 5,
+    "m": 5,
+    "l": 5,
+    "xl": 5,
+    "xxl": 5
+  }
+};
+
+stockRemeras["Remera Sombra"] = {
+  "xx": {
+    "xs": 5,
+    "s": 5,
+    "m": 5,
+    "l": 5,
+    "xl": 5,
+    "xxl": 5
+  },
+  "xy": {
+    "xs": 5,
+    "s": 5,
+    "m": 5,
+    "l": 5,
+    "xl": 5,
+    "xxl": 5
+  },
+  "ch": {
+    "xs": 5,
+    "s": 5,
+    "m": 5,
+    "l": 5,
+    "xl": 5,
+    "xxl": 5
+  }
+};
+
+stockRemeras["Remera Nature"] = {
+  "xx": {
+    "xs": 5,
+    "s": 5,
+    "m": 5,
+    "l": 5,
+    "xl": 5,
+    "xxl": 5
+  },
+  "xy": {
+    "xs": 5,
+    "s": 5,
+    "m": 5,
+    "l": 5,
+    "xl": 5,
+    "xxl": 5
+  },
+  "ch": {
+    "xs": 5,
+    "s": 5,
+    "m": 5,
+    "l": 5,
+    "xl": 5,
+    "xxl": 5
+  }
+};
+
+stockRemeras["Remera Sol"] = {
+  "xx": {
+    "xs": 5,
+    "s": 5,
+    "m": 5,
+    "l": 5,
+    "xl": 5,
+    "xxl": 5
+  },
+  "xy": {
+    "xs": 5,
+    "s": 5,
+    "m": 5,
+    "l": 5,
+    "xl": 5,
+    "xxl": 5
+  },
+  "ch": {
+    "xs": 5,
+    "s": 5,
+    "m": 5,
+    "l": 5,
+    "xl": 5,
+    "xxl": 5
+  }
+};
+
+stockRemeras["Remera Aire"] = {
+  "xx": {
+    "xs": 5,
+    "s": 5,
+    "m": 5,
+    "l": 5,
+    "xl": 5,
+    "xxl": 5
+  },
+  "xy": {
+    "xs": 5,
+    "s": 5,
+    "m": 5,
+    "l": 5,
+    "xl": 5,
+    "xxl": 5
+  },
+  "ch": {
+    "xs": 5,
+    "s": 5,
+    "m": 5,
+    "l": 5,
+    "xl": 5,
+    "xxl": 5
+  }
+};
+
+// Acceder al stock de una remera específica, modelo y talla
+let stockRemeraAguaModeloXXTalleS = stockRemeras["Remera Agua"]["xx"]["s"];
+console.log("Stock de Remera Agua, Modelo XX, Talle S:", stockRemeraAguaModeloXXTalleS);
+
+console.log(stockRemeras)
+
