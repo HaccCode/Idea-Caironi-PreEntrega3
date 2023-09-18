@@ -21,7 +21,12 @@ do {
   }
 } while (isNaN(dni) || dni <= 0);
 
-//Precios Entradas segun edad
+let opcion = prompt("Selecciona una opción:\n1. Reservar entradas para el Parque\n2. Tienda\n3. Festeja tu Cumple \n4. Retira tu Foto \n5. Salir");
+opcion = parseInt(opcion);
+
+switch (opcion) {
+  case 1: //Reserva de Entradas
+    //Precios Entradas segun edad
 let entradaGral = 1200;
 let descMayores = 0.75; //-75% de descuento
 let descMenores = 0.5; //-50% de descuento
@@ -120,50 +125,92 @@ function validarDatoStr(dato) {
     alert("Ingrese solo texto válido");
   }
 }
-
+    break;
+  case 2: // Tienda
+    
+    alert("Has seleccionado Ver mensajes.");
+    break;
+  case 3: //Festeja tu cumple
+    // Lógica para configuración
+    alert("Has seleccionado Configuración.");
+    break;
+  case 4: // Retira tu foto
+    // Lógica para configuración
+    alert("Has seleccionado Configuración.");
+    break;
+  case 5: // Salir
+    // Lógica para salir
+    alert("Gracias por usar nuestro sistema. ¡Hasta luego!");
+    break;
+  default:
+    // Opción no válida
+    alert("Opción no válida. Por favor, selecciona una opción válida.");
+}
 */
 
 
 
+
+
 //Listado Remeras
-let remeraAgua = {id: 1001, nombre: "Remera Agua", modelo: ["xx", "xy", "ch"], talle: ["xs", "s", "m", "l", "xl", "xxl"], precio: 7000};
+let remeraAgua = {id: "1001", nombre: "Remera Agua", modelo: ["xx", "xy", "ch"], talle: ["xs", "s", "m", "l", "xl", "xxl"], precio: 7000};
 
-let remeraAire = {id: 1002, nombre: "Remera Aire", modelo: ["xx", "xy", "ch"], talle: ["xs", "s", "m", "l", "xl", "xxl"], precio: 7000}
+let remeraAire = {id: "1002", nombre: "Remera Aire", modelo: ["xx", "xy", "ch"], talle: ["xs", "s", "m", "l", "xl", "xxl"], precio: 7000}
 
-let remeraTierra = {id: 1003, nombre: "Remera Tierra", modelo: ["xx", "xy", "ch"], talle: ["xs", "s", "m", "l", "xl", "xxl"], precio: 7000}
+let remeraTierra = {id: "1003", nombre: "Remera Tierra", modelo: ["xx", "xy", "ch"], talle: ["xs", "s", "m", "l", "xl", "xxl"], precio: 7000}
 
-let remeraFuego = {id: 1004, nombre: "Remera Fuego", modelo: ["xx", "xy", "ch"], talle: ["xs", "s", "m", "l", "xl", "xxl"], precio: 7000}
+let remeraFuego = {id: "1004", nombre: "Remera Fuego", modelo: ["xx", "xy", "ch"], talle: ["xs", "s", "m", "l", "xl", "xxl"], precio: 7000}
 
-let remeraLuz = {id: 1005, nombre: "Remera Luz", modelo: ["xx", "xy", "ch"], talle: ["xs", "s", "m", "l", "xl", "xxl"], precio: 7000}
+let remeraLuz = {id: "1005", nombre: "Remera Luz", modelo: ["xx", "xy", "ch"], talle: ["xs", "s", "m", "l", "xl", "xxl"], precio: 7000}
 
-let remeraSombra = {id: 1006, nombre: "Remera Sombra", modelo: ["xx", "xy", "ch"], talle: ["xs", "s", "m", "l", "xl", "xxl"], precio: 7000}
+let remeraSombra = {id: "1006", nombre: "Remera Sombra", modelo: ["xx", "xy", "ch"], talle: ["xs", "s", "m", "l", "xl", "xxl"], precio: 7000}
 
-let remeraNature = {id: 1007, nombre: "Remera Nature", modelo: ["xx", "xy", "ch"], talle: ["xs", "s", "m", "l", "xl", "xxl"], precio: 7000}
+let remeraNature = {id: "1007", nombre: "Remera Nature", modelo: ["xx", "xy", "ch"], talle: ["xs", "s", "m", "l", "xl", "xxl"], precio: 7000}
 
-let remeraSol = {id: 1008, nombre: "Remera Sol", modelo: ["xx", "xy", "ch"], talle: ["xs", "s", "m", "l", "xl", "xxl"], precio: 7000}
+let remeraSol = {id: "1008", nombre: "Remera Sol", modelo: ["xx", "xy", "ch"], talle: ["xs", "s", "m", "l", "xl", "xxl"], precio: 7000}
 
 //listado de Remeras
 let remeras = [remeraAgua, remeraAire, remeraFuego, remeraLuz, remeraSombra, remeraTierra, remeraNature, remeraSol];
 
-console.log(remeras)
+//IDs para cada producto
+function generarNuevosIDs(producto) {
+  let nuevosID = [];
 
-console.log(remeraAgua.modelo[1]);
+  for (let i = 0; i < producto.modelo.length; i++) {
+    for (let j = 0; j < producto.talle.length; j++) {
+      let nuevoId = producto.id+i+j;
+      let combinacion = {
+        id: nuevoId,
+        nombre: producto.nombre,
+        modelo: producto.modelo[i],
+        talle: producto.talle[j],
+        precio: producto.precio
+      };
+      nuevosID.push(combinacion);
+    }
+  }
+
+  return nuevosID;
+}
+
+let idsRemerasAgua = generarNuevosIDs(remeraAgua);
+let idsRemerasAire = generarNuevosIDs(remeraAire);
+let idsRemerasTierra = generarNuevosIDs(remeraTierra);
+let idsRemerasFuego = generarNuevosIDs(remeraFuego);
+let idsRemerasLuz = generarNuevosIDs(remeraLuz);
+let idsRemerasSombra = generarNuevosIDs(remeraSombra);
+let idsRemerasNature = generarNuevosIDs(remeraNature);
+let idsRemerasSol = generarNuevosIDs(remeraSol);
 
 
+// Combinar las nuevosID de ambos productos en un solo arreglo
+let nuevosID = [idsRemerasAgua, idsRemerasAire, idsRemerasTierra, 
+  idsRemerasFuego, idsRemerasLuz, idsRemerasSombra, idsRemerasNature, idsRemerasSol];
 
-let carrito = []
-
-
-
-//ID productos
-
-let remerasIDs = {};
-
-
+console.log(nuevosID);
 
 
 //STOCK
-
 
 let stockRemeras = {};
 
