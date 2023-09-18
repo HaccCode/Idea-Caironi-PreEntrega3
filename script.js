@@ -148,291 +148,566 @@ function validarDatoStr(dato) {
 }
 */
 
+let productos = [
+  {
+    id: "100001",
+    categoria: "Indumentaria",
+    subcategoria: "Remeras",
+    nombre: "Remera Agua",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 7000,
+  },
+  {
+    id: "100002",
+    categoria: "Indumentaria",
+    subcategoria: "Remeras",
+    nombre: "Remera Aire",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 7000,
+  },
+  {
+    id: "100003",
+    categoria: "Indumentaria",
+    subcategoria: "Remeras",
+    nombre: "Remera Tierra",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 7000,
+  },
+  {
+    id: "100004",
+    categoria: "Indumentaria",
+    subcategoria: "Remeras",
+    nombre: "Remera Fuego",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 7000,
+  },
+  {
+    id: "100005",
+    categoria: "Indumentaria",
+    subcategoria: "Remeras",
+    nombre: "Remera Luz",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 7000,
+  },
+  {
+    id: "100006",
+    categoria: "Indumentaria",
+    subcategoria: "Remeras",
+    nombre: "Remera Sombra",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 7000,
+  },
+  {
+    id: "100007",
+    categoria: "Indumentaria",
+    subcategoria: "Remeras",
+    nombre: "Remera Nature",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 7000,
+  },
+  {
+    id: "100008",
+    categoria: "Indumentaria",
+    subcategoria: "Remeras",
+    nombre: "Remera Sol",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 7000,
+  },
+  {
+    id: "100101",
+    categoria: "Indumentaria",
+    subcategoria: "Buzos",
+    nombre: "Buzo Agua",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 11000,
+  },
+  {
+    id: "100102",
+    categoria: "Indumentaria",
+    subcategoria: "Buzos",
+    nombre: "Buzo Aire",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 11000,
+  },
+  {
+    id: "100103",
+    categoria: "Indumentaria",
+    subcategoria: "Buzos",
+    nombre: "Buzo Tierra",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 11000,
+  },
+  {
+    id: "100104",
+    categoria: "Indumentaria",
+    subcategoria: "Buzos",
+    nombre: "Buzo Fuego",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 11000,
+  },
+  {
+    id: "100105",
+    categoria: "Indumentaria",
+    subcategoria: "Buzo",
+    nombre: "Buzo Luz",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 11000,
+  },
+  {
+    id: "100106",
+    categoria: "Indumentaria",
+    subcategoria: "Buzos",
+    nombre: "Buzo Sombra",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 11000,
+  },
+  {
+    id: "100107",
+    categoria: "Indumentaria",
+    subcategoria: "Buzos",
+    nombre: "Buzo Nature",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 11000,
+  },
+  {
+    id: "100108",
+    categoria: "Indumentaria",
+    subcategoria: "Buzos",
+    nombre: "Buzo Sol",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 11000,
+  },
+  {
+    id: "100201",
+    categoria: "Indumentaria",
+    subcategoria: "Camperitas",
+    nombre: "Camperita Agua",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 18000,
+  },
+  {
+    id: "100202",
+    categoria: "Indumentaria",
+    subcategoria: "Camperitas",
+    nombre: "Camperita Aire",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 18000,
+  },
+  {
+    id: "100203",
+    categoria: "Indumentaria",
+    subcategoria: "Camperitas",
+    nombre: "Camperita Tierra",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 18000,
+  },
+  {
+    id: "100204",
+    categoria: "Indumentaria",
+    subcategoria: "Camperitas",
+    nombre: "Camperita Fuego",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 18000,
+  },
+  {
+    id: "100205",
+    categoria: "Indumentaria",
+    subcategoria: "Camperitas",
+    nombre: "Camperita Luz",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 18000,
+  },
+  {
+    id: "100206",
+    categoria: "Indumentaria",
+    subcategoria: "Camperitas",
+    nombre: "Camperita Sombra",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 18000,
+  },
+  {
+    id: "100207",
+    categoria: "Indumentaria",
+    subcategoria: "Camperitas",
+    nombre: "Camperita Nature",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 18000,
+  },
+  {
+    id: "100208",
+    categoria: "Indumentaria",
+    subcategoria: "Camperitas",
+    nombre: "Camperita Sol",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 18000,
+  },
+  {
+    id: "110001",
+    categoria: "Accesorios",
+    subcategoria: "Lentes",
+    nombre: "Lentes Sol Agua",
+    modelo: ["xx", "xy", "ch"],
+    precio: 22000,
+  },
+  {
+    id: "110002",
+    categoria: "Accesorios",
+    subcategoria: "Lentes",
+    nombre: "Lentes Sol Aire",
+    modelo: ["xx", "xy", "ch"],
+    precio: 22000,
+  },
+  {
+    id: "110003",
+    categoria: "Accesorios",
+    subcategoria: "Lentes",
+    nombre: "Lentes Sol Tierra",
+    modelo: ["xx", "xy", "ch"],
+    precio: 22000,
+  },
+  {
+    id: "110004",
+    categoria: "Accesorios",
+    subcategoria: "Lentes",
+    nombre: "Lentes Sol Fuego",
+    modelo: ["xx", "xy", "ch"],
+    precio: 22000,
+  },
+  {
+    id: "110005",
+    categoria: "Accesorios",
+    subcategoria: "Lentes",
+    nombre: "Lentes Sol Luz",
+    modelo: ["xx", "xy", "ch"],
+    precio: 22000,
+  },
+  {
+    id: "110006",
+    categoria: "Accesorios",
+    subcategoria: "Lentes",
+    nombre: "Lentes Sol Sombra",
+    modelo: ["xx", "xy", "ch"],
+    precio: 22000,
+  },
+  {
+    id: "110007",
+    categoria: "Accesorios",
+    subcategoria: "Lentes",
+    nombre: "Lentes Sol Nature",
+    modelo: ["xx", "xy", "ch"],
+    precio: 22000,
+  },
+  {
+    id: "110008",
+    categoria: "Accesorios",
+    subcategoria: "Lentes",
+    nombre: "Lentes Sol Sol",
+    modelo: ["xx", "xy", "ch"],
+    precio: 22000,
+  },
+  {
+    id: "110101",
+    categoria: "Accesorios",
+    subcategoria: "Collares",
+    nombre: "Oxitocina",
+    modelo: ["xx", "xy", "ch"],
+    precio: 14000,
+  },
+  {
+    id: "110102",
+    categoria: "Accesorios",
+    subcategoria: "Collares",
+    nombre: "Dopamina",
+    modelo: ["xx", "xy", "ch"],
+    precio: 14000,
+  },
+  {
+    id: "110103",
+    categoria: "Accesorios",
+    subcategoria: "Collares",
+    nombre: "Serotonina",
+    modelo: ["xx", "xy", "ch"],
+    precio: 14000,
+  },
+  {
+    id: "110104",
+    categoria: "Accesorios",
+    subcategoria: "Collares",
+    nombre: "THC",
+    modelo: ["xx", "xy", "ch"],
+    precio: 14000,
+  },
+  {
+    id: "110105",
+    categoria: "Accesorios",
+    subcategoria: "Collares",
+    nombre: "LSD",
+    modelo: ["xx", "xy", "ch"],
+    precio: 14000,
+  },
+  {
+    id: "110105",
+    categoria: "Accesorios",
+    subcategoria: "Collares",
+    nombre: "DMT",
+    modelo: ["xx", "xy", "ch"],
+    precio: 14000,
+  },
 
+  ];
 
-
-
-//Listado Remeras
-let remeraAgua = {id: "1001", nombre: "Remera Agua", modelo: ["xx", "xy", "ch"], talle: ["xs", "s", "m", "l", "xl", "xxl"], precio: 7000};
-
-let remeraAire = {id: "1002", nombre: "Remera Aire", modelo: ["xx", "xy", "ch"], talle: ["xs", "s", "m", "l", "xl", "xxl"], precio: 7000}
-
-let remeraTierra = {id: "1003", nombre: "Remera Tierra", modelo: ["xx", "xy", "ch"], talle: ["xs", "s", "m", "l", "xl", "xxl"], precio: 7000}
-
-let remeraFuego = {id: "1004", nombre: "Remera Fuego", modelo: ["xx", "xy", "ch"], talle: ["xs", "s", "m", "l", "xl", "xxl"], precio: 7000}
-
-let remeraLuz = {id: "1005", nombre: "Remera Luz", modelo: ["xx", "xy", "ch"], talle: ["xs", "s", "m", "l", "xl", "xxl"], precio: 7000}
-
-let remeraSombra = {id: "1006", nombre: "Remera Sombra", modelo: ["xx", "xy", "ch"], talle: ["xs", "s", "m", "l", "xl", "xxl"], precio: 7000}
-
-let remeraNature = {id: "1007", nombre: "Remera Nature", modelo: ["xx", "xy", "ch"], talle: ["xs", "s", "m", "l", "xl", "xxl"], precio: 7000}
-
-let remeraSol = {id: "1008", nombre: "Remera Sol", modelo: ["xx", "xy", "ch"], talle: ["xs", "s", "m", "l", "xl", "xxl"], precio: 7000}
-
-//listado de Remeras
-let remeras = [remeraAgua, remeraAire, remeraFuego, remeraLuz, remeraSombra, remeraTierra, remeraNature, remeraSol];
-
-//IDs para cada producto
-function generarNuevosIDs(producto) {
-  let nuevosID = [];
-
-  for (let i = 0; i < producto.modelo.length; i++) {
-    for (let j = 0; j < producto.talle.length; j++) {
-      let nuevoId = producto.id+i+j;
-      let combinacion = {
-        id: nuevoId,
-        nombre: producto.nombre,
-        modelo: producto.modelo[i],
-        talle: producto.talle[j],
-        precio: producto.precio
-      };
-      nuevosID.push(combinacion);
-    }
-  }
-
-  return nuevosID;
-}
-
-let idsRemerasAgua = generarNuevosIDs(remeraAgua);
-let idsRemerasAire = generarNuevosIDs(remeraAire);
-let idsRemerasTierra = generarNuevosIDs(remeraTierra);
-let idsRemerasFuego = generarNuevosIDs(remeraFuego);
-let idsRemerasLuz = generarNuevosIDs(remeraLuz);
-let idsRemerasSombra = generarNuevosIDs(remeraSombra);
-let idsRemerasNature = generarNuevosIDs(remeraNature);
-let idsRemerasSol = generarNuevosIDs(remeraSol);
-
-
-// Combinar las nuevosID de ambos productos en un solo arreglo
-let nuevosID = [idsRemerasAgua, idsRemerasAire, idsRemerasTierra, 
-  idsRemerasFuego, idsRemerasLuz, idsRemerasSombra, idsRemerasNature, idsRemerasSol];
-
-console.log(nuevosID);
-
+console.log(productos)
 
 //STOCK
 
-let stockRemeras = {};
+/*let stockRemeras = {};
 
 stockRemeras["Remera Agua"] = {
-  "xx": {
-    "xs": 5,
-    "s": 5,
-    "m": 5,
-    "l": 5,
-    "xl": 5,
-    "xxl": 5
+  xx: {
+    xs: 5,
+    s: 5,
+    m: 5,
+    l: 5,
+    xl: 5,
+    xxl: 5,
   },
-  "xy": {
-    "xs": 5,
-    "s": 5,
-    "m": 5,
-    "l": 5,
-    "xl": 5,
-    "xxl": 5
+  xy: {
+    xs: 5,
+    s: 5,
+    m: 5,
+    l: 5,
+    xl: 5,
+    xxl: 5,
   },
-  "ch": {
-    "xs": 5,
-    "s": 5,
-    "m": 5,
-    "l": 5,
-    "xl": 5,
-    "xxl": 5
-  }
+  ch: {
+    xs: 5,
+    s: 5,
+    m: 5,
+    l: 5,
+    xl: 5,
+    xxl: 5,
+  },
 };
 
 stockRemeras["Remera Tierra"] = {
-  "xx": {
-    "xs": 5,
-    "s": 5,
-    "m": 5,
-    "l": 5,
-    "xl": 5,
-    "xxl": 5
+  xx: {
+    xs: 5,
+    s: 5,
+    m: 5,
+    l: 5,
+    xl: 5,
+    xxl: 5,
   },
-  "xy": {
-    "xs": 5,
-    "s": 5,
-    "m": 5,
-    "l": 5,
-    "xl": 5,
-    "xxl": 5
+  xy: {
+    xs: 5,
+    s: 5,
+    m: 5,
+    l: 5,
+    xl: 5,
+    xxl: 5,
   },
-  "ch": {
-    "xs": 5,
-    "s": 5,
-    "m": 5,
-    "l": 5,
-    "xl": 5,
-    "xxl": 5
-  }
+  ch: {
+    xs: 5,
+    s: 5,
+    m: 5,
+    l: 5,
+    xl: 5,
+    xxl: 5,
+  },
 };
 
 stockRemeras["Remera Fuego"] = {
-  "xx": {
-    "xs": 5,
-    "s": 5,
-    "m": 5,
-    "l": 5,
-    "xl": 5,
-    "xxl": 5
+  xx: {
+    xs: 5,
+    s: 5,
+    m: 5,
+    l: 5,
+    xl: 5,
+    xxl: 5,
   },
-  "xy": {
-    "xs": 5,
-    "s": 5,
-    "m": 5,
-    "l": 5,
-    "xl": 5,
-    "xxl": 5
+  xy: {
+    xs: 5,
+    s: 5,
+    m: 5,
+    l: 5,
+    xl: 5,
+    xxl: 5,
   },
-  "ch": {
-    "xs": 5,
-    "s": 5,
-    "m": 5,
-    "l": 5,
-    "xl": 5,
-    "xxl": 5
-  }
+  ch: {
+    xs: 5,
+    s: 5,
+    m: 5,
+    l: 5,
+    xl: 5,
+    xxl: 5,
+  },
 };
 
 stockRemeras["Remera Luz"] = {
-  "xx": {
-    "xs": 5,
-    "s": 5,
-    "m": 5,
-    "l": 5,
-    "xl": 5,
-    "xxl": 5
+  xx: {
+    xs: 5,
+    s: 5,
+    m: 5,
+    l: 5,
+    xl: 5,
+    xxl: 5,
   },
-  "xy": {
-    "xs": 5,
-    "s": 5,
-    "m": 5,
-    "l": 5,
-    "xl": 5,
-    "xxl": 5
+  xy: {
+    xs: 5,
+    s: 5,
+    m: 5,
+    l: 5,
+    xl: 5,
+    xxl: 5,
   },
-  "ch": {
-    "xs": 5,
-    "s": 5,
-    "m": 5,
-    "l": 5,
-    "xl": 5,
-    "xxl": 5
-  }
+  ch: {
+    xs: 5,
+    s: 5,
+    m: 5,
+    l: 5,
+    xl: 5,
+    xxl: 5,
+  },
 };
 
 stockRemeras["Remera Sombra"] = {
-  "xx": {
-    "xs": 5,
-    "s": 5,
-    "m": 5,
-    "l": 5,
-    "xl": 5,
-    "xxl": 5
+  xx: {
+    xs: 5,
+    s: 5,
+    m: 5,
+    l: 5,
+    xl: 5,
+    xxl: 5,
   },
-  "xy": {
-    "xs": 5,
-    "s": 5,
-    "m": 5,
-    "l": 5,
-    "xl": 5,
-    "xxl": 5
+  xy: {
+    xs: 5,
+    s: 5,
+    m: 5,
+    l: 5,
+    xl: 5,
+    xxl: 5,
   },
-  "ch": {
-    "xs": 5,
-    "s": 5,
-    "m": 5,
-    "l": 5,
-    "xl": 5,
-    "xxl": 5
-  }
+  ch: {
+    xs: 5,
+    s: 5,
+    m: 5,
+    l: 5,
+    xl: 5,
+    xxl: 5,
+  },
 };
 
 stockRemeras["Remera Nature"] = {
-  "xx": {
-    "xs": 5,
-    "s": 5,
-    "m": 5,
-    "l": 5,
-    "xl": 5,
-    "xxl": 5
+  xx: {
+    xs: 5,
+    s: 5,
+    m: 5,
+    l: 5,
+    xl: 5,
+    xxl: 5,
   },
-  "xy": {
-    "xs": 5,
-    "s": 5,
-    "m": 5,
-    "l": 5,
-    "xl": 5,
-    "xxl": 5
+  xy: {
+    xs: 5,
+    s: 5,
+    m: 5,
+    l: 5,
+    xl: 5,
+    xxl: 5,
   },
-  "ch": {
-    "xs": 5,
-    "s": 5,
-    "m": 5,
-    "l": 5,
-    "xl": 5,
-    "xxl": 5
-  }
+  ch: {
+    xs: 5,
+    s: 5,
+    m: 5,
+    l: 5,
+    xl: 5,
+    xxl: 5,
+  },
 };
 
 stockRemeras["Remera Sol"] = {
-  "xx": {
-    "xs": 5,
-    "s": 5,
-    "m": 5,
-    "l": 5,
-    "xl": 5,
-    "xxl": 5
+  xx: {
+    xs: 5,
+    s: 5,
+    m: 5,
+    l: 5,
+    xl: 5,
+    xxl: 5,
   },
-  "xy": {
-    "xs": 5,
-    "s": 5,
-    "m": 5,
-    "l": 5,
-    "xl": 5,
-    "xxl": 5
+  xy: {
+    xs: 5,
+    s: 5,
+    m: 5,
+    l: 5,
+    xl: 5,
+    xxl: 5,
   },
-  "ch": {
-    "xs": 5,
-    "s": 5,
-    "m": 5,
-    "l": 5,
-    "xl": 5,
-    "xxl": 5
-  }
+  ch: {
+    xs: 5,
+    s: 5,
+    m: 5,
+    l: 5,
+    xl: 5,
+    xxl: 5,
+  },
 };
 
 stockRemeras["Remera Aire"] = {
-  "xx": {
-    "xs": 5,
-    "s": 5,
-    "m": 5,
-    "l": 5,
-    "xl": 5,
-    "xxl": 5
+  xx: {
+    xs: 5,
+    s: 5,
+    m: 5,
+    l: 5,
+    xl: 5,
+    xxl: 5,
   },
-  "xy": {
-    "xs": 5,
-    "s": 5,
-    "m": 5,
-    "l": 5,
-    "xl": 5,
-    "xxl": 5
+  xy: {
+    xs: 5,
+    s: 5,
+    m: 5,
+    l: 5,
+    xl: 5,
+    xxl: 5,
   },
-  "ch": {
-    "xs": 5,
-    "s": 5,
-    "m": 5,
-    "l": 5,
-    "xl": 5,
-    "xxl": 5
-  }
+  ch: {
+    xs: 5,
+    s: 5,
+    m: 5,
+    l: 5,
+    xl: 5,
+    xxl: 5,
+  },
 };
 
 // Acceder al stock de una remera específica, modelo y talla
 let stockRemeraAguaModeloXXTalleS = stockRemeras["Remera Agua"]["xx"]["s"];
-console.log("Stock de Remera Agua, Modelo XX, Talle S:", stockRemeraAguaModeloXXTalleS);
+console.log(
+  "Stock de Remera Agua, Modelo XX, Talle S:",
+  stockRemeraAguaModeloXXTalleS
+);
 
-console.log(stockRemeras)
-
+console.log(stockRemeras);
+*/
