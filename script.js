@@ -157,6 +157,7 @@ let productos = [
     modelo: ["xx", "xy", "ch"],
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 7000,
+    stock: 5,
   },
   {
     id: "100002",
@@ -166,6 +167,7 @@ let productos = [
     modelo: ["xx", "xy", "ch"],
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 7000,
+    stock: 5,
   },
   {
     id: "100003",
@@ -175,6 +177,7 @@ let productos = [
     modelo: ["xx", "xy", "ch"],
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 7000,
+    stock: 5,
   },
   {
     id: "100004",
@@ -184,6 +187,7 @@ let productos = [
     modelo: ["xx", "xy", "ch"],
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 7000,
+    stock: 5,
   },
   {
     id: "100005",
@@ -193,6 +197,7 @@ let productos = [
     modelo: ["xx", "xy", "ch"],
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 7000,
+    stock: 5,
   },
   {
     id: "100006",
@@ -202,6 +207,7 @@ let productos = [
     modelo: ["xx", "xy", "ch"],
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 7000,
+    stock: 5,
   },
   {
     id: "100007",
@@ -211,6 +217,7 @@ let productos = [
     modelo: ["xx", "xy", "ch"],
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 7000,
+    stock: 5,
   },
   {
     id: "100008",
@@ -220,6 +227,7 @@ let productos = [
     modelo: ["xx", "xy", "ch"],
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 7000,
+    stock: 5,
   },
   {
     id: "100101",
@@ -229,6 +237,7 @@ let productos = [
     modelo: ["xx", "xy", "ch"],
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 11000,
+    stock: 5,
   },
   {
     id: "100102",
@@ -238,6 +247,7 @@ let productos = [
     modelo: ["xx", "xy", "ch"],
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 11000,
+    stock: 5,
   },
   {
     id: "100103",
@@ -247,6 +257,7 @@ let productos = [
     modelo: ["xx", "xy", "ch"],
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 11000,
+    stock: 5,
   },
   {
     id: "100104",
@@ -256,6 +267,7 @@ let productos = [
     modelo: ["xx", "xy", "ch"],
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 11000,
+    stock: 5,
   },
   {
     id: "100105",
@@ -265,6 +277,7 @@ let productos = [
     modelo: ["xx", "xy", "ch"],
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 11000,
+    stock: 5,
   },
   {
     id: "100106",
@@ -274,6 +287,7 @@ let productos = [
     modelo: ["xx", "xy", "ch"],
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 11000,
+    stock: 5,
   },
   {
     id: "100107",
@@ -283,6 +297,7 @@ let productos = [
     modelo: ["xx", "xy", "ch"],
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 11000,
+    stock: 5,
   },
   {
     id: "100108",
@@ -292,6 +307,7 @@ let productos = [
     modelo: ["xx", "xy", "ch"],
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 11000,
+    stock: 5,
   },
   {
     id: "100201",
@@ -301,6 +317,7 @@ let productos = [
     modelo: ["xx", "xy", "ch"],
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 18000,
+    stock: 5,
   },
   {
     id: "100202",
@@ -310,6 +327,7 @@ let productos = [
     modelo: ["xx", "xy", "ch"],
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 18000,
+    stock: 5,
   },
   {
     id: "100203",
@@ -319,6 +337,7 @@ let productos = [
     modelo: ["xx", "xy", "ch"],
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 18000,
+    stock: 5,
   },
   {
     id: "100204",
@@ -328,6 +347,7 @@ let productos = [
     modelo: ["xx", "xy", "ch"],
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 18000,
+    stock: 5,
   },
   {
     id: "100205",
@@ -337,6 +357,7 @@ let productos = [
     modelo: ["xx", "xy", "ch"],
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 18000,
+    stock: 5,
   },
   {
     id: "100206",
@@ -346,6 +367,7 @@ let productos = [
     modelo: ["xx", "xy", "ch"],
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 18000,
+    stock: 5,
   },
   {
     id: "100207",
@@ -355,6 +377,7 @@ let productos = [
     modelo: ["xx", "xy", "ch"],
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 18000,
+    stock: 5,
   },
   {
     id: "100208",
@@ -364,6 +387,7 @@ let productos = [
     modelo: ["xx", "xy", "ch"],
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 18000,
+    stock: 5,
   },
   {
     id: "110001",
@@ -372,6 +396,7 @@ let productos = [
     nombre: "Lentes Sol Agua",
     modelo: ["xx", "xy", "ch"],
     precio: 22000,
+    stock: 3,
   },
   {
     id: "110002",
@@ -380,6 +405,7 @@ let productos = [
     nombre: "Lentes Sol Aire",
     modelo: ["xx", "xy", "ch"],
     precio: 22000,
+    stock: 3,
   },
   {
     id: "110003",
@@ -388,6 +414,7 @@ let productos = [
     nombre: "Lentes Sol Tierra",
     modelo: ["xx", "xy", "ch"],
     precio: 22000,
+    stock: 3,
   },
   {
     id: "110004",
@@ -396,6 +423,7 @@ let productos = [
     nombre: "Lentes Sol Fuego",
     modelo: ["xx", "xy", "ch"],
     precio: 22000,
+    stock: 3,
   },
   {
     id: "110005",
@@ -404,6 +432,7 @@ let productos = [
     nombre: "Lentes Sol Luz",
     modelo: ["xx", "xy", "ch"],
     precio: 22000,
+    stock: 3,
   },
   {
     id: "110006",
@@ -412,6 +441,7 @@ let productos = [
     nombre: "Lentes Sol Sombra",
     modelo: ["xx", "xy", "ch"],
     precio: 22000,
+    stock: 3,
   },
   {
     id: "110007",
@@ -420,6 +450,7 @@ let productos = [
     nombre: "Lentes Sol Nature",
     modelo: ["xx", "xy", "ch"],
     precio: 22000,
+    stock: 3,
   },
   {
     id: "110008",
@@ -428,6 +459,7 @@ let productos = [
     nombre: "Lentes Sol Sol",
     modelo: ["xx", "xy", "ch"],
     precio: 22000,
+    stock: 3,
   },
   {
     id: "110101",
@@ -436,6 +468,7 @@ let productos = [
     nombre: "Oxitocina",
     modelo: ["xx", "xy", "ch"],
     precio: 14000,
+    stock: 3,
   },
   {
     id: "110102",
@@ -444,6 +477,7 @@ let productos = [
     nombre: "Dopamina",
     modelo: ["xx", "xy", "ch"],
     precio: 14000,
+    stock: 3,
   },
   {
     id: "110103",
@@ -452,6 +486,7 @@ let productos = [
     nombre: "Serotonina",
     modelo: ["xx", "xy", "ch"],
     precio: 14000,
+    stock: 3,
   },
   {
     id: "110104",
@@ -460,6 +495,7 @@ let productos = [
     nombre: "THC",
     modelo: ["xx", "xy", "ch"],
     precio: 14000,
+    stock: 3,
   },
   {
     id: "110105",
@@ -468,6 +504,7 @@ let productos = [
     nombre: "LSD",
     modelo: ["xx", "xy", "ch"],
     precio: 14000,
+    stock: 3,
   },
   {
     id: "110105",
@@ -476,6 +513,7 @@ let productos = [
     nombre: "DMT",
     modelo: ["xx", "xy", "ch"],
     precio: 14000,
+    stock: 3,
   },
 
   ];
