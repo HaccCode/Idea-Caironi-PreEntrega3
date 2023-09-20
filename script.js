@@ -24,124 +24,10 @@ do {
 
 //Variables
 let carrito = [];
+let productoBuscado;
 
-//Switch Menu Principal
-let opcion;
-do {
-  opcion = parseInt(
-    prompt(
-      "Selecciona una opción:\n1. Reservar entradas para el Parque\n2. Tienda\n3. Festeja tu Cumple \n4. Retira tu Foto \n0. Salir"
-    )
-  );
-
-  switch (opcion) {
-    case 1: //Reserva de Entradas
-      //Precios Entradas segun edad
-      let entradaGral = 1200;
-      let descMayores = 0.75; //-75% de descuento
-      let descMenores = 0.5; //-50% de descuento
-      let descInfantes = "Entrada Gratuita";
-      alert(
-        "Valor entrada: $" +
-          entradaGral +
-          "\nDescuento Mayores de 65 años: -" +
-          descMayores * 100 +
-          "%" +
-          "\nDescuento Menores de 13 años: -" +
-          descMenores * 100 +
-          "%" +
-          "\nDescuento Menores de 6 años: " +
-          descInfantes
-      );
-
-      //Bucle Cantidad de entradas y Datos por entrada
-      let entradas, dniEntrada, nombreEntrada, apellidoEntrada, edadEntrada;
-
-      do {
-        entradas = Number(prompt("Cuantas entradas desea reservar?"));
-        if (isNaN(entradas) || entradas <= 0 || entradas >= 10) {
-          alert("Debe ser un número mayor que 0. Máximo Reserva: 10 entradas");
-        }
-      } while (isNaN(entradas) || entradas <= 0);
-
-      for (let i = 1; i <= entradas; i++) {
-        do {
-          dniEntrada = Number(prompt("Ingrese el DNI para visitante Nº " + i));
-          validarDatoNum(dniEntrada);
-        } while (isNaN(dniEntrada) || dniEntrada <= 0);
-
-        do {
-          nombreEntrada = prompt("Ingrese Nombre");
-          validarDatoStr(nombreEntrada);
-        } while (
-          !/^[a-zA-Z]+$/.test(nombreEntrada) ||
-          nombreEntrada.trim() === ""
-        );
-
-        do {
-          apellidoEntrada = prompt("Ingrese Apellido");
-          validarDatoStr(apellidoEntrada);
-        } while (
-          !/^[a-zA-Z]+$/.test(apellidoEntrada) ||
-          apellidoEntrada.trim() === ""
-        );
-
-        do {
-          edadEntrada = Number(prompt("Ingrese edad actual del visitante"));
-          validarDatoNum(edadEntrada);
-        } while (isNaN(edadEntrada) || edadEntrada <= 0);
-
-        let valorEntrada = entradaGral;
-
-        //condicional valor entradas segun edad
-        if (edadEntrada < 6) {
-          valorEntrada = descInfantes;
-        } else if (edadEntrada < 13) {
-          valorEntrada = entradaGral - entradaGral * descMenores;
-        } else if (edadEntrada >= 65) {
-          valorEntrada = entradaGral - entradaGral * descMayores;
-        }
-
-        //Impresion por pantalla de Datos ingresados
-        alert(
-          "Entrada " +
-            i +
-            ":\nDNI: " +
-            dniEntrada +
-            "\nNombre Visitante: " +
-            nombreEntrada +
-            " " +
-            apellidoEntrada +
-            "\nEdad del Visitante: " +
-            edadEntrada +
-            "\nValor Entrada: $" +
-            valorEntrada
-        );
-      }
-
-      //mensaje reserva exitosa
-      alert(
-        "Reserva Exitosa " +
-          nombre +
-          "!\nRecuerde asistir dentro de los 10 días posteriores de la reserva, con DNI de los visitantes sin excepción\nTu Número de reserva es " +
-          dni +
-          " \n¡Muchas gracias! Te esperamos! Parque Tecno ☼"
-      );
-
-      //Funciones de validación de datos
-      function validarDatoNum(dato) {
-        if (isNaN(dato) || dato <= 0) alert("Debe ser un número mayor que 0.");
-      }
-
-      function validarDatoStr(dato) {
-        if (!/^[a-zA-Z]+$/.test(dato) || dato.trim() === "") {
-          alert("Ingrese solo texto válido");
-        }
-      }
-      break;
-    case 2: // Tienda
-      //Array de Productos Totales
-      let productos = [
+//Array de Productos Totales
+let productos = [
         {
           id: "1001",
           categoria: "Indumentaria",
@@ -508,7 +394,126 @@ do {
           precio: 14000,
           stock: 3,
         },
-      ];
+];
+
+
+//Switch Menu Principal
+let opcion;
+do {
+  opcion = parseInt(
+    prompt(
+      "Selecciona una opción:\n1. Reservar entradas para el Parque\n2. Tienda\n3. Festeja tu Cumple \n4. Retira tu Foto \n0. Salir"
+    )
+  );
+
+  switch (opcion) {
+    case 1: //Reserva de Entradas
+      //Precios Entradas segun edad
+      let entradaGral = 2200;
+      let descMayores = 0.75; //-75% de descuento
+      let descMenores = 0.5; //-50% de descuento
+      let descInfantes = "Entrada Gratuita";
+      alert(
+        "Valor entrada: $" +
+          entradaGral +
+          "\nDescuento Mayores de 65 años: -" +
+          descMayores * 100 +
+          "%" +
+          "\nDescuento Menores de 13 años: -" +
+          descMenores * 100 +
+          "%" +
+          "\nDescuento Menores de 6 años: " +
+          descInfantes
+      );
+
+      //Bucle Cantidad de entradas y Datos por entrada
+      let entradas, dniEntrada, nombreEntrada, apellidoEntrada, edadEntrada;
+
+      do {
+        entradas = Number(prompt("Cuantas entradas desea reservar?"));
+        if (isNaN(entradas) || entradas <= 0 || entradas >= 10) {
+          alert("Debe ser un número mayor que 0. Máximo Reserva: 10 entradas");
+        }
+      } while (isNaN(entradas) || entradas <= 0);
+
+      for (let i = 1; i <= entradas; i++) {
+        do {
+          dniEntrada = Number(prompt("Ingrese el DNI para visitante Nº " + i));
+          validarDatoNum(dniEntrada);
+        } while (isNaN(dniEntrada) || dniEntrada <= 0);
+
+        do {
+          nombreEntrada = prompt("Ingrese Nombre");
+          validarDatoStr(nombreEntrada);
+        } while (
+          !/^[a-zA-Z]+$/.test(nombreEntrada) ||
+          nombreEntrada.trim() === ""
+        );
+
+        do {
+          apellidoEntrada = prompt("Ingrese Apellido");
+          validarDatoStr(apellidoEntrada);
+        } while (
+          !/^[a-zA-Z]+$/.test(apellidoEntrada) ||
+          apellidoEntrada.trim() === ""
+        );
+
+        do {
+          edadEntrada = Number(prompt("Ingrese edad actual del visitante"));
+          validarDatoNum(edadEntrada);
+        } while (isNaN(edadEntrada) || edadEntrada <= 0);
+
+        let valorEntrada = entradaGral;
+
+        //condicional valor entradas segun edad
+        if (edadEntrada < 6) {
+          valorEntrada = descInfantes;
+        } else if (edadEntrada < 13) {
+          valorEntrada = entradaGral - entradaGral * descMenores;
+        } else if (edadEntrada >= 65) {
+          valorEntrada = entradaGral - entradaGral * descMayores;
+        }
+
+        //Impresion por pantalla de Datos ingresados
+        alert(
+          "Entrada " +
+            i +
+            ":\nDNI: " +
+            dniEntrada +
+            "\nNombre Visitante: " +
+            nombreEntrada +
+            " " +
+            apellidoEntrada +
+            "\nEdad del Visitante: " +
+            edadEntrada +
+            "\nValor Entrada: $" +
+            valorEntrada
+        );
+      }
+
+      //mensaje reserva exitosa
+      alert(
+        "Reserva Exitosa.!" +
+          nombre +
+          "!\nRecuerde asistir dentro de los 10 días posteriores de la reserva, con DNI de los visitantes sin excepción\nTu Número de reserva es " +
+          dni +
+          " \n¡Muchas gracias! Te esperamos! Parque Tecno ☼"
+      );
+
+      //Funciones de validación de datos
+      function validarDatoNum(dato) {
+        if (isNaN(dato) || dato <= 0) alert("Debe ser un número mayor que 0.");
+      }
+
+      function validarDatoStr(dato) {
+        if (!/^[a-zA-Z]+$/.test(dato) || dato.trim() === "") {
+          alert("Ingrese solo texto válido");
+        }
+      }
+      break;
+    
+      case 2: // Tienda
+
 
       //Switch Tienda
       let opcion;
@@ -521,6 +526,7 @@ do {
         );
 
         switch (opcion) {
+
           case 1: //Buscar por Categoría
             let opcionCategoria = Number(
               prompt(
@@ -540,6 +546,7 @@ do {
             }
 
             break;
+
           case 2: //Buscar por Subcategoria
             let opcionSubcategoria = Number(
               prompt(
@@ -573,34 +580,53 @@ do {
               alert(listaProductos(porSubcategoria));
             }
             break;
-          case 3: //Ver Informacion Completa del Producto***
-            break;
-          case 4: //Agregar al Carrito***
-            let id = Number(
-              prompt("Ingrese ID del Producto:\n" + listaProductos(productos))
-            );
-            let productoBuscado = productos.find(
-              (producto) => producto.id === id
-            );
-            let productoEnCarrito = carrito.find(
-              (producto) => producto.id === productoBuscado.id
-            );
 
-            if (productoEnCarrito) {
-              productoEnCarrito.unidades++;
-              productoEnCarrito.subtotal =
-                productoEnCarrito.unidades * productoEnCarrito.precioUnitario;
-              alert("El producto ya se encuentra agregado al carrito");
+          case 3: //Ver Informacion Completa del Producto
+            let productoBuscadoID = prompt("Ingrese ID del Producto:");
+            productoBuscado = buscarPorID(productoBuscadoID);
+
+            if (productoBuscado) {
+              mostrarInfoProducto(productoBuscado);
             } else {
-              carrito.push(productoBuscado);
-              alert("El producto se agregó al carrito");
+              alert("Producto no encontrado. Por favor, ingrese un ID válido.");
             }
 
-            console.log(carrito);
+            break;
+
+          case 4:
+            let id = prompt("Ingrese ID del Producto:\n");
+            productoBuscado = buscarPorID(id);
+
+            if (productoBuscado) {
+              let productoEnCarrito = carrito.find(
+                (producto) => producto.id === productoBuscado.id
+              );
+
+              if (productoEnCarrito) {
+                // Si ya está en el carrito
+                productoEnCarrito.unidades++;
+                productoEnCarrito.subtotal =
+                  productoEnCarrito.unidades * productoEnCarrito.precioUnitario;
+                alert("Se sumó una unidad más del producto al carrito");
+              } else {
+                // Agregar el producto al carrito
+                let productoNuevo = {
+                  id: productoBuscado.id,
+                  nombre: productoBuscado.nombre,
+                  unidades: 1,
+                  precioUnitario: productoBuscado.precio,
+                  subtotal: productoBuscado.precio,
+                };
+                carrito.push(productoNuevo);
+                alert("El producto se agregó al carrito.");
+              }
+            } else {
+              alert("El ID del producto ingresado no es válido.");
+            }
 
             break;
+
           case 5: //Finalizar compra
-            alert("Has seleccionado Finalizar Compra");
             break;
           case 0: //
             break;
@@ -627,6 +653,7 @@ do {
   }
 } while (opcion !== 0);
 
+//Funciones
 function listaProductos(productos) {
   return productos
     .map(
@@ -634,4 +661,29 @@ function listaProductos(productos) {
         producto.id + " - " + producto.subcategoria + " - " + producto.nombre
     )
     .join("\n");
+}
+
+function mostrarInfoProducto(producto) {
+  alert(
+    "ID: " +
+      producto.id +
+      "\nCategoría: " +
+      producto.categoria +
+      "\nSubcategoría: " +
+      producto.subcategoria +
+      "\nNombre: " +
+      producto.nombre +
+      "\nModelo: " +
+      producto.modelo.join(", ") +
+      "\nTalle: " +
+      producto.talle.join(", ") +
+      "\nPrecio: $" +
+      producto.precio +
+      "\nStock: " +
+      producto.stock
+  );
+}
+
+function buscarPorID(id) {
+  return productos.find((producto) => producto.id === id);
 }
