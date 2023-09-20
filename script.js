@@ -28,374 +28,373 @@ let productoBuscado;
 
 //Array de Productos Totales
 let productos = [
-        {
-          id: "1001",
-          categoria: "Indumentaria",
-          subcategoria: "Remeras",
-          nombre: "Remera Agua",
-          modelo: ["xx", "xy", "ch"],
-          talle: ["xs", "s", "m", "l", "xl", "xxl"],
-          precio: 7000,
-          stock: 5,
-        },
-        {
-          id: "1002",
-          categoria: "Indumentaria",
-          subcategoria: "Remeras",
-          nombre: "Remera Aire",
-          modelo: ["xx", "xy", "ch"],
-          talle: ["xs", "s", "m", "l", "xl", "xxl"],
-          precio: 7000,
-          stock: 5,
-        },
-        {
-          id: "1003",
-          categoria: "Indumentaria",
-          subcategoria: "Remeras",
-          nombre: "Remera Tierra",
-          modelo: ["xx", "xy", "ch"],
-          talle: ["xs", "s", "m", "l", "xl", "xxl"],
-          precio: 7000,
-          stock: 5,
-        },
-        {
-          id: "1004",
-          categoria: "Indumentaria",
-          subcategoria: "Remeras",
-          nombre: "Remera Fuego",
-          modelo: ["xx", "xy", "ch"],
-          talle: ["xs", "s", "m", "l", "xl", "xxl"],
-          precio: 7000,
-          stock: 5,
-        },
-        {
-          id: "1005",
-          categoria: "Indumentaria",
-          subcategoria: "Remeras",
-          nombre: "Remera Luz",
-          modelo: ["xx", "xy", "ch"],
-          talle: ["xs", "s", "m", "l", "xl", "xxl"],
-          precio: 7000,
-          stock: 5,
-        },
-        {
-          id: "1006",
-          categoria: "Indumentaria",
-          subcategoria: "Remeras",
-          nombre: "Remera Sombra",
-          modelo: ["xx", "xy", "ch"],
-          talle: ["xs", "s", "m", "l", "xl", "xxl"],
-          precio: 7000,
-          stock: 5,
-        },
-        {
-          id: "1007",
-          categoria: "Indumentaria",
-          subcategoria: "Remeras",
-          nombre: "Remera Nature",
-          modelo: ["xx", "xy", "ch"],
-          talle: ["xs", "s", "m", "l", "xl", "xxl"],
-          precio: 7000,
-          stock: 5,
-        },
-        {
-          id: "1008",
-          categoria: "Indumentaria",
-          subcategoria: "Remeras",
-          nombre: "Remera Sol",
-          modelo: ["xx", "xy", "ch"],
-          talle: ["xs", "s", "m", "l", "xl", "xxl"],
-          precio: 7000,
-          stock: 5,
-        },
-        {
-          id: "1101",
-          categoria: "Indumentaria",
-          subcategoria: "Buzos",
-          nombre: "Buzo Agua",
-          modelo: ["xx", "xy", "ch"],
-          talle: ["xs", "s", "m", "l", "xl", "xxl"],
-          precio: 11000,
-          stock: 5,
-        },
-        {
-          id: "1102",
-          categoria: "Indumentaria",
-          subcategoria: "Buzos",
-          nombre: "Buzo Aire",
-          modelo: ["xx", "xy", "ch"],
-          talle: ["xs", "s", "m", "l", "xl", "xxl"],
-          precio: 11000,
-          stock: 5,
-        },
-        {
-          id: "1103",
-          categoria: "Indumentaria",
-          subcategoria: "Buzos",
-          nombre: "Buzo Tierra",
-          modelo: ["xx", "xy", "ch"],
-          talle: ["xs", "s", "m", "l", "xl", "xxl"],
-          precio: 11000,
-          stock: 5,
-        },
-        {
-          id: "1104",
-          categoria: "Indumentaria",
-          subcategoria: "Buzos",
-          nombre: "Buzo Fuego",
-          modelo: ["xx", "xy", "ch"],
-          talle: ["xs", "s", "m", "l", "xl", "xxl"],
-          precio: 11000,
-          stock: 5,
-        },
-        {
-          id: "1105",
-          categoria: "Indumentaria",
-          subcategoria: "Buzos",
-          nombre: "Buzo Luz",
-          modelo: ["xx", "xy", "ch"],
-          talle: ["xs", "s", "m", "l", "xl", "xxl"],
-          precio: 11000,
-          stock: 5,
-        },
-        {
-          id: "1106",
-          categoria: "Indumentaria",
-          subcategoria: "Buzos",
-          nombre: "Buzo Sombra",
-          modelo: ["xx", "xy", "ch"],
-          talle: ["xs", "s", "m", "l", "xl", "xxl"],
-          precio: 11000,
-          stock: 5,
-        },
-        {
-          id: "1107",
-          categoria: "Indumentaria",
-          subcategoria: "Buzos",
-          nombre: "Buzo Nature",
-          modelo: ["xx", "xy", "ch"],
-          talle: ["xs", "s", "m", "l", "xl", "xxl"],
-          precio: 11000,
-          stock: 5,
-        },
-        {
-          id: "1108",
-          categoria: "Indumentaria",
-          subcategoria: "Buzos",
-          nombre: "Buzo Sol",
-          modelo: ["xx", "xy", "ch"],
-          talle: ["xs", "s", "m", "l", "xl", "xxl"],
-          precio: 11000,
-          stock: 5,
-        },
-        {
-          id: "1201",
-          categoria: "Indumentaria",
-          subcategoria: "Camperitas",
-          nombre: "Camperita Agua",
-          modelo: ["xx", "xy", "ch"],
-          talle: ["xs", "s", "m", "l", "xl", "xxl"],
-          precio: 18000,
-          stock: 5,
-        },
-        {
-          id: "1202",
-          categoria: "Indumentaria",
-          subcategoria: "Camperitas",
-          nombre: "Camperita Aire",
-          modelo: ["xx", "xy", "ch"],
-          talle: ["xs", "s", "m", "l", "xl", "xxl"],
-          precio: 18000,
-          stock: 5,
-        },
-        {
-          id: "1203",
-          categoria: "Indumentaria",
-          subcategoria: "Camperitas",
-          nombre: "Camperita Tierra",
-          modelo: ["xx", "xy", "ch"],
-          talle: ["xs", "s", "m", "l", "xl", "xxl"],
-          precio: 18000,
-          stock: 5,
-        },
-        {
-          id: "1204",
-          categoria: "Indumentaria",
-          subcategoria: "Camperitas",
-          nombre: "Camperita Fuego",
-          modelo: ["xx", "xy", "ch"],
-          talle: ["xs", "s", "m", "l", "xl", "xxl"],
-          precio: 18000,
-          stock: 5,
-        },
-        {
-          id: "1205",
-          categoria: "Indumentaria",
-          subcategoria: "Camperitas",
-          nombre: "Camperita Luz",
-          modelo: ["xx", "xy", "ch"],
-          talle: ["xs", "s", "m", "l", "xl", "xxl"],
-          precio: 18000,
-          stock: 5,
-        },
-        {
-          id: "1206",
-          categoria: "Indumentaria",
-          subcategoria: "Camperitas",
-          nombre: "Camperita Sombra",
-          modelo: ["xx", "xy", "ch"],
-          talle: ["xs", "s", "m", "l", "xl", "xxl"],
-          precio: 18000,
-          stock: 5,
-        },
-        {
-          id: "1207",
-          categoria: "Indumentaria",
-          subcategoria: "Camperitas",
-          nombre: "Camperita Nature",
-          modelo: ["xx", "xy", "ch"],
-          talle: ["xs", "s", "m", "l", "xl", "xxl"],
-          precio: 18000,
-          stock: 5,
-        },
-        {
-          id: "1208",
-          categoria: "Indumentaria",
-          subcategoria: "Camperitas",
-          nombre: "Camperita Sol",
-          modelo: ["xx", "xy", "ch"],
-          talle: ["xs", "s", "m", "l", "xl", "xxl"],
-          precio: 18000,
-          stock: 5,
-        },
-        {
-          id: "2001",
-          categoria: "Accesorios",
-          subcategoria: "Lentes",
-          nombre: "Lentes Sol Agua",
-          modelo: ["xx", "xy", "ch"],
-          precio: 22000,
-          stock: 3,
-        },
-        {
-          id: "2002",
-          categoria: "Accesorios",
-          subcategoria: "Lentes",
-          nombre: "Lentes Sol Aire",
-          modelo: ["xx", "xy", "ch"],
-          precio: 22000,
-          stock: 3,
-        },
-        {
-          id: "2003",
-          categoria: "Accesorios",
-          subcategoria: "Lentes",
-          nombre: "Lentes Sol Tierra",
-          modelo: ["xx", "xy", "ch"],
-          precio: 22000,
-          stock: 3,
-        },
-        {
-          id: "2004",
-          categoria: "Accesorios",
-          subcategoria: "Lentes",
-          nombre: "Lentes Sol Fuego",
-          modelo: ["xx", "xy", "ch"],
-          precio: 22000,
-          stock: 3,
-        },
-        {
-          id: "2005",
-          categoria: "Accesorios",
-          subcategoria: "Lentes",
-          nombre: "Lentes Sol Luz",
-          modelo: ["xx", "xy", "ch"],
-          precio: 22000,
-          stock: 3,
-        },
-        {
-          id: "2006",
-          categoria: "Accesorios",
-          subcategoria: "Lentes",
-          nombre: "Lentes Sol Sombra",
-          modelo: ["xx", "xy", "ch"],
-          precio: 22000,
-          stock: 3,
-        },
-        {
-          id: "2007",
-          categoria: "Accesorios",
-          subcategoria: "Lentes",
-          nombre: "Lentes Sol Nature",
-          modelo: ["xx", "xy", "ch"],
-          precio: 22000,
-          stock: 3,
-        },
-        {
-          id: "2008",
-          categoria: "Accesorios",
-          subcategoria: "Lentes",
-          nombre: "Lentes Sol Sol",
-          modelo: ["xx", "xy", "ch"],
-          precio: 22000,
-          stock: 3,
-        },
-        {
-          id: "2101",
-          categoria: "Accesorios",
-          subcategoria: "Collares",
-          nombre: "Oxitocina",
-          modelo: ["xx", "xy", "ch"],
-          precio: 14000,
-          stock: 3,
-        },
-        {
-          id: "2102",
-          categoria: "Accesorios",
-          subcategoria: "Collares",
-          nombre: "Dopamina",
-          modelo: ["xx", "xy", "ch"],
-          precio: 14000,
-          stock: 3,
-        },
-        {
-          id: "2103",
-          categoria: "Accesorios",
-          subcategoria: "Collares",
-          nombre: "Serotonina",
-          modelo: ["xx", "xy", "ch"],
-          precio: 14000,
-          stock: 3,
-        },
-        {
-          id: "2104",
-          categoria: "Accesorios",
-          subcategoria: "Collares",
-          nombre: "THC",
-          modelo: ["xx", "xy", "ch"],
-          precio: 14000,
-          stock: 3,
-        },
-        {
-          id: "2105",
-          categoria: "Accesorios",
-          subcategoria: "Collares",
-          nombre: "LSD",
-          modelo: ["xx", "xy", "ch"],
-          precio: 14000,
-          stock: 3,
-        },
-        {
-          id: "2106",
-          categoria: "Accesorios",
-          subcategoria: "Collares",
-          nombre: "DMT",
-          modelo: ["xx", "xy", "ch"],
-          precio: 14000,
-          stock: 3,
-        },
+  {
+    id: "1001",
+    categoria: "Indumentaria",
+    subcategoria: "Remeras",
+    nombre: "Remera Agua",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 7000,
+    stock: 5,
+  },
+  {
+    id: "1002",
+    categoria: "Indumentaria",
+    subcategoria: "Remeras",
+    nombre: "Remera Aire",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 7000,
+    stock: 5,
+  },
+  {
+    id: "1003",
+    categoria: "Indumentaria",
+    subcategoria: "Remeras",
+    nombre: "Remera Tierra",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 7000,
+    stock: 5,
+  },
+  {
+    id: "1004",
+    categoria: "Indumentaria",
+    subcategoria: "Remeras",
+    nombre: "Remera Fuego",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 7000,
+    stock: 5,
+  },
+  {
+    id: "1005",
+    categoria: "Indumentaria",
+    subcategoria: "Remeras",
+    nombre: "Remera Luz",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 7000,
+    stock: 5,
+  },
+  {
+    id: "1006",
+    categoria: "Indumentaria",
+    subcategoria: "Remeras",
+    nombre: "Remera Sombra",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 7000,
+    stock: 5,
+  },
+  {
+    id: "1007",
+    categoria: "Indumentaria",
+    subcategoria: "Remeras",
+    nombre: "Remera Nature",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 7000,
+    stock: 5,
+  },
+  {
+    id: "1008",
+    categoria: "Indumentaria",
+    subcategoria: "Remeras",
+    nombre: "Remera Sol",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 7000,
+    stock: 5,
+  },
+  {
+    id: "1101",
+    categoria: "Indumentaria",
+    subcategoria: "Buzos",
+    nombre: "Buzo Agua",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 11000,
+    stock: 5,
+  },
+  {
+    id: "1102",
+    categoria: "Indumentaria",
+    subcategoria: "Buzos",
+    nombre: "Buzo Aire",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 11000,
+    stock: 5,
+  },
+  {
+    id: "1103",
+    categoria: "Indumentaria",
+    subcategoria: "Buzos",
+    nombre: "Buzo Tierra",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 11000,
+    stock: 5,
+  },
+  {
+    id: "1104",
+    categoria: "Indumentaria",
+    subcategoria: "Buzos",
+    nombre: "Buzo Fuego",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 11000,
+    stock: 5,
+  },
+  {
+    id: "1105",
+    categoria: "Indumentaria",
+    subcategoria: "Buzos",
+    nombre: "Buzo Luz",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 11000,
+    stock: 5,
+  },
+  {
+    id: "1106",
+    categoria: "Indumentaria",
+    subcategoria: "Buzos",
+    nombre: "Buzo Sombra",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 11000,
+    stock: 5,
+  },
+  {
+    id: "1107",
+    categoria: "Indumentaria",
+    subcategoria: "Buzos",
+    nombre: "Buzo Nature",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 11000,
+    stock: 5,
+  },
+  {
+    id: "1108",
+    categoria: "Indumentaria",
+    subcategoria: "Buzos",
+    nombre: "Buzo Sol",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 11000,
+    stock: 5,
+  },
+  {
+    id: "1201",
+    categoria: "Indumentaria",
+    subcategoria: "Camperitas",
+    nombre: "Camperita Agua",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 18000,
+    stock: 5,
+  },
+  {
+    id: "1202",
+    categoria: "Indumentaria",
+    subcategoria: "Camperitas",
+    nombre: "Camperita Aire",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 18000,
+    stock: 5,
+  },
+  {
+    id: "1203",
+    categoria: "Indumentaria",
+    subcategoria: "Camperitas",
+    nombre: "Camperita Tierra",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 18000,
+    stock: 5,
+  },
+  {
+    id: "1204",
+    categoria: "Indumentaria",
+    subcategoria: "Camperitas",
+    nombre: "Camperita Fuego",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 18000,
+    stock: 5,
+  },
+  {
+    id: "1205",
+    categoria: "Indumentaria",
+    subcategoria: "Camperitas",
+    nombre: "Camperita Luz",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 18000,
+    stock: 5,
+  },
+  {
+    id: "1206",
+    categoria: "Indumentaria",
+    subcategoria: "Camperitas",
+    nombre: "Camperita Sombra",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 18000,
+    stock: 5,
+  },
+  {
+    id: "1207",
+    categoria: "Indumentaria",
+    subcategoria: "Camperitas",
+    nombre: "Camperita Nature",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 18000,
+    stock: 5,
+  },
+  {
+    id: "1208",
+    categoria: "Indumentaria",
+    subcategoria: "Camperitas",
+    nombre: "Camperita Sol",
+    modelo: ["xx", "xy", "ch"],
+    talle: ["xs", "s", "m", "l", "xl", "xxl"],
+    precio: 18000,
+    stock: 5,
+  },
+  {
+    id: "2001",
+    categoria: "Accesorios",
+    subcategoria: "Lentes",
+    nombre: "Lentes Sol Agua",
+    modelo: ["xx", "xy", "ch"],
+    precio: 22000,
+    stock: 3,
+  },
+  {
+    id: "2002",
+    categoria: "Accesorios",
+    subcategoria: "Lentes",
+    nombre: "Lentes Sol Aire",
+    modelo: ["xx", "xy", "ch"],
+    precio: 22000,
+    stock: 3,
+  },
+  {
+    id: "2003",
+    categoria: "Accesorios",
+    subcategoria: "Lentes",
+    nombre: "Lentes Sol Tierra",
+    modelo: ["xx", "xy", "ch"],
+    precio: 22000,
+    stock: 3,
+  },
+  {
+    id: "2004",
+    categoria: "Accesorios",
+    subcategoria: "Lentes",
+    nombre: "Lentes Sol Fuego",
+    modelo: ["xx", "xy", "ch"],
+    precio: 22000,
+    stock: 3,
+  },
+  {
+    id: "2005",
+    categoria: "Accesorios",
+    subcategoria: "Lentes",
+    nombre: "Lentes Sol Luz",
+    modelo: ["xx", "xy", "ch"],
+    precio: 22000,
+    stock: 3,
+  },
+  {
+    id: "2006",
+    categoria: "Accesorios",
+    subcategoria: "Lentes",
+    nombre: "Lentes Sol Sombra",
+    modelo: ["xx", "xy", "ch"],
+    precio: 22000,
+    stock: 3,
+  },
+  {
+    id: "2007",
+    categoria: "Accesorios",
+    subcategoria: "Lentes",
+    nombre: "Lentes Sol Nature",
+    modelo: ["xx", "xy", "ch"],
+    precio: 22000,
+    stock: 3,
+  },
+  {
+    id: "2008",
+    categoria: "Accesorios",
+    subcategoria: "Lentes",
+    nombre: "Lentes Sol Sol",
+    modelo: ["xx", "xy", "ch"],
+    precio: 22000,
+    stock: 3,
+  },
+  {
+    id: "2101",
+    categoria: "Accesorios",
+    subcategoria: "Collares",
+    nombre: "Oxitocina",
+    modelo: ["xx", "xy", "ch"],
+    precio: 14000,
+    stock: 3,
+  },
+  {
+    id: "2102",
+    categoria: "Accesorios",
+    subcategoria: "Collares",
+    nombre: "Dopamina",
+    modelo: ["xx", "xy", "ch"],
+    precio: 14000,
+    stock: 3,
+  },
+  {
+    id: "2103",
+    categoria: "Accesorios",
+    subcategoria: "Collares",
+    nombre: "Serotonina",
+    modelo: ["xx", "xy", "ch"],
+    precio: 14000,
+    stock: 3,
+  },
+  {
+    id: "2104",
+    categoria: "Accesorios",
+    subcategoria: "Collares",
+    nombre: "THC",
+    modelo: ["xx", "xy", "ch"],
+    precio: 14000,
+    stock: 3,
+  },
+  {
+    id: "2105",
+    categoria: "Accesorios",
+    subcategoria: "Collares",
+    nombre: "LSD",
+    modelo: ["xx", "xy", "ch"],
+    precio: 14000,
+    stock: 3,
+  },
+  {
+    id: "2106",
+    categoria: "Accesorios",
+    subcategoria: "Collares",
+    nombre: "DMT",
+    modelo: ["xx", "xy", "ch"],
+    precio: 14000,
+    stock: 3,
+  },
 ];
-
 
 //Switch Menu Principal
 let opcion;
@@ -511,11 +510,8 @@ do {
         }
       }
       break;
-    
-      case 2: // Tienda
 
-
-      //Switch Tienda
+    case 2: // Tienda
       let opcion;
 
       do {
@@ -525,8 +521,8 @@ do {
           )
         );
 
+        //Switch Tienda
         switch (opcion) {
-
           case 1: //Buscar por Categoría
             let opcionCategoria = Number(
               prompt(
@@ -593,7 +589,7 @@ do {
 
             break;
 
-          case 4:
+          case 4: //Agregar al carrito
             let id = prompt("Ingrese ID del Producto:\n");
             productoBuscado = buscarPorID(id);
 
@@ -612,6 +608,7 @@ do {
                 // Agregar el producto al carrito
                 let productoNuevo = {
                   id: productoBuscado.id,
+                  subcategoria: productoBuscado.subcategoria,
                   nombre: productoBuscado.nombre,
                   unidades: 1,
                   precioUnitario: productoBuscado.precio,
@@ -627,16 +624,52 @@ do {
             break;
 
           case 5: //Finalizar compra
+            if (carrito.length === 0) {
+              alert("No hay productos en el carrito.");
+            } else {
+              let totalUnidades = carrito.reduce((total, producto) => {
+                return total + producto.unidades;
+              }, 0);
+
+              while (true) {
+                alert(
+                  "\nProductos en carrito: " +
+                    totalUnidades +
+                    "\n" +
+                    listaProductos(carrito) +
+                    "\nTotal: $" +
+                    carrito.reduce((total, producto) => {
+                      return total + producto.subtotal;
+                    }, 0)
+                );
+
+                opcion = Number(
+                  prompt(
+                    "¿Estás seguro que querés finalizar la compra?\n1. Para continuar agregando productos\n0. Para Finalizar"
+                  )
+                );
+
+                if (opcion === 0) {
+                  alert("Compra realizada con Éxito!")
+                  break;
+                } else {
+                  break
+                }
+              }
+            }
+            console.log(carrito);
             break;
+          
           case 0: //
             break;
-          default:
-            // Opción no válida
+
+          default: // Opción no válida
             alert("Opción no válida. Por favor, selecciona una opción válida.");
             break;
         }
       } while (opcion !== 0);
 
+      break;
     case 3: //Festeja tu cumple
       alert("Has seleccionado Festeja tu cumple");
       break;
