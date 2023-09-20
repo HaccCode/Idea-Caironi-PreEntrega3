@@ -1,10 +1,9 @@
-/*//Mensaje de Bienvenida al Portal
+//Mensaje de Bienvenida al Portal
 alert(
   "Gracias por acceder al Portal de Parque Tec ☼\nA continuación le pediremos algunos datos para iniciar el proceso:"
 );
 
 //Ingreso Nombre y DNI del Usuario
-
 let nombre;
 do {
   nombre = prompt("Ingrese su Nombre");
@@ -20,7 +19,6 @@ do {
     alert("Debe ser un número mayor que 0.");
   }
 } while (isNaN(dni) || dni <= 0);
-*/
 
 //Variables
 let carrito = [];
@@ -274,6 +272,7 @@ let productos = [
     subcategoria: "Lentes",
     nombre: "Lentes Sol Agua",
     modelo: ["xx", "xy", "ch"],
+    talle: ["-", "-"],
     precio: 22000,
     stock: 3,
   },
@@ -283,6 +282,7 @@ let productos = [
     subcategoria: "Lentes",
     nombre: "Lentes Sol Aire",
     modelo: ["xx", "xy", "ch"],
+    talle: ["-", "-"],
     precio: 22000,
     stock: 3,
   },
@@ -292,6 +292,7 @@ let productos = [
     subcategoria: "Lentes",
     nombre: "Lentes Sol Tierra",
     modelo: ["xx", "xy", "ch"],
+    talle: ["-", "-"],
     precio: 22000,
     stock: 3,
   },
@@ -301,6 +302,7 @@ let productos = [
     subcategoria: "Lentes",
     nombre: "Lentes Sol Fuego",
     modelo: ["xx", "xy", "ch"],
+    talle: ["-", "-"],
     precio: 22000,
     stock: 3,
   },
@@ -310,6 +312,7 @@ let productos = [
     subcategoria: "Lentes",
     nombre: "Lentes Sol Luz",
     modelo: ["xx", "xy", "ch"],
+    talle: ["-", "-"],
     precio: 22000,
     stock: 3,
   },
@@ -319,6 +322,7 @@ let productos = [
     subcategoria: "Lentes",
     nombre: "Lentes Sol Sombra",
     modelo: ["xx", "xy", "ch"],
+    talle: ["-", "-"],
     precio: 22000,
     stock: 3,
   },
@@ -328,6 +332,7 @@ let productos = [
     subcategoria: "Lentes",
     nombre: "Lentes Sol Nature",
     modelo: ["xx", "xy", "ch"],
+    talle: ["-", "-"],
     precio: 22000,
     stock: 3,
   },
@@ -337,6 +342,7 @@ let productos = [
     subcategoria: "Lentes",
     nombre: "Lentes Sol Sol",
     modelo: ["xx", "xy", "ch"],
+    talle: ["-", "-"],
     precio: 22000,
     stock: 3,
   },
@@ -346,6 +352,7 @@ let productos = [
     subcategoria: "Collares",
     nombre: "Oxitocina",
     modelo: ["xx", "xy", "ch"],
+    talle: ["-", "-"],
     precio: 14000,
     stock: 3,
   },
@@ -355,6 +362,7 @@ let productos = [
     subcategoria: "Collares",
     nombre: "Dopamina",
     modelo: ["xx", "xy", "ch"],
+    talle: ["-", "-"],
     precio: 14000,
     stock: 3,
   },
@@ -364,6 +372,7 @@ let productos = [
     subcategoria: "Collares",
     nombre: "Serotonina",
     modelo: ["xx", "xy", "ch"],
+    talle: ["-", "-"],
     precio: 14000,
     stock: 3,
   },
@@ -373,6 +382,7 @@ let productos = [
     subcategoria: "Collares",
     nombre: "THC",
     modelo: ["xx", "xy", "ch"],
+    talle: ["-", "-"],
     precio: 14000,
     stock: 3,
   },
@@ -382,6 +392,7 @@ let productos = [
     subcategoria: "Collares",
     nombre: "LSD",
     modelo: ["xx", "xy", "ch"],
+    talle: ["-", "-"],
     precio: 14000,
     stock: 3,
   },
@@ -391,12 +402,13 @@ let productos = [
     subcategoria: "Collares",
     nombre: "DMT",
     modelo: ["xx", "xy", "ch"],
+    talle: ["-", "-"],
     precio: 14000,
     stock: 3,
   },
 ];
 
-//Switch Menu Principal
+//Menu Principal
 let opcion;
 do {
   opcion = parseInt(
@@ -405,7 +417,7 @@ do {
     )
   );
 
-  switch (opcion) {
+  switch (opcion) { //Switch Menu Principal
     case 1: //Reserva de Entradas
       //Precios Entradas segun edad
       let entradaGral = 2200;
@@ -430,10 +442,12 @@ do {
 
       do {
         entradas = Number(prompt("Cuantas entradas desea reservar?"));
-        if (isNaN(entradas) || entradas <= 0 || entradas >= 10) {
-          alert("Debe ser un número mayor que 0. Máximo Reserva: 10 entradas");
+        if (isNaN(entradas) || entradas <= 0) {
+          alert("Debe ser un número mayor que 0.");
+        } else if (entradas >= 10) {
+          alert("Máximo Reserva: 10 entradas");
         }
-      } while (isNaN(entradas) || entradas <= 0);
+      } while (isNaN(entradas) || entradas <= 0 || entradas >= 10);
 
       for (let i = 1; i <= entradas; i++) {
         do {
@@ -510,7 +524,6 @@ do {
         }
       }
       break;
-
     case 2: // Tienda
       let opcion;
 
@@ -539,6 +552,8 @@ do {
                 producto.categoria.includes("Accesorios")
               );
               alert(listaProductos(porCategoria));
+            } else {
+              alert("La opción ingresada en incorrecta")
             }
 
             break;
@@ -574,7 +589,10 @@ do {
                 producto.subcategoria.includes("Collares")
               );
               alert(listaProductos(porSubcategoria));
+            } else {
+              alert("La opción ingresada en incorrecta")
             }
+        
             break;
 
           case 3: //Ver Informacion Completa del Producto
@@ -586,7 +604,6 @@ do {
             } else {
               alert("Producto no encontrado. Por favor, ingrese un ID válido.");
             }
-
             break;
 
           case 4: //Agregar al carrito
@@ -650,17 +667,17 @@ do {
                 );
 
                 if (opcion === 0) {
-                  alert("Compra realizada con Éxito!")
+                  alert("Compra realizada con Éxito!");
                   break;
                 } else {
-                  break
+                  break;
                 }
               }
             }
-            console.log(carrito);
+
             break;
-          
-          case 0: //
+
+          case 0: // Volver al Menu
             break;
 
           default: // Opción no válida
@@ -671,10 +688,12 @@ do {
 
       break;
     case 3: //Festeja tu cumple
-      alert("Has seleccionado Festeja tu cumple");
+      alert(
+        "Has seleccionado Festeja tu cumple.\nProximamente más información"
+      );
       break;
     case 4: // Retira tu foto
-      alert("Has seleccionado Retirar tu foto");
+      alert("Has seleccionado Retirar tu foto.\nProximamente más información");
       break;
     case 0: // Salir
       alert("Gracias por usar nuestro sistema. ¡Hasta luego!");
