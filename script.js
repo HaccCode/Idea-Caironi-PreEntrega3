@@ -739,3 +739,5 @@ function mostrarInfoProducto(producto) {
 function buscarPorID(id) {
   return productos.find((producto) => producto.id === id);
 }
+
+//<prueba
