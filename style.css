@@ -1,0 +1,15 @@
+/* Generalidades */
+* {
+  box-sizing: border-box;
+  background-color: green;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+}
+
