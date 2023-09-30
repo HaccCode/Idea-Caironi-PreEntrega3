@@ -8,6 +8,8 @@ let productos = [
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 7000,
     stock: 5,
+    color: "Azul",
+    rutaImagen: "remera_agua.png",
   },
   {
     id: "1002",
@@ -18,6 +20,8 @@ let productos = [
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 7000,
     stock: 5,
+    color: "Gris",
+    rutaImagen: "remera_aire.png",
   },
   {
     id: "1003",
@@ -28,6 +32,8 @@ let productos = [
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 7000,
     stock: 5,
+    color: "Marron",
+    rutaImagen: "remera_tierra.png",
   },
   {
     id: "1004",
@@ -38,6 +44,8 @@ let productos = [
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 7000,
     stock: 5,
+    color: "Rojo",
+    rutaImagen: "remera_fuego.png",
   },
   {
     id: "1005",
@@ -48,6 +56,8 @@ let productos = [
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 7000,
     stock: 5,
+    color: "Blanco",
+    rutaImagen: "remera_luz.png",
   },
   {
     id: "1006",
@@ -58,6 +68,8 @@ let productos = [
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 7000,
     stock: 5,
+    color: "Negro",
+    rutaImagen: "remera_dark.png",
   },
   {
     id: "1007",
@@ -68,6 +80,8 @@ let productos = [
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 7000,
     stock: 5,
+    color: "Verde",
+    rutaImagen: "remera_nature.png",
   },
   {
     id: "1008",
@@ -78,6 +92,8 @@ let productos = [
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 7000,
     stock: 5,
+    color: "Amarillo",
+    rutaImagen: "remera_sol.png",
   },
   {
     id: "1101",
@@ -88,6 +104,8 @@ let productos = [
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 11000,
     stock: 5,
+    color: "Azul",
+    rutaImagen: "buzo_agua.png",
   },
   {
     id: "1102",
@@ -98,6 +116,8 @@ let productos = [
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 11000,
     stock: 5,
+    color: "Gris",
+    rutaImagen: "buzo_aire.png",
   },
   {
     id: "1103",
@@ -108,6 +128,8 @@ let productos = [
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 11000,
     stock: 5,
+    color: "Marron",
+    rutaImagen: "buzo_marron.png",
   },
   {
     id: "1104",
@@ -118,6 +140,8 @@ let productos = [
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 11000,
     stock: 5,
+    color: "Rojo",
+    rutaImagen: "buzo_fuego.png",
   },
   {
     id: "1105",
@@ -128,6 +152,8 @@ let productos = [
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 11000,
     stock: 5,
+    color: "Blanco",
+    rutaImagen: "buzo_luz.png",
   },
   {
     id: "1106",
@@ -138,6 +164,8 @@ let productos = [
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 11000,
     stock: 5,
+    color: "Negro",
+    rutaImagen: "buzo_dark.png",
   },
   {
     id: "1107",
@@ -148,6 +176,8 @@ let productos = [
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 11000,
     stock: 5,
+    color: "Verde",
+    rutaImagen: "buzo_nature.png",
   },
   {
     id: "1108",
@@ -158,6 +188,8 @@ let productos = [
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 11000,
     stock: 5,
+    color: "Amarillo",
+    rutaImagen: "buzo_sol.png",
   },
   {
     id: "1201",
@@ -168,6 +200,8 @@ let productos = [
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 18000,
     stock: 5,
+    color: "Azul",
+    rutaImagen: "camperita_agua.png",
   },
   {
     id: "1202",
@@ -178,6 +212,8 @@ let productos = [
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 18000,
     stock: 5,
+    color: "Gris",
+    rutaImagen: "camperita_aire.png",
   },
   {
     id: "1203",
@@ -188,6 +224,8 @@ let productos = [
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 18000,
     stock: 5,
+    color: "Marron",
+    rutaImagen: "camperita_tierra.png",
   },
   {
     id: "1204",
@@ -198,6 +236,8 @@ let productos = [
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 18000,
     stock: 5,
+    color: "Rojo",
+    rutaImagen:  "camperita_fuego.png",
   },
   {
     id: "1205",
@@ -208,6 +248,8 @@ let productos = [
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 18000,
     stock: 5,
+    color: "Blanco",
+    rutaImagen: "camperita_luz.png",
   },
   {
     id: "1206",
@@ -218,6 +260,8 @@ let productos = [
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 18000,
     stock: 5,
+    color: "Negro",
+    rutaImagen: "camperita_dark.png",
   },
   {
     id: "1207",
@@ -228,6 +272,8 @@ let productos = [
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 18000,
     stock: 5,
+    color: "Verde",
+    rutaImagen: "camperita_nature.png",
   },
   {
     id: "1208",
@@ -238,6 +284,8 @@ let productos = [
     talle: ["xs", "s", "m", "l", "xl", "xxl"],
     precio: 18000,
     stock: 5,
+    color: "Amarillo",
+    rutaImagen: "camperita_sol.png",
   },
   {
     id: "2001",
@@ -248,6 +296,8 @@ let productos = [
     talle: ["-", "-"],
     precio: 22000,
     stock: 3,
+    color: "Azul",
+    rutaImagen: "lentes_agua.png",
   },
   {
     id: "2002",
@@ -258,6 +308,8 @@ let productos = [
     talle: ["-", "-"],
     precio: 22000,
     stock: 3,
+    color: "Gris",
+    rutaImagen: "lentes_aire.png",
   },
   {
     id: "2003",
@@ -268,6 +320,8 @@ let productos = [
     talle: ["-", "-"],
     precio: 22000,
     stock: 3,
+    color: "Marron",
+    rutaImagen: "lentes_tierra.png",
   },
   {
     id: "2004",
@@ -278,6 +332,8 @@ let productos = [
     talle: ["-", "-"],
     precio: 22000,
     stock: 3,
+    color: "Rojo",
+    rutaImagen: "lentes_fuego.png",
   },
   {
     id: "2005",
@@ -288,6 +344,8 @@ let productos = [
     talle: ["-", "-"],
     precio: 22000,
     stock: 3,
+    color: "Blanco",
+    rutaImagen: "lentes_luz.png",
   },
   {
     id: "2006",
@@ -298,6 +356,8 @@ let productos = [
     talle: ["-", "-"],
     precio: 22000,
     stock: 3,
+    color: "Negro",
+    rutaImagen: "lentes_dark.png",
   },
   {
     id: "2007",
@@ -308,6 +368,8 @@ let productos = [
     talle: ["-", "-"],
     precio: 22000,
     stock: 3,
+    color: "Verde",
+    rutaImagen: "lentes_nature.png",
   },
   {
     id: "2008",
@@ -318,6 +380,8 @@ let productos = [
     talle: ["-", "-"],
     precio: 22000,
     stock: 3,
+    color: "Amarillo",
+    rutaImagen: "lentes_sol.png",
   },
   {
     id: "2101",
@@ -328,6 +392,7 @@ let productos = [
     talle: ["-", "-"],
     precio: 14000,
     stock: 3,
+    rutaImagen: "oxitocina.png"
   },
   {
     id: "2102",
@@ -338,6 +403,7 @@ let productos = [
     talle: ["-", "-"],
     precio: 14000,
     stock: 3,
+    rutaImagen: "dopamina.png"
   },
   {
     id: "2103",
@@ -348,6 +414,7 @@ let productos = [
     talle: ["-", "-"],
     precio: 14000,
     stock: 3,
+    rutaImagen: "serotonina.png"
   },
   {
     id: "2104",
@@ -358,6 +425,8 @@ let productos = [
     talle: ["-", "-"],
     precio: 14000,
     stock: 3,
+    rutaImagen: "thc.png"
+
   },
   {
     id: "2105",
@@ -368,6 +437,7 @@ let productos = [
     talle: ["-", "-"],
     precio: 14000,
     stock: 3,
+    rutaImagen: "lsd.png"
   },
   {
     id: "2106",
@@ -378,6 +448,7 @@ let productos = [
     talle: ["-", "-"],
     precio: 14000,
     stock: 3,
+    rutaImagen: "dmt.png"
   },
 ];
 /* //Mensaje de Bienvenida al Portal
@@ -743,4 +814,13 @@ function buscarPorID(id) {
 // nuevo DOM
 ////////////////////////////////
 
+let contenedor = document.getElementById("contenedorProductos");
+
+productos.forEach(producto => {
+  let tarjeta = document.createElement("div")
+  tarjeta.innerHTML = `<h3>${producto.nombre}</h3>`
+  <img src=
+
+  contenedor.appendChild(tarjeta)
+})
 

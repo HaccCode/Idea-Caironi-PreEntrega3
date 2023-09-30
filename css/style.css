@@ -4,7 +4,7 @@
   background-image: url("../images/backgound.png");
   background-attachment:  fixed;
   background-size: cover;
-  
+  font-family: 'Exo 2', sans-serif;
   }
 
 a {
@@ -23,6 +23,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p{
   color: azure;
+  
 }
 
 div {
