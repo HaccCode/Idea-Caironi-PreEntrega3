@@ -1,30 +1,3 @@
-//Mensaje de Bienvenida al Portal
-alert(
-  "Gracias por acceder al Portal de Parque Tec ☼\nA continuación le pediremos algunos datos para iniciar el proceso:"
-);
-
-//Ingreso Nombre y DNI del Usuario
-let nombre;
-do {
-  nombre = prompt("Ingrese su Nombre");
-  if (!isNaN(nombre) || nombre.trim() === "") {
-    alert("Por favor, ingrese un nombre para continuar");
-  }
-} while (!isNaN(nombre) || nombre.trim() === "");
-
-let dni;
-do {
-  dni = Number(prompt("Ingrese su DNI"));
-  if (isNaN(dni) || dni <= 0) {
-    alert("Debe ser un número mayor que 0.");
-  }
-} while (isNaN(dni) || dni <= 0);
-
-//Variables
-let carrito = [];
-let productoBuscado;
-
-//Array de Productos Totales
 let productos = [
   {
     id: "1001",
@@ -407,6 +380,33 @@ let productos = [
     stock: 3,
   },
 ];
+/* //Mensaje de Bienvenida al Portal
+alert(
+  "Gracias por acceder al Portal de Parque Tec ☼\nA continuación le pediremos algunos datos para iniciar el proceso:"
+);
+
+//Ingreso Nombre y DNI del Usuario
+let nombre;
+do {
+  nombre = prompt("Ingrese su Nombre");
+  if (!isNaN(nombre) || nombre.trim() === "") {
+    alert("Por favor, ingrese un nombre para continuar");
+  }
+} while (!isNaN(nombre) || nombre.trim() === "");
+
+let dni;
+do {
+  dni = Number(prompt("Ingrese su DNI"));
+  if (isNaN(dni) || dni <= 0) {
+    alert("Debe ser un número mayor que 0.");
+  }
+} while (isNaN(dni) || dni <= 0);
+
+//Variables
+let carrito = [];
+let productoBuscado;
+
+//Array de Productos Totales
 
 //Menu Principal
 let opcion;
@@ -739,5 +739,8 @@ function mostrarInfoProducto(producto) {
 function buscarPorID(id) {
   return productos.find((producto) => producto.id === id);
 }
+ */
+// nuevo DOM
+////////////////////////////////
 
-test
+
