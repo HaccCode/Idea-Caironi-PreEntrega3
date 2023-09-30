@@ -38,3 +38,11 @@ div {
   border-radius: 10px;
 
 }
+
+img{
+  width: 30%;
+  height: 30%;
+  border-radius: 5%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  
+}

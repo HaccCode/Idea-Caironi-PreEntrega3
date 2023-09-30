@@ -129,7 +129,7 @@ let productos = [
     precio: 11000,
     stock: 5,
     color: "Marron",
-    rutaImagen: "buzo_marron.png",
+    rutaImagen: "buzo_tierra.png",
   },
   {
     id: "1104",
@@ -818,9 +818,9 @@ let contenedor = document.getElementById("contenedorProductos");
 
 productos.forEach(producto => {
   let tarjeta = document.createElement("div")
-  tarjeta.innerHTML = `<h3>${producto.nombre}</h3>`
-  <img src=
-
+  tarjeta.innerHTML = `<h3>${producto.nombre}</h3>
+  <img src=./images/${producto.rutaImagen} />
+  `
   contenedor.appendChild(tarjeta)
 })
 
