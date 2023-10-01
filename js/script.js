@@ -682,41 +682,40 @@ do {
             break;
 
           case 4: //Agregar al carrito
-            let id = prompt("Ingrese ID del Producto:\n");
-            productoBuscado = buscarPorID(id);
-
-            if (productoBuscado) {
-              let productoEnCarrito = carrito.find(
-                (producto) => producto.id === productoBuscado.id
-              );
-
-              if (productoBuscado.stock > 0) {
-                if (productoEnCarrito) {
-                  // Si ya está en el carrito, sumarlo
-                  productoEnCarrito.unidades++;
-                  productoEnCarrito.subtotal =
-                    productoEnCarrito.unidades * productoEnCarrito.precioUnitario;
-                  alert("Se sumó una unidad más del producto al carrito");
-                } else {
-                  // Si no esta en carrito, Agregarlo
-                  let productoNuevo = {
-                    id: productoBuscado.id,
-                    subcategoria: productoBuscado.subcategoria,
-                    nombre: productoBuscado.nombre,
-                    unidades: 1,
-                    precioUnitario: productoBuscado.precio,
-                    subtotal: productoBuscado.precio,
-                  };
-                  carrito.push(productoNuevo);
-                  alert("El producto se agregó al carrito.");
-                }
-                productoBuscado.stock--
-              }
-              console.log(carrito)
+          let id = prompt("Ingrese ID del Producto:\n");
+          productoBuscado = buscarPorID(id);
+          
+          if (!productoBuscado) {
+            alert("El ID del producto ingresado no es válido.");
+          } else if (productoBuscado.stock === 0) {
+            alert("No hay stock disponible para este producto.");
+          } else {
+            let productoEnCarrito = carrito.find((producto) => producto.id === productoBuscado.id);
+          
+            if (productoEnCarrito) {
+              // Si ya está en el carrito, sumarlo
+              productoEnCarrito.unidades++;
+              productoEnCarrito.subtotal = productoEnCarrito.unidades * productoEnCarrito.precioUnitario;
+              productoBuscado.stock--;
+              alert("Se sumó una unidad más del producto al carrito");
             } else {
-              alert("El ID del producto ingresado no es válido.");
+              // Si no está en el carrito, agregarlo
+              let productoNuevo = {
+                id: productoBuscado.id,
+                subcategoria: productoBuscado.subcategoria,
+                nombre: productoBuscado.nombre,
+                unidades: 1,
+                precioUnitario: productoBuscado.precio,
+                subtotal: productoBuscado.precio,
+              };
+              carrito.push(productoNuevo);
+              productoBuscado.stock--;
+              alert("El producto se agregó al carrito.");
             }
-
+          }
+          
+          console.log(carrito);
+          
             break;
 
           case 5: //Finalizar compra
