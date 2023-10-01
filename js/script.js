@@ -1,3 +1,6 @@
+//Variables
+let carrito = [];
+let productoBuscado;
 let productos = [
   {
     id: "1001",
@@ -451,7 +454,10 @@ let productos = [
     rutaImagen: "dmt.png"
   },
 ];
-/* //Mensaje de Bienvenida al Portal
+
+/*
+
+//Mensaje de Bienvenida al Portal
 alert(
   "Gracias por acceder al Portal de Parque Tec ☼\nA continuación le pediremos algunos datos para iniciar el proceso:"
 );
@@ -473,11 +479,9 @@ do {
   }
 } while (isNaN(dni) || dni <= 0);
 
-//Variables
-let carrito = [];
-let productoBuscado;
 
-//Array de Productos Totales
+
+*/
 
 //Menu Principal
 let opcion;
@@ -686,25 +690,29 @@ do {
                 (producto) => producto.id === productoBuscado.id
               );
 
-              if (productoEnCarrito) {
-                // Si ya está en el carrito
-                productoEnCarrito.unidades++;
-                productoEnCarrito.subtotal =
-                  productoEnCarrito.unidades * productoEnCarrito.precioUnitario;
-                alert("Se sumó una unidad más del producto al carrito");
-              } else {
-                // Agregar el producto al carrito
-                let productoNuevo = {
-                  id: productoBuscado.id,
-                  subcategoria: productoBuscado.subcategoria,
-                  nombre: productoBuscado.nombre,
-                  unidades: 1,
-                  precioUnitario: productoBuscado.precio,
-                  subtotal: productoBuscado.precio,
-                };
-                carrito.push(productoNuevo);
-                alert("El producto se agregó al carrito.");
+              if (productoBuscado.stock > 0) {
+                if (productoEnCarrito) {
+                  // Si ya está en el carrito, sumarlo
+                  productoEnCarrito.unidades++;
+                  productoEnCarrito.subtotal =
+                    productoEnCarrito.unidades * productoEnCarrito.precioUnitario;
+                  alert("Se sumó una unidad más del producto al carrito");
+                } else {
+                  // Si no esta en carrito, Agregarlo
+                  let productoNuevo = {
+                    id: productoBuscado.id,
+                    subcategoria: productoBuscado.subcategoria,
+                    nombre: productoBuscado.nombre,
+                    unidades: 1,
+                    precioUnitario: productoBuscado.precio,
+                    subtotal: productoBuscado.precio,
+                  };
+                  carrito.push(productoNuevo);
+                  alert("El producto se agregó al carrito.");
+                }
+                productoBuscado.stock--
               }
+              console.log(carrito)
             } else {
               alert("El ID del producto ingresado no es válido.");
             }
@@ -810,7 +818,7 @@ function mostrarInfoProducto(producto) {
 function buscarPorID(id) {
   return productos.find((producto) => producto.id === id);
 }
- */
+
 // nuevo DOM
 ////////////////////////////////
 
