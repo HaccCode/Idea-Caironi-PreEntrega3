@@ -1,9 +1,9 @@
 /* Generalidades */
 * {
   box-sizing: border-box;
-  background-image: url("../images/backgound.png");
+  /* background-image: url("../images/backgound.png");
   background-attachment: fixed;
-  background-size: cover;
+  background-size: cover; */
   font-family: 'Exo 2', sans-serif;
 }
 
@@ -12,11 +12,11 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6, p {
-  color: azure;
+  color: rgb(0, 0, 0);
 } */
 
 #logo {
- 
+width: 100%;
 }
 
 #contenedorProductos {
@@ -45,4 +45,14 @@ h1, h2, h3, h4, h5, h6, p {
 
 section{
   border: 5px solid pink;
+}
+
+#carrito{
+  width: 100%;
+  min-height: 100%;
+  border: 3px solid red;
+}
+
+.oculta{
+  display: none!important;
 }

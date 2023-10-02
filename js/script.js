@@ -1,6 +1,31 @@
+/*
+
+//Mensaje de Bienvenida al Portal
+alert(
+  "Gracias por acceder al Portal de Parque Tec ☼\nA continuación le pediremos algunos datos para iniciar el proceso:"
+);
+
+//Ingreso Nombre y DNI del Usuario
+let nombre;
+do {
+  nombre = prompt("Ingrese su Nombre");
+  if (!isNaN(nombre) || nombre.trim() === "") {
+    alert("Por favor, ingrese un nombre para continuar");
+  }
+} while (!isNaN(nombre) || nombre.trim() === "");
+
+let dni;
+do {
+  dni = Number(prompt("Ingrese su DNI"));
+  if (isNaN(dni) || dni <= 0) {
+    alert("Debe ser un número mayor que 0.");
+  }
+} while (isNaN(dni) || dni <= 0);
+
+
+
+*/
 //Variables
-let carrito = [];
-let productoBuscado;
 let productos = [
   {
     id: "1001",
@@ -453,34 +478,8 @@ let productos = [
     rutaImagen: "dmt.png",
   },
 ];
-
-/*
-
-//Mensaje de Bienvenida al Portal
-alert(
-  "Gracias por acceder al Portal de Parque Tec ☼\nA continuación le pediremos algunos datos para iniciar el proceso:"
-);
-
-//Ingreso Nombre y DNI del Usuario
-let nombre;
-do {
-  nombre = prompt("Ingrese su Nombre");
-  if (!isNaN(nombre) || nombre.trim() === "") {
-    alert("Por favor, ingrese un nombre para continuar");
-  }
-} while (!isNaN(nombre) || nombre.trim() === "");
-
-let dni;
-do {
-  dni = Number(prompt("Ingrese su DNI"));
-  if (isNaN(dni) || dni <= 0) {
-    alert("Debe ser un número mayor que 0.");
-  }
-} while (isNaN(dni) || dni <= 0);
-
-
-
-*/
+let carrito = [];
+let productoBuscado;
 
 //Menu Principal
 let opcion;
@@ -683,8 +682,7 @@ do {
             break;
 
           case 4: //Agregar al carrito
-            agregarProductoAlCarrito(productos, carrito);
-            console.log(carrito);
+            agregarProductoAlCarrito(productos, carrito,e);
 
             break;
 
@@ -755,16 +753,16 @@ function buscarPorID(id) {
   return productos.find((producto) => producto.id === id);
 }
 
-function agregarProductoAlCarrito() {
-  let id = prompt("Ingrese ID del Producto:\n");
-  productoBuscado = buscarPorID(id);
+function agregarProductoAlCarrito(productos, carrito, e) {
+  let productoBuscado = productos.find(producto => producto.id === e.target.id);
+  let productoEnCarrito = carrito.find(producto => producto.id === productoBuscado.id);
 
   if (!productoBuscado) {
     alert("El ID del producto ingresado no es válido.");
   } else if (productoBuscado.stock === 0) {
     alert("No hay stock disponible para este producto.");
   } else {
-    let productoEnCarrito = carrito.find(
+    productoEnCarrito = carrito.find(
       (producto) => producto.id === productoBuscado.id
     );
 
@@ -774,8 +772,8 @@ function agregarProductoAlCarrito() {
       productoEnCarrito.subtotal =
         productoEnCarrito.unidades * productoEnCarrito.precioUnitario;
       productoBuscado.stock--;
-      alert("Se sumó una unidad más del producto al carrito");
-    } else {
+/*       alert("Se sumó una unidad más del producto al carrito");
+ */    } else {
       // Si no está en el carrito, agregarlo
       let productoNuevo = {
         id: productoBuscado.id,
@@ -787,9 +785,27 @@ function agregarProductoAlCarrito() {
       };
       carrito.push(productoNuevo);
       productoBuscado.stock--;
-      alert("El producto se agregó al carrito.");
-    }
+/*       alert("El producto se agregó al carrito.");
+ */    }
+    renderizarCarrito(carrito)
   }
+
+}
+
+function renderizarCarrito(productosEnCarrito) {
+  let divCarrito = document.getElementById("carrito");
+  divCarrito.innerHTML = "";
+
+  productosEnCarrito.forEach(producto => {
+    let tarjProdCarrito = document.createElement("div");
+    tarjProdCarrito.innerHTML = `
+    <p>${producto.nombre}</p>
+    <p>$${producto.precioUnitario}</p>
+    <p>${producto.unidades}</p>
+    <p>$${producto.subtotal}</p>
+    `
+    divCarrito.appendChild(tarjProdCarrito);
+})
 }
 
 function finalizarCompra(carrito) {
@@ -828,16 +844,13 @@ function finalizarCompra(carrito) {
   }
 }
 
+renderizarProductos(productos, carrito);
 
-// nuevo DOM
-////////////////////////////////
-
-renderizarProductos(productos)
-
-function renderizarProductos(productos){ //Crea tarjetas de cada producto
+function renderizarProductos(productos, carrito) {
+  //Crea tarjetas de cada producto
 
   let contenedor = document.getElementById("contenedorProductos");
-  contenedor.innerHTML = ""
+  contenedor.innerHTML = "";
 
   productos.forEach((producto) => {
     let tarjeta = document.createElement("div");
@@ -851,19 +864,31 @@ function renderizarProductos(productos){ //Crea tarjetas de cada producto
     contenedor.appendChild(tarjeta);
 
     let botonAgregarAlCarrito = document.getElementById(producto.id);
-    botonAgregarAlCarrito.addEventListener('click',agregarProductoAlCarrito)
+    /* botonAgregarAlCarrito.addEventListener("click", agregarProductoAlCarrito) */
+    botonAgregarAlCarrito.addEventListener("click", (e) => agregarProductoAlCarrito(productos, carrito, e));
   });
-  
 }
 
 let buscador = document.getElementById("buscador"); // Casilla Buscador
 
 let botonBuscar = document.getElementById("botonBuscar"); //Boton Busqueda
+botonBuscar.addEventListener("click", (e) => filtrarYRenderizar(productos)); //Accion boton buscar
 
-botonBuscar.addEventListener("click", () => filtrarYRenderizar(productos)); //Accion boton buscar
+function filtrarYRenderizar(productos) {
+  // Crea Tarjetas ya Filtradas
+  let productosFiltrados = productos.filter((producto) =>
+    producto.nombre.includes(buscador.value)
+  );
+  renderizarProductos(productosFiltrados);
+}
 
-function filtrarYRenderizar(productos) { // Crea Tarjetas ya Filtradas
-  let productosFiltrados = productos.filter(producto => producto.nombre.includes(buscador.value))
-  renderizarProductos(productosFiltrados)
+let botonVerOcultar = document.getElementById("verOcultar");
+botonVerOcultar.addEventListener("click", verOcultarCarrito)
 
+function verOcultarCarrito() {
+  let carrito = document.getElementById("carrito");
+  let contenedorProductos = document.getElementById("contenedorProductos");
+
+carrito.classList.toggle("oculta")
+contenedorProductos.classList.toggle("oculta")
 }
