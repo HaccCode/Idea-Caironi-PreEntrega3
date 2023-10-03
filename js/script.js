@@ -1,12 +1,4 @@
-/*
-
-//Mensaje de Bienvenida al Portal
-alert(
-  "Gracias por acceder al Portal de Parque Tec ☼\nA continuación le pediremos algunos datos para iniciar el proceso:"
-);
-
-//Ingreso Nombre y DNI del Usuario
-let nombre;
+/* let nombre;
 do {
   nombre = prompt("Ingrese su Nombre");
   if (!isNaN(nombre) || nombre.trim() === "") {
@@ -20,11 +12,8 @@ do {
   if (isNaN(dni) || dni <= 0) {
     alert("Debe ser un número mayor que 0.");
   }
-} while (isNaN(dni) || dni <= 0);
+} while (isNaN(dni) || dni <= 0); */
 
-
-
-*/
 //Variables
 let productos = [
   {
@@ -598,6 +587,7 @@ do {
           alert("Ingrese solo texto válido");
         }
       }
+
       break;
     case 2: // Tienda
       let opcion;
@@ -682,7 +672,7 @@ do {
             break;
 
           case 4: //Agregar al carrito
-            agregarProductoAlCarrito(productos, carrito,e);
+            agregarProductoAlCarrito(productos, carrito, e);
 
             break;
 
@@ -753,9 +743,23 @@ function buscarPorID(id) {
   return productos.find((producto) => producto.id === id);
 }
 
+function filtrarYRenderizar(productos) {
+  // Crea Tarjetas ya Filtradas
+  let productosFiltrados = productos.filter((producto) =>
+    producto.nombre.includes(buscador.value)
+  );
+  z;
+  renderizarProductos(productosFiltrados);
+  return productosFiltrados;
+}
+
 function agregarProductoAlCarrito(productos, carrito, e) {
-  let productoBuscado = productos.find(producto => producto.id === e.target.id);
-  let productoEnCarrito = carrito.find(producto => producto.id === productoBuscado.id);
+  let productoBuscado = productos.find(
+    (producto) => producto.id === e.target.id
+  );
+  let productoEnCarrito = carrito.find(
+    (producto) => producto.id === productoBuscado.id
+  );
 
   if (!productoBuscado) {
     alert("El ID del producto ingresado no es válido.");
@@ -772,8 +776,9 @@ function agregarProductoAlCarrito(productos, carrito, e) {
       productoEnCarrito.subtotal =
         productoEnCarrito.unidades * productoEnCarrito.precioUnitario;
       productoBuscado.stock--;
-/*       alert("Se sumó una unidad más del producto al carrito");
- */    } else {
+      /*       alert("Se sumó una unidad más del producto al carrito");
+       */
+    } else {
       // Si no está en el carrito, agregarlo
       let productoNuevo = {
         id: productoBuscado.id,
@@ -785,27 +790,27 @@ function agregarProductoAlCarrito(productos, carrito, e) {
       };
       carrito.push(productoNuevo);
       productoBuscado.stock--;
-/*       alert("El producto se agregó al carrito.");
- */    }
-    renderizarCarrito(carrito)
+      /*       alert("El producto se agregó al carrito.");
+       */
+    }
+    renderizarCarrito(carrito);
   }
-
 }
 
 function renderizarCarrito(productosEnCarrito) {
   let divCarrito = document.getElementById("carrito");
   divCarrito.innerHTML = "";
 
-  productosEnCarrito.forEach(producto => {
+  productosEnCarrito.forEach((producto) => {
     let tarjProdCarrito = document.createElement("div");
     tarjProdCarrito.innerHTML = `
     <p>${producto.nombre}</p>
     <p>$${producto.precioUnitario}</p>
     <p>${producto.unidades}</p>
     <p>$${producto.subtotal}</p>
-    `
+    `;
     divCarrito.appendChild(tarjProdCarrito);
-})
+  });
 }
 
 function finalizarCompra(carrito) {
@@ -864,8 +869,9 @@ function renderizarProductos(productos, carrito) {
     contenedor.appendChild(tarjeta);
 
     let botonAgregarAlCarrito = document.getElementById(producto.id);
-    /* botonAgregarAlCarrito.addEventListener("click", agregarProductoAlCarrito) */
-    botonAgregarAlCarrito.addEventListener("click", (e) => agregarProductoAlCarrito(productos, carrito, e));
+    botonAgregarAlCarrito.addEventListener("click", (e) =>
+      agregarProductoAlCarrito(productos, carrito, e)
+    );
   });
 }
 
@@ -874,21 +880,34 @@ let buscador = document.getElementById("buscador"); // Casilla Buscador
 let botonBuscar = document.getElementById("botonBuscar"); //Boton Busqueda
 botonBuscar.addEventListener("click", (e) => filtrarYRenderizar(productos)); //Accion boton buscar
 
-function filtrarYRenderizar(productos) {
-  // Crea Tarjetas ya Filtradas
-  let productosFiltrados = productos.filter((producto) =>
-    producto.nombre.includes(buscador.value)
-  );
-  renderizarProductos(productosFiltrados);
-}
-
 let botonVerOcultar = document.getElementById("verOcultar");
-botonVerOcultar.addEventListener("click", verOcultarCarrito)
+botonVerOcultar.addEventListener("click", verOcultarCarrito);
 
 function verOcultarCarrito() {
   let carrito = document.getElementById("carrito");
   let contenedorProductos = document.getElementById("contenedorProductos");
 
-carrito.classList.toggle("oculta")
-contenedorProductos.classList.toggle("oculta")
+  carrito.classList.toggle("oculta");
+  contenedorProductos.classList.toggle("oculta");
+}
+
+let contenedorReservas = document.getElementById("contenedorReservas");
+let dniComprador = document.getElementById("dniComprador");
+
+let nombreComprador = document.getElementById("nombreComprador");
+
+nombreComprador.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    saludoComprador();
+  }
+});
+
+function saludoComprador() {
+  let saludo = document.createElement("div");
+  saludo.innerHTML = `
+    <h3>Hola ${nombreComprador.value}!</h3>
+    <p>Estamos listos para empezar a reservar. Y vos? Comencemos:</p>
+    `;
+
+  contenedorReservas.appendChild(saludo);
 }

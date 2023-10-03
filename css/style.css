@@ -1,9 +1,9 @@
 /* Generalidades */
 * {
   box-sizing: border-box;
-  /* background-image: url("../images/backgound.png");
+  background-image: url(../images/background.png);
   background-attachment: fixed;
-  background-size: cover; */
+  background-size: cover;
   font-family: 'Exo 2', sans-serif;
 }
 
