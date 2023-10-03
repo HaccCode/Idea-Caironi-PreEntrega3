@@ -851,8 +851,8 @@ function finalizarCompra(carrito) {
 
 renderizarProductos(productos, carrito);
 
+//Crea tarjetas de cada producto
 function renderizarProductos(productos, carrito) {
-  //Crea tarjetas de cada producto
 
   let contenedor = document.getElementById("contenedorProductos");
   contenedor.innerHTML = "";
