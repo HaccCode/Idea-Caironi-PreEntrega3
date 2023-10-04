@@ -463,6 +463,7 @@ renderizarCarrito(carrito)
 
 renderizarProductos(productos, carrito);
 
+
 ///////////////////////////
 /* let nombre;
 do {
@@ -682,6 +683,7 @@ function renderizarCarrito(productosEnCarrito) {
 
   productosEnCarrito.forEach((producto) => {
     let tarjProdCarrito = document.createElement("div");
+    tarjProdCarrito.className = "tarjProdCarrito"
     tarjProdCarrito.innerHTML = `
     <p>${producto.nombre}</p>
     <p>$${producto.precioUnitario}</p>

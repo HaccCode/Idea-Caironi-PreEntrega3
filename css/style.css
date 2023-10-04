@@ -50,6 +50,7 @@ p {
   padding: 20px;
   border: 10px solid yellow;
   width: 20%;
+  margin: 10px;
 }
 
 section {
@@ -58,9 +59,16 @@ section {
 }
 
 #carrito {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content:space-evenly;
   width: 100%;
   min-height: 100%;
-  border: 3px solid red;
+  /* border: 3px solid red; */
+  padding: 15px;
+  margin: 15px;
 }
 
 .oculta {
@@ -93,3 +101,10 @@ nav ul{
 
 }
 
+.tarjProdCarrito{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 10px;
+  flex-wrap: wrap;
+}
