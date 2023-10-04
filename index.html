@@ -19,13 +19,15 @@
 
   <body>
     <header>
-      <!--       <img id="logo" src="./images/ParqueTecno Full Logo White.png" alt="logoParqueTeqno">
- -->
+      <div class="logo">
+        <p>LogoParque</p>
+      </div>
+
       <nav>
         <ul>
-          <li><a href="#seccion1">Sección 1</a></li>
-          <li><a href="#seccion2">Sección 2</a></li>
-          <li><a href="#seccion3">Sección 3</a></li>
+          <li><a href="#seccion1">Sección</a></li>
+          <li><a href="#seccion2">Sección</a></li>
+          <li><a href="#seccion3">Sección</a></li>
         </ul>
       </nav>
     </header>
@@ -58,13 +60,15 @@
 
       <section>
         <!--Seccion Reservas -->
-        <h2>Reserva de Entradas</h2>
-        <p>
-          ¡Asegura tu diversión reservando tus entradas en línea! Planifica tu
-          visita y elige la fecha y hora que más te convenga. Garantiza tu
-          acceso a todas nuestras emocionantes atracciones y evita las colas en
-          la entrada.
-        </p>
+        <div>
+          <h2>Reserva de Entradas</h2>
+          <p>
+            ¡Asegura tu diversión reservando tus entradas en línea! Planifica tu
+            visita y elige la fecha y hora que más te convenga. Garantiza tu
+            acceso a todas nuestras emocionantes atracciones y evita las colas
+            en la entrada.
+          </p>
+        </div>
         <div id="contenedorReservas">
           <div>
             <label for="nombreComprador">Ingrese su Nombre</label>
@@ -72,23 +76,35 @@
             <label for="dniComprador">Ingrese su DNI</label>
             <input id="dniComprador" type="text" placeholder="Su DNI" />
           </div>
-
         </div>
       </section>
 
       <section>
         <!-- Seccion Tienda -->
-        <h2>Tienda OnLine</h2>
+        <div>
+          <h2>Tienda OnLine</h2>
+          <p>
+            Explora nuestra tienda en línea y descubre una gama de productos
+            tecnológicos, gadgets innovadores y recuerdos del parque. Desde
+            camisetas hasta dispositivos de última generación, encontrarás algo
+            que te encantará.
+          </p>
+        </div>
 
-        <p>
-          Explora nuestra tienda en línea y descubre una gama de productos
-          tecnológicos, gadgets innovadores y recuerdos del parque. Desde
-          camisetas hasta dispositivos de última generación, encontrarás algo
-          que te encantará.
-        </p>
         <div class="oculta" id="carrito"></div>
+        <label for="buscador">Busca por Nombre</label>
         <input id="buscador" placeholder="Nombre del Producto" />
         <button id="botonBuscar">BUSCAR</button>
+
+        <label for="listaFiltro">Busca por Subcategoría</label>
+        <select id="listaFiltro" name="opcion">
+          <option value="Remeras">Remeras</option>
+          <option value="Buzos">Buzos</option>
+          <option value="Camperitas">Camperitas</option>
+          <option value="Lentes">Lentes</option>
+          <option value="Collares">Collares</option>
+        </select>
+        <button>BUSCAR</button>
         <button id="verOcultar">VER OCULTAR</button>
         <div id="contenedorProductos"></div>
       </section>
