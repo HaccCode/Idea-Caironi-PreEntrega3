@@ -743,13 +743,12 @@ function buscarPorID(id) {
   return productos.find((producto) => producto.id === id);
 }
 
-function filtrarYRenderizar(productos) {
+function filtrarYRenderizar(productos, carrito) {
   // Crea Tarjetas ya Filtradas
   let productosFiltrados = productos.filter((producto) =>
     producto.nombre.includes(buscador.value)
   );
-  z;
-  renderizarProductos(productosFiltrados);
+  renderizarProductos(productosFiltrados, carrito);
   return productosFiltrados;
 }
 
@@ -806,7 +805,7 @@ function renderizarCarrito(productosEnCarrito) {
     tarjProdCarrito.innerHTML = `
     <p>${producto.nombre}</p>
     <p>$${producto.precioUnitario}</p>
-    <p>${producto.unidades}</p>
+    <p>x${producto.unidades}</p>
     <p>$${producto.subtotal}</p>
     `;
     divCarrito.appendChild(tarjProdCarrito);
@@ -878,7 +877,7 @@ function renderizarProductos(productos, carrito) {
 let buscador = document.getElementById("buscador"); // Casilla Buscador
 
 let botonBuscar = document.getElementById("botonBuscar"); //Boton Busqueda
-botonBuscar.addEventListener("click", (e) => filtrarYRenderizar(productos)); //Accion boton buscar
+botonBuscar.addEventListener("click", (e) => filtrarYRenderizar(productos, carrito)); //Accion boton buscar
 
 let botonVerOcultar = document.getElementById("verOcultar");
 botonVerOcultar.addEventListener("click", verOcultarCarrito);
