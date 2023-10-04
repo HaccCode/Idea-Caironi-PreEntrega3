@@ -454,15 +454,14 @@ let productos = [
 ];
 let productoBuscado;
 let carrito = [];
-let carritoStandBy = localStorage.getItem("carrito")
+let carritoStandBy = localStorage.getItem("carrito");
 if (carritoStandBy) {
   carrito = JSON.parse(carritoStandBy);
 }
 
-renderizarCarrito(carrito)
+renderizarCarrito(carrito);
 
 renderizarProductos(productos, carrito);
-
 
 ///////////////////////////
 /* let nombre;
@@ -549,36 +548,10 @@ if (edadEntrada < 6) {
   valorEntrada = entradaGral - entradaGral * descMayores;
 }
 
-//Impresion por pantalla de Datos ingresados
-/* alert(
-    "Entrada " +
-      i +
-      ":\nDNI: " +
-      dniEntrada +
-      "\nNombre Visitante: " +
-      nombreEntrada +
-      " " +
-      apellidoEntrada +
-      "\nEdad del Visitante: " +
-      edadEntrada +
-      "\nValor Entrada: $" +
-      valorEntrada
-  ); */
-
-//mensaje reserva exitosa
-/* alert(
-  "Reserva Exitosa.!" +
-    nombre +
-    "!\nRecuerde asistir dentro de los 10 días posteriores de la reserva, con DNI de los visitantes sin excepción\nTu Número de reserva es " +
-    dni +
-    " \n¡Muchas gracias! Te esperamos! Parque Tecno ☼"
-); */
-
-
 ///////////////////////////
 /* Funciones */ //////////////////////////////////
 
-/* //Funciones de validación de datos
+//Funciones de validación de datos
 function validarDatoNum(dato) {
   if (isNaN(dato) || dato <= 0) alert("Debe ser un número mayor que 0.");
 }
@@ -587,7 +560,7 @@ function validarDatoStr(dato) {
   if (!/^[a-zA-Z]+$/.test(dato) || dato.trim() === "") {
     alert("Ingrese solo texto válido");
   }
-} */
+}
 
 function listaProductos(productos) {
   return productos
@@ -632,7 +605,6 @@ function filtrarYRenderizar(productos, carrito) {
   return productosFiltrados;
 }
 
-
 function agregarProductoAlCarrito(productos, carrito, e) {
   let productoBuscado = productos.find(
     (producto) => producto.id === e.target.id
@@ -656,7 +628,6 @@ function agregarProductoAlCarrito(productos, carrito, e) {
       productoEnCarrito.subtotal =
         productoEnCarrito.unidades * productoEnCarrito.precioUnitario;
       productoBuscado.stock--;
-      
     } else {
       // Si no está en el carrito, agregarlo
       let productoNuevo = {
@@ -675,73 +646,38 @@ function agregarProductoAlCarrito(productos, carrito, e) {
   }
 }
 
-
-
 function renderizarCarrito(productosEnCarrito) {
-  
   if (productosEnCarrito.length > 0) {
     let divCarrito = document.getElementById("carrito");
     divCarrito.innerHTML = "";
-  
+
     productosEnCarrito.forEach((producto) => {
-    let tarjProdCarrito = document.createElement("div");
-    tarjProdCarrito.className = "tarjProdCarrito"
-    tarjProdCarrito.innerHTML = `
+      let tarjProdCarrito = document.createElement("div");
+      tarjProdCarrito.className = "tarjProdCarrito";
+      tarjProdCarrito.innerHTML = `
     <img class="imagenEnCarrito" src=./images/${producto.rutaImagen} />
     <p>${producto.nombre}</p>
     <p>$${producto.precioUnitario}</p>
     <p>x${producto.unidades}</p>
     <p>$${producto.subtotal}</p>
     `;
-    divCarrito.appendChild(tarjProdCarrito);
-  })
-  
-  divCarrito.appendChild(document.createElement("button"))
-  
-  
-  
-}
-}
+      divCarrito.appendChild(tarjProdCarrito);
+    });
 
+    let botonFinalizar = document.createElement("button");
+    botonFinalizar.innerHTML = "Finalizar Compra";
 
-function finalizarCompra(carrito) {
-  if (carrito.length === 0) {
-    /* alert("No hay productos en el carrito."); */
-  } else {
-    let totalUnidades = carrito.reduce((total, producto) => {
-      return total + producto.unidades;
-    }, 0);
-
-    while (true) {
-      /* alert(
-        "\nProductos en carrito: " +
-          totalUnidades +
-          "\n" +
-          listaProductos(carrito) +
-          "\nTotal: $" +
-          carrito.reduce((total, producto) => {
-            return total + producto.subtotal;
-          }, 0) 
-      );*/
-
-      opcion = Number(
-        /* prompt(
-          "¿Estás seguro que querés finalizar la compra?\n1. Para continuar agregando productos\n0. Para Finalizar"
-        ) */
-      );
-
-      if (opcion === 0) {
-        /* alert("Compra realizada con Éxito!"); */
-        break;
-      } else {
-        break;
-      }
-    }
+    botonFinalizar.addEventListener("click", finalizarCompra);
+    divCarrito.appendChild(botonFinalizar);
   }
 }
 
-
-
+function finalizarCompra() {
+  let carrito = document.getElementById("carrito");
+  carrito.innerHTML = ""
+  localStorage.removeItem("carrito");
+  
+}
 
 //Crea tarjetas de cada producto
 function renderizarProductos(productos, carrito) {
@@ -761,8 +697,8 @@ function renderizarProductos(productos, carrito) {
 
     let botonAgregarAlCarrito = document.getElementById(producto.id);
     botonAgregarAlCarrito.addEventListener("click", (e) => {
-      agregarProductoAlCarrito(productos, carrito, e)
-  });
+      agregarProductoAlCarrito(productos, carrito, e);
+    });
   });
 }
 
@@ -793,7 +729,7 @@ nombreComprador.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     saludoComprador();
   }
-})
+});
 
 function saludoComprador() {
   let saludo = document.createElement("div");
@@ -811,21 +747,9 @@ function mensajeError() {
   <h3>Dato Incorrecto</h3>
   <p>Por favor, ingrese un dato válido</p>
     `;
-    
+
   contenedorReservas.appendChild(mensajeError);
 }
 
-
 //Finalizar compra
 finalizarCompra(carrito);
-
-
-
-
-
-
-
-
-
-
-
