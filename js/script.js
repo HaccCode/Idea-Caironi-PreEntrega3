@@ -678,22 +678,30 @@ function agregarProductoAlCarrito(productos, carrito, e) {
 
 
 function renderizarCarrito(productosEnCarrito) {
-  let divCarrito = document.getElementById("carrito");
-  divCarrito.innerHTML = "";
-
-  productosEnCarrito.forEach((producto) => {
+  
+  if (productosEnCarrito.length > 0) {
+    let divCarrito = document.getElementById("carrito");
+    divCarrito.innerHTML = "";
+  
+    productosEnCarrito.forEach((producto) => {
     let tarjProdCarrito = document.createElement("div");
     tarjProdCarrito.className = "tarjProdCarrito"
     tarjProdCarrito.innerHTML = `
+    <img class="imagenEnCarrito" src=./images/${producto.rutaImagen} />
     <p>${producto.nombre}</p>
     <p>$${producto.precioUnitario}</p>
     <p>x${producto.unidades}</p>
     <p>$${producto.subtotal}</p>
     `;
     divCarrito.appendChild(tarjProdCarrito);
-  });
+  })
+  
+  divCarrito.appendChild(document.createElement("button"))
+  
+  
+  
 }
-
+}
 
 
 function finalizarCompra(carrito) {
