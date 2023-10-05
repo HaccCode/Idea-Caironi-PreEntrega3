@@ -664,7 +664,7 @@ function saludoComprador() {
 //DNIComprador-Enter
 dniComprador.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
-    sessionStorage.setItem("dniComprador", JSON.stringify(dniComprador));
+    sessionStorage.setItem("dniComprador", JSON.stringify(dniComprador.value));
   }
 });
 
