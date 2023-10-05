@@ -463,23 +463,6 @@ renderizarCarrito(carrito);
 
 renderizarProductos(productos, carrito);
 
-///////////////////////////
-/* let nombre;
-do {
-  nombre = prompt("Ingrese su Nombre");
-  if (!isNaN(nombre) || nombre.trim() === "") {
-    mensajeError()
-  }
-} while (!isNaN(nombre) || nombre.trim() === "");
-
-let dni;
-do {
-  dni = Number(prompt("Ingrese su DNI"));
-  if (isNaN(dni) || dni <= 0) {
-    alert("Debe ser un número mayor que 0.");
-  }
-} while (isNaN(dni) || dni <= 0); */
-
 ////////////////////////////////
 /* Reserva de Entradas */ ////////////////////////////
 
@@ -488,54 +471,8 @@ let entradaGral = 2200;
 let descMayores = 0.75; //-75% de descuento
 let descMenores = 0.5; //-50% de descuento
 let descInfantes = "Entrada Gratuita";
-/* alert(
-  "Valor entrada: $" +
-    entradaGral +
-    "\nDescuento Mayores de 65 años: -" +
-    descMayores * 100 +
-    "%" +
-    "\nDescuento Menores de 13 años: -" +
-    descMenores * 100 +
-    "%" +
-    "\nDescuento Menores de 6 años: " +
-    descInfantes
-); */
 
-//Bucle Cantidad de entradas y Datos por entrada
 let entradas, dniEntrada, nombreEntrada, apellidoEntrada, edadEntrada;
-
-/* do {
-  entradas = Number(prompt("Cuantas entradas desea reservar?"));
-  if (isNaN(entradas) || entradas <= 0) {
-    alert("Debe ser un número mayor que 0.");
-  } else if (entradas >= 10) {
-    alert("Máximo Reserva: 10 entradas");
-  }
-} while (isNaN(entradas) || entradas <= 0 || entradas >= 10);
-
-for (let i = 1; i <= entradas; i++) {
-  do {
-    dniEntrada = Number(prompt("Ingrese el DNI para visitante Nº " + i));
-    validarDatoNum(dniEntrada);
-  } while (isNaN(dniEntrada) || dniEntrada <= 0);
-
-  do {
-    nombreEntrada = prompt("Ingrese Nombre");
-    validarDatoStr(nombreEntrada);
-  } while (!/^[a-zA-Z]+$/.test(nombreEntrada) || nombreEntrada.trim() === "");
-
-  do {
-    apellidoEntrada = prompt("Ingrese Apellido");
-    validarDatoStr(apellidoEntrada);
-  } while (
-    !/^[a-zA-Z]+$/.test(apellidoEntrada) ||
-    apellidoEntrada.trim() === ""
-  );
-
-  do {
-    edadEntrada = Number(prompt("Ingrese edad actual del visitante"));
-    validarDatoNum(edadEntrada);
-  } while (isNaN(edadEntrada) || edadEntrada <= 0); */
 
 let valorEntrada = entradaGral;
 
@@ -571,27 +508,6 @@ function listaProductos(productos) {
     .join("\n");
 }
 
-function mostrarInfoProducto(producto) {
-  alert(
-    "ID: " +
-      producto.id +
-      "\nCategoría: " +
-      producto.categoria +
-      "\nSubcategoría: " +
-      producto.subcategoria +
-      "\nNombre: " +
-      producto.nombre +
-      "\nModelo: " +
-      producto.modelo.join(", ") +
-      "\nTalle: " +
-      producto.talle.join(", ") +
-      "\nPrecio: $" +
-      producto.precio +
-      "\nStock: " +
-      producto.stock
-  );
-}
-
 function buscarPorID(id) {
   return productos.find((producto) => producto.id === id);
 }
@@ -614,9 +530,9 @@ function agregarProductoAlCarrito(productos, carrito, e) {
   );
 
   if (!productoBuscado) {
-    alert("El ID del producto ingresado no es válido.");
+    /* alert("El ID del producto ingresado no es válido."); */
   } else if (productoBuscado.stock === 0) {
-    alert("No hay stock disponible para este producto.");
+    /* alert("No hay stock disponible para este producto."); */
   } else {
     productoEnCarrito = carrito.find(
       (producto) => producto.id === productoBuscado.id
@@ -637,6 +553,7 @@ function agregarProductoAlCarrito(productos, carrito, e) {
         unidades: 1,
         precioUnitario: productoBuscado.precio,
         subtotal: productoBuscado.precio,
+        rutaImagen: productoBuscado.rutaImagen,
       };
       carrito.push(productoNuevo);
       productoBuscado.stock--;
@@ -674,9 +591,8 @@ function renderizarCarrito(productosEnCarrito) {
 
 function finalizarCompra() {
   let carrito = document.getElementById("carrito");
-  carrito.innerHTML = ""
+  carrito.innerHTML = "El Carrito esta vacío y esperando que elijas lo que más te guste!";
   localStorage.removeItem("carrito");
-  
 }
 
 //Crea tarjetas de cada producto
@@ -728,6 +644,10 @@ let nombreComprador = document.getElementById("nombreComprador");
 nombreComprador.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     saludoComprador();
+    localStorage.setItem(
+      "nombreComprador",
+      JSON.stringify(nombreComprador.value)
+    );
   }
 });
 
@@ -740,6 +660,13 @@ function saludoComprador() {
 
   contenedorReservas.appendChild(saludo);
 }
+
+//DNIComprador-Enter
+dniComprador.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    sessionStorage.setItem("dniComprador", JSON.stringify(dniComprador));
+  }
+});
 
 function mensajeError() {
   let mensajeError = document.createElement("div");
