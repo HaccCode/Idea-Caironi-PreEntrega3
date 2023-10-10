@@ -1,179 +1,187 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Parque Teqno</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!--Font Family-->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,200;0,400;1,300&display=swap"
-      rel="stylesheet"
-    />
+  <title>Parque Teqno</title>
 
-    <link rel="stylesheet" href="./css/style.css" />
-  </head>
+  <!--Font Family-->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,200;0,400;1,300&display=swap"
+    rel="stylesheet" />
 
-  <body>
-    <header>
-      <div class="logo">
-        <p>LogoParque</p>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <p>LogoParque</p>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="#inicio">Home</a></li>
+        <li><a href="#reservas">Entradas</a></li>
+        <li><a href="#tienda">Tienda</a></li>
+        <li><a href="#cumpleaños">Cumpleaños</a></li>
+        <li><a href="#fotos">Fotos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+      </ul>
+    </nav>
+
+    <button id="verOcultar">VER OCULTAR</button>
+  </header>
+
+  <main>
+    <section id="inicio">
+      <!-- Seccion Bienvenida -->
+      <h1>Bienvenidos a Parque Teqno</h1>
+      <p>
+        ¡Bienvenidos a Parque Teqno! Descubre un mundo de maravillas
+        tecnológicas, diversión y aventuras. Sumérgete en la emoción y la
+        innovación en un lugar donde la imaginación cobra vida. Prepárate para
+        explorar el futuro en cada rincón de nuestro parque. ¡La aventura
+        comienza aquí!
+      </p>
+
+      <!-- Slider -->
+      <p>
+        Imagen 1: Patio de Comidas Disfruta de una amplia variedad de
+        deliciosas opciones gastronómicas que satisfarán todos los paladares.
+        Desde platos gourmet hasta bocadillos rápidos, tenemos algo para
+        todos. Imagen 2: Juegos y Premios Embárcate en emocionantes juegos y
+        desafíos para ganar premios asombrosos. Pon a prueba tu habilidad y
+        destreza en nuestras atracciones de juegos. Imagen 3: Tecnología
+        Futurista Sumérgete en un mundo de alta tecnología con montañas rusas
+        futuristas, simuladores de última generación y experiencias que
+        desafían los límites de la imaginación.
+      </p>
+    </section>
+
+    <section id="reservas">
+      <!--Seccion Reservas -->
+      <div>
+        <h2>Reserva de Entradas</h2>
+        <p>
+          ¡Asegura tu diversión reservando tus entradas en línea! Planifica tu
+          visita y elige la fecha y hora que más te convenga. Garantiza tu
+          acceso a todas nuestras emocionantes atracciones y evita las colas
+          en la entrada.
+        </p>
+      </div>
+      <div id="contenedorReservas">
+        <div>
+          <label for="listaEntradas">Cantidad de Entradas</label>
+          <select id="listaEntradas" name="opcion"></select>
+        </div>
+        <div>
+          <label for="nombreComprador">Ingrese su Nombre</label>
+          <input id="nombreComprador" type="text" placeholder="Su Nombre" />
+          <label for="dniComprador">Ingrese su DNI</label>
+          <input id="dniComprador" type="text" placeholder="Su DNI" />
+        </div>
+      </div>
+    </section>
+
+    <section id="tienda">
+      <!-- Seccion Tienda -->
+      <div>
+        <h2>Tienda OnLine</h2>
+        <p>
+          Explora nuestra tienda en línea y descubre una gama de productos
+          tecnológicos, gadgets innovadores y recuerdos del parque. Desde
+          camisetas hasta dispositivos de última generación, encontrarás algo
+          que te encantará.
+        </p>
       </div>
 
-      <nav>
-        <ul>
-          <li><a href="#seccion1">Sección</a></li>
-          <li><a href="#seccion2">Sección</a></li>
-          <li><a href="#seccion3">Sección</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <main>
-      <section>
-        <!-- Seccion Bienvenida -->
-        <h1>Bienvenidos a Parque Teqno</h1>
-        <p>
-          ¡Bienvenidos a Parque Teqno! Descubre un mundo de maravillas
-          tecnológicas, diversión y aventuras. Sumérgete en la emoción y la
-          innovación en un lugar donde la imaginación cobra vida. Prepárate para
-          explorar el futuro en cada rincón de nuestro parque. ¡La aventura
-          comienza aquí!
-        </p>
-
-        <!-- Slider -->
-        <p>
-          Imagen 1: Patio de Comidas Disfruta de una amplia variedad de
-          deliciosas opciones gastronómicas que satisfarán todos los paladares.
-          Desde platos gourmet hasta bocadillos rápidos, tenemos algo para
-          todos. Imagen 2: Juegos y Premios Embárcate en emocionantes juegos y
-          desafíos para ganar premios asombrosos. Pon a prueba tu habilidad y
-          destreza en nuestras atracciones de juegos. Imagen 3: Tecnología
-          Futurista Sumérgete en un mundo de alta tecnología con montañas rusas
-          futuristas, simuladores de última generación y experiencias que
-          desafían los límites de la imaginación.
-        </p>
-      </section>
-
-      <section>
-        <!--Seccion Reservas -->
-        <div>
-          <h2>Reserva de Entradas</h2>
-          <p>
-            ¡Asegura tu diversión reservando tus entradas en línea! Planifica tu
-            visita y elige la fecha y hora que más te convenga. Garantiza tu
-            acceso a todas nuestras emocionantes atracciones y evita las colas
-            en la entrada.
-          </p>
+      <div class="oculta" id="carrito"></div>
+      <div class="cajaBusqueda">
+        <div class="buscar">
+          <label for="listaFiltro">Busca por Subcategoría</label>
+          <select id="listaFiltro" name="opcion"></select>
         </div>
-        <div id="contenedorReservas">
-          <div>
-            <label for="nombreComprador">Ingrese su Nombre</label>
-            <input id="nombreComprador" type="text" placeholder="Su Nombre" />
-            <label for="dniComprador">Ingrese su DNI</label>
-            <input id="dniComprador" type="text" placeholder="Su DNI" />
-          </div>
+        <div class="buscar">
+          <label for="buscador">Busca por Nombre</label>
+          <input id="buscador" placeholder="Nombre del Producto" />
+          <button id="botonBuscar">BUSCAR</button>
         </div>
-      </section>
+      </div>
 
-      <section>
-        <!-- Seccion Tienda -->
-        <div>
-          <h2>Tienda OnLine</h2>
-          <p>
-            Explora nuestra tienda en línea y descubre una gama de productos
-            tecnológicos, gadgets innovadores y recuerdos del parque. Desde
-            camisetas hasta dispositivos de última generación, encontrarás algo
-            que te encantará.
-          </p>
-        </div>
+      <div id="contenedorProductos"></div>
+    </section>
 
-        <div class="oculta" id="carrito"></div>
-        <label for="buscador">Busca por Nombre</label>
-        <input id="buscador" placeholder="Nombre del Producto" />
-        <button id="botonBuscar">BUSCAR</button>
+    <section id="cumpleaños">
+      <!-- Seccion Cumpleaños -->
+      <h2>Festeja tu Cumpleaños</h2>
 
-        <label for="listaFiltro">Busca por Subcategoría</label>
-        <select id="listaFiltro" name="opcion">
-          <option value="Remeras">Remeras</option>
-          <option value="Buzos">Buzos</option>
-          <option value="Camperitas">Camperitas</option>
-          <option value="Lentes">Lentes</option>
-          <option value="Collares">Collares</option>
-        </select>
-        <button>BUSCAR</button>
-        <button id="verOcultar">VER OCULTAR</button>
-        <div id="contenedorProductos"></div>
-      </section>
-
-      <section>
-        <!-- Seccion Cumpleaños -->
-        <h2>Festeja tu Cumpleaños</h2>
-
-        <p>
-          Celebra tu cumpleaños en un entorno único y emocionante. Ofrecemos
-          paquetes especiales que incluyen acceso a atracciones, áreas
-          reservadas para festejar y deliciosos menús. Haz que tu día especial
-          sea inolvidable con nosotros.
-        </p>
-      </section>
-
-      <section>
-        <!-- Seccion Foto -->
-        <h2>Busca tu Foto</h2>
-
-        <p>
-          Revive tus momentos favoritos en el parque. Utiliza nuestra
-          herramienta de búsqueda de fotos para encontrar y adquirir las
-          imágenes capturadas durante tu visita. Comparte tus recuerdos con
-          amigos y familiares.
-        </p>
-      </section>
-
-      <section>
-        <h2>Contacto</h2>
-        <!-- Seccion Contacto -->
-        <p>
-          ¿Tienes alguna pregunta o comentario? Estamos aquí para ayudarte.
-          Ponte en contacto con nuestro equipo de atención al cliente para
-          obtener asistencia. Estamos disponibles por teléfono, correo
-          electrónico y redes sociales.
-        </p>
-      </section>
-
-      <section>
-        <h2>Sobre Nosotros</h2>
-        <!-- Seccion Sobre Nosotros -->
-        <p>
-          En Parque Teqno, estamos comprometidos a ofrecer experiencias
-          emocionantes y educativas para todas las edades. Con una pasión por la
-          tecnología y la diversión, nuestro equipo trabaja incansablemente para
-          crear momentos inolvidables.
-        </p>
-      </section>
-
-      <section>
-        <h3>Disclaimer</h3>
-        <!-- Seccion Disclaimer -->
-        <p>
-          Todos los visitantes deben seguir las reglas y pautas de seguridad del
-          parque en todo momento. Parque Teqno no se hace responsable por
-          lesiones o daños causados por un incumplimiento de estas reglas.
-          Consulta nuestras políticas y términos antes de tu visita.
-        </p>
-      </section>
-    </main>
-
-    <footer>
       <p>
-        Parque Tecno© - Todos los derechos reservados<br />
-        Creado por HaccCode©
+        Celebra tu cumpleaños en un entorno único y emocionante. Ofrecemos
+        paquetes especiales que incluyen acceso a atracciones, áreas
+        reservadas para festejar y deliciosos menús. Haz que tu día especial
+        sea inolvidable con nosotros.
       </p>
-    </footer>
+    </section>
 
-    <script src="./js/script.js"></script>
-  </body>
+    <section id="fotos">
+      <!-- Seccion Foto -->
+      <h2>Busca tu Foto</h2>
+
+      <p>
+        Revive tus momentos favoritos en el parque. Utiliza nuestra
+        herramienta de búsqueda de fotos para encontrar y adquirir las
+        imágenes capturadas durante tu visita. Comparte tus recuerdos con
+        amigos y familiares.
+      </p>
+    </section>
+
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <!-- Seccion Contacto -->
+      <p>
+        ¿Tienes alguna pregunta o comentario? Estamos aquí para ayudarte.
+        Ponte en contacto con nuestro equipo de atención al cliente para
+        obtener asistencia. Estamos disponibles por teléfono, correo
+        electrónico y redes sociales.
+      </p>
+    </section>
+
+    <section id="nosotros">
+      <h2>Sobre Nosotros</h2>
+      <!-- Seccion Sobre Nosotros -->
+      <p>
+        En Parque Teqno, estamos comprometidos a ofrecer experiencias
+        emocionantes y educativas para todas las edades. Con una pasión por la
+        tecnología y la diversión, nuestro equipo trabaja incansablemente para
+        crear momentos inolvidables.
+      </p>
+    </section>
+
+    <section id="disclaimer">
+      <h3>Disclaimer</h3>
+      <!-- Seccion Disclaimer -->
+      <p>
+        Todos los visitantes deben seguir las reglas y pautas de seguridad del
+        parque en todo momento. Parque Teqno no se hace responsable por
+        lesiones o daños causados por un incumplimiento de estas reglas.
+        Consulta nuestras políticas y términos antes de tu visita.
+      </p>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <p>
+      Parque Tecno© - Todos los derechos reservados<br />
+      Creado por HaccCode©
+    </p>
+  </footer>
+
+  <script src="./js/script.js"></script>
+</body>
+
 </html>

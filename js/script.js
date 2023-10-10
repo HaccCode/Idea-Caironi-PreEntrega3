@@ -452,8 +452,10 @@ let productos = [
     rutaImagen: "dmt.png",
   },
 ];
+let subcategorias = ["Remeras", "Buzos", "Camperitas", "Lentes", "Collares"];
 let productoBuscado;
 let carrito = [];
+
 let carritoStandBy = localStorage.getItem("carrito");
 if (carritoStandBy) {
   carrito = JSON.parse(carritoStandBy);
@@ -485,6 +487,22 @@ if (edadEntrada < 6) {
   valorEntrada = entradaGral - entradaGral * descMayores;
 }
 
+let select = document.getElementById("listaFiltro");
+select.addEventListener("change", () => {
+  let productosFiltrados = productos.filter((producto) =>
+    producto.subcategoria.includes(select.value)
+  );
+  renderizarProductos(productosFiltrados, carrito);
+  return productosFiltrados;
+});
+
+subcategorias.forEach((text) => {
+  let option = document.createElement("option");
+  option.innerText = `${text}`;
+  option.value = `${text}`;
+  select.appendChild(option);
+});
+
 ///////////////////////////
 /* Funciones */ //////////////////////////////////
 
@@ -497,19 +515,6 @@ function validarDatoStr(dato) {
   if (!/^[a-zA-Z]+$/.test(dato) || dato.trim() === "") {
     alert("Ingrese solo texto válido");
   }
-}
-
-function listaProductos(productos) {
-  return productos
-    .map(
-      (producto) =>
-        producto.id + " - " + producto.subcategoria + " - " + producto.nombre
-    )
-    .join("\n");
-}
-
-function buscarPorID(id) {
-  return productos.find((producto) => producto.id === id);
 }
 
 // Crea Tarjetas ya Filtradas
@@ -591,9 +596,15 @@ function renderizarCarrito(productosEnCarrito) {
 
 function finalizarCompra() {
   let carrito = document.getElementById("carrito");
-  carrito.innerHTML = "El Carrito esta vacío y esperando que elijas lo que más te guste!";
+  carrito.innerHTML =
+    "El Carrito esta vacío y esperando que elijas lo que más te guste!";
   localStorage.removeItem("carrito");
 }
+
+finalizarCompra(carrito);
+
+
+
 
 //Crea tarjetas de cada producto
 function renderizarProductos(productos, carrito) {
@@ -605,7 +616,7 @@ function renderizarProductos(productos, carrito) {
     tarjeta.className = "tarjeta";
     tarjeta.innerHTML = `<h3>${producto.nombre}</h3>
     <img class=imagenProducto src=./images/${producto.rutaImagen} />
-    <p>$${producto.precio}</p>
+    <p class=precio>$${producto.precio}</p>
     <button id=${producto.id}>Agregar al Carrito</button>
     `;
 
@@ -617,6 +628,7 @@ function renderizarProductos(productos, carrito) {
     });
   });
 }
+
 
 let buscador = document.getElementById("buscador"); // Casilla Buscador
 let botonBuscar = document.getElementById("botonBuscar"); //Boton Busqueda
@@ -640,9 +652,11 @@ let contenedorReservas = document.getElementById("contenedorReservas");
 let dniComprador = document.getElementById("dniComprador");
 let nombreComprador = document.getElementById("nombreComprador");
 
-//NombreComprador-Enter
+let ejecutado = false;
+
 nombreComprador.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") {
+  if (!ejecutado && e.key === "Enter") {
+    ejecutado = true;
     saludoComprador();
     localStorage.setItem(
       "nombreComprador",
@@ -650,6 +664,7 @@ nombreComprador.addEventListener("keydown", (e) => {
     );
   }
 });
+
 
 function saludoComprador() {
   let saludo = document.createElement("div");
@@ -678,5 +693,5 @@ function mensajeError() {
   contenedorReservas.appendChild(mensajeError);
 }
 
-//Finalizar compra
-finalizarCompra(carrito);
+
+
