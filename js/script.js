@@ -465,7 +465,7 @@ renderizarCarrito(carrito);
 
 renderizarProductos(productos, carrito);
 
-////////////////////////////////
+/////////////////////////////////
 /* Reserva de Entradas */ ////////////////////////////
 
 //Precios Entradas segun edad
@@ -474,7 +474,7 @@ let descMayores = 0.75; //-75% de descuento
 let descMenores = 0.5; //-50% de descuento
 let descInfantes = "Entrada Gratuita";
 
-let entradas, dniEntrada, nombreEntrada, apellidoEntrada, edadEntrada;
+let dniEntrada, nombreEntrada, apellidoEntrada, edadEntrada;
 
 let valorEntrada = entradaGral;
 
@@ -503,6 +503,97 @@ subcategorias.forEach((text) => {
   select.appendChild(option);
 });
 
+
+
+let entradas = document.getElementById("listaEntradas"); 
+
+
+let opcionDefecto = document.createElement("option");
+opcionDefecto.value = "0";
+opcionDefecto.innerText = "Seleccionar";
+select.appendChild(opcionDefecto);
+
+// Crear opciones para números del 1 al 10
+for (let i = 1; i <= 10; i++) {
+  let option = document.createElement("option");
+  option.value = i.toString(); // Convertir el número a una cadena
+  option.innerText = i.toString();
+  entradas.appendChild(option);
+}
+
+// Función para mostrar u ocultar el formulario de entradas
+function mostrarFormulario() {
+  let cantidadEntradas = parseInt(entradas.value);
+
+  // Obtener el div del formulario
+  let formularioDiv = document.getElementById("formularioEntradas");
+
+  // Si la cantidad de entradas es mayor que 0, mostrar el formulario, de lo contrario, ocultarlo
+  if (cantidadEntradas > 0) {
+    formularioDiv.style.display = "block";
+  } else {
+    formularioDiv.style.display = "none";
+  }
+}
+
+// Agrega un evento al cambio de selección en la lista de entradas
+entradas.addEventListener("change", mostrarFormulario);
+
+// Llama a la función una vez para asegurarte de que el formulario se muestre u oculte según la selección inicial (0 por defecto)
+mostrarFormulario();
+
+
+// Función para generar campos de entrada dinámicos
+function generarCamposDeEntrada() {
+  let cantidadEntradas = parseInt(entradas.value);
+  let formularioDiv = document.getElementById("formularioEntradas");
+
+  // Limpia cualquier contenido previo en el formulario
+  formularioDiv.innerHTML = "";
+
+  // Genera los campos de entrada según la cantidad de entradas seleccionadas
+  for (let i = 1; i <= cantidadEntradas; i++) {
+    // Crea un div para agrupar los campos de cada entrada
+    let entradaDiv = document.createElement("div");
+
+    // Crea campos de entrada para nombre, apellido, DNI y edad
+    let nombreInput = document.createElement("input");
+    nombreInput.type = "text";
+    nombreInput.placeholder = "Nombre";
+    nombreInput.id = `nombre${i}`;
+
+    let apellidoInput = document.createElement("input");
+    apellidoInput.type = "text";
+    apellidoInput.placeholder = "Apellido";
+    apellidoInput.id = `apellido${i}`;
+
+    let dniInput = document.createElement("input");
+    dniInput.type = "text";
+    dniInput.placeholder = "DNI";
+    dniInput.id = `dni${i}`;
+
+    let edadInput = document.createElement("input");
+    edadInput.type = "number";
+    edadInput.placeholder = "Edad";
+    edadInput.id = `edad${i}`;
+
+    // Agrega los campos al div de entrada
+    entradaDiv.appendChild(nombreInput);
+    entradaDiv.appendChild(apellidoInput);
+    entradaDiv.appendChild(dniInput);
+    entradaDiv.appendChild(edadInput);
+
+    // Agrega el div de entrada al formulario
+    formularioDiv.appendChild(entradaDiv);
+  }
+}
+
+// Agrega un evento al cambio de selección en la lista de entradas
+entradas.addEventListener("change", generarCamposDeEntrada);
+
+// Llama a la función una vez para asegurarte de que los campos se generen correctamente
+generarCamposDeEntrada();
+
 ///////////////////////////
 /* Funciones */ //////////////////////////////////
 
@@ -511,11 +602,7 @@ function validarDatoNum(dato) {
   if (isNaN(dato) || dato <= 0) alert("Debe ser un número mayor que 0.");
 }
 
-function validarDatoStr(dato) {
-  if (!/^[a-zA-Z]+$/.test(dato) || dato.trim() === "") {
-    alert("Ingrese solo texto válido");
-  }
-}
+
 
 // Crea Tarjetas ya Filtradas
 function filtrarYRenderizar(productos, carrito) {
@@ -594,6 +681,8 @@ function renderizarCarrito(productosEnCarrito) {
   }
 }
 
+
+
 function finalizarCompra() {
   let carrito = document.getElementById("carrito");
   carrito.innerHTML =
@@ -651,30 +740,52 @@ function verOcultarCarrito() {
 let contenedorReservas = document.getElementById("contenedorReservas");
 let dniComprador = document.getElementById("dniComprador");
 let nombreComprador = document.getElementById("nombreComprador");
+let mensajeDiv = document.getElementById("mensaje")
 
 let ejecutado = false;
+let errorMostrado = false;
 
 nombreComprador.addEventListener("keydown", (e) => {
   if (!ejecutado && e.key === "Enter") {
-    ejecutado = true;
-    saludoComprador();
-    localStorage.setItem(
-      "nombreComprador",
-      JSON.stringify(nombreComprador.value)
-    );
+    if (validarDatoStr()) {
+      ejecutado = true;
+      saludoComprador();
+      localStorage.setItem("nombreComprador", JSON.stringify(nombreComprador.value));
+    } else {
+      if (!errorMostrado) {
+        mensajeError();
+        errorMostrado = true;
+        
+      }
+    }
+    
   }
+  
 });
 
+function validarDatoStr() {
+  const nombre = nombreComprador.value.trim();
+  if (!/^[a-zA-Z]+$/.test(nombre) || nombre === "") {
+    return false; // El dato no es válido, devuelve false.
+  } else {
+    ejecutado = false;
+    return true; // El dato es válido, devuelve true.
+  }
+}
 
 function saludoComprador() {
-  let saludo = document.createElement("div");
+  let saludo = document.createElement("div")
   saludo.innerHTML = `
   <h3>Hola ${nombreComprador.value}!</h3>
-  <p>Estamos listos para empezar a reservar. Y vos? Comencemos:</p>
+  <p>Estamos listos para empezar la reserva!</p>
+
     `;
 
   contenedorReservas.appendChild(saludo);
+  
+  
 }
+
 
 //DNIComprador-Enter
 dniComprador.addEventListener("keydown", (e) => {

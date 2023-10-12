@@ -75,7 +75,7 @@ p {
 
 header{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   position: sticky;
   top: 0;
   width: 100%;
@@ -88,7 +88,7 @@ header{
 section {
   /* border: 5px solid pink; */
   padding: 40px;
-  scroll-margin-top: 120px
+  scroll-margin-top: 100px
 } 
 
 
@@ -155,9 +155,30 @@ margin-bottom: 10px;
 
 #contenedorReservas{
   display: flex;
+  flex-direction: row-reverse;
   flex-wrap: wrap;
   margin: 50px;
   justify-content: space-evenly;
   align-items: center;
   
+}
+
+#formularioEntradas{
+  display: none;
+  padding: 10px;
+}
+
+#listaEntradas{
+  padding: 6px;
+}
+
+.carousel-inner{
+border: 2px solid black;
+
+
+
+}
+
+.carousel-item{
+  width: 70%;
 }

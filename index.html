@@ -13,6 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,200;0,400;1,300&display=swap"
     rel="stylesheet" />
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/style.css" />
 </head>
 
@@ -47,8 +48,42 @@
         innovación en un lugar donde la imaginación cobra vida. Prepárate para
         explorar el futuro en cada rincón de nuestro parque. ¡La aventura
         comienza aquí!
+        
       </p>
-
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="./images/imageParque01.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./images/imageDinosaurio01.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./images/imageComida01.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./images/imageJuego01.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./images/imageParque02.png" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+      </div>
       <!-- Slider -->
       <p>
         Imagen 1: Patio de Comidas Disfruta de una amplia variedad de
@@ -74,16 +109,24 @@
           en la entrada.
         </p>
       </div>
+      
+      
       <div id="contenedorReservas">
-        <div>
-          <label for="listaEntradas">Cantidad de Entradas</label>
-          <select id="listaEntradas" name="opcion"></select>
-        </div>
         <div>
           <label for="nombreComprador">Ingrese su Nombre</label>
           <input id="nombreComprador" type="text" placeholder="Su Nombre" />
           <label for="dniComprador">Ingrese su DNI</label>
           <input id="dniComprador" type="text" placeholder="Su DNI" />
+        </div>
+        <div>
+          <div id="mensaje" class="mensaje"></div>
+          <label for="listaEntradas">Cantidad de Entradas</label>
+          <select id="listaEntradas" name="opcion"></select>
+          
+          <div id="formularioEntradas">
+            <!-- Aquí irá el formulario de entradas -->
+          </div>
+          
         </div>
       </div>
     </section>
@@ -180,8 +223,9 @@
       Creado por HaccCode©
     </p>
   </footer>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   <script src="./js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>
