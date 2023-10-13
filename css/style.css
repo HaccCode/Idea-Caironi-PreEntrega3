@@ -81,6 +81,7 @@ header{
   width: 100%;
   align-items: center;
   padding: 20px;
+  z-index: 1000
 /* border: 10px solid yellow; 
  */}
 
@@ -191,6 +192,7 @@ border: 2px solid black;
   margin: 0 auto;
   overflow: hidden;
   position: relative;
+  z-index: 999
 }
 
 .carousel {
