@@ -80,15 +80,16 @@ header{
   top: 0;
   width: 100%;
   align-items: center;
-  padding: 10px;
-  /* border: 10px solid yellow; */
-  }
+  padding: 20px;
+/* border: 10px solid yellow; 
+ */}
 
 
 section {
   /* border: 5px solid pink; */
   padding: 40px;
-  scroll-margin-top: 100px
+  padding-top: 40px;
+  scroll-margin-top: 80px
 } 
 
 
@@ -181,4 +182,37 @@ border: 2px solid black;
 
 .carousel-item{
   width: 70%;
+}
+
+
+
+.carousel-container {
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.carousel-slide img {
+  max-width: 100%;
+  max-height: 400px; /* Ajusta la altura según tu diseño */
+}
+
+
+.logo img{
+  width: 25vh;
+
 }

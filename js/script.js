@@ -771,6 +771,7 @@ function validarDatoStr() {
     ejecutado = false;
     return true; // El dato es válido, devuelve true.
   }
+  
 }
 
 function saludoComprador() {
