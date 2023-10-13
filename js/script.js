@@ -454,16 +454,12 @@ let productos = [
 ];
 let subcategorias = ["Remeras", "Buzos", "Camperitas", "Lentes", "Collares"];
 let productoBuscado;
-let carrito = [];
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-let carritoStandBy = localStorage.getItem("carrito");
-if (carritoStandBy) {
-  carrito = JSON.parse(carritoStandBy);
-}
 
 renderizarCarrito(carrito);
 
-renderizarProductos(productos, carrito);
+renderizarProductos(productos);
 
 /////////////////////////////////
 /* Reserva de Entradas */ ////////////////////////////
@@ -492,7 +488,7 @@ select.addEventListener("change", () => {
   let productosFiltrados = productos.filter((producto) =>
     producto.subcategoria.includes(select.value)
   );
-  renderizarProductos(productosFiltrados, carrito);
+  renderizarProductos(productosFiltrados);
   return productosFiltrados;
 });
 
@@ -605,15 +601,15 @@ function validarDatoNum(dato) {
 
 
 // Crea Tarjetas ya Filtradas
-function filtrarYRenderizar(productos, carrito) {
+function filtrarYRenderizar(productos) {
   let productosFiltrados = productos.filter((producto) =>
     producto.nombre.includes(buscador.value)
   );
-  renderizarProductos(productosFiltrados, carrito);
+  renderizarProductos(productosFiltrados);
   return productosFiltrados;
 }
 
-function agregarProductoAlCarrito(productos, carrito, e) {
+function agregarProductoAlCarrito(productos, e) {
   let productoBuscado = productos.find(
     (producto) => producto.id === e.target.id
   );
@@ -684,19 +680,17 @@ function renderizarCarrito(productosEnCarrito) {
 
 
 function finalizarCompra() {
-  let carrito = document.getElementById("carrito");
-  carrito.innerHTML =
+  let carritoFinal = document.getElementById("carrito");
+  carritoFinal.innerHTML =
     "El Carrito esta vacío y esperando que elijas lo que más te guste!";
-  localStorage.removeItem("carrito");
+    carrito = []
+  localStorage.setItem("carrito", JSON.stringify(carrito));
 }
-
-finalizarCompra(carrito);
-
 
 
 
 //Crea tarjetas de cada producto
-function renderizarProductos(productos, carrito) {
+function renderizarProductos(productos) {
   let contenedor = document.getElementById("contenedorProductos");
   contenedor.innerHTML = "";
 
@@ -713,7 +707,7 @@ function renderizarProductos(productos, carrito) {
 
     let botonAgregarAlCarrito = document.getElementById(producto.id);
     botonAgregarAlCarrito.addEventListener("click", (e) => {
-      agregarProductoAlCarrito(productos, carrito, e);
+      agregarProductoAlCarrito(productos, e);
     });
   });
 }
@@ -722,7 +716,7 @@ function renderizarProductos(productos, carrito) {
 let buscador = document.getElementById("buscador"); // Casilla Buscador
 let botonBuscar = document.getElementById("botonBuscar"); //Boton Busqueda
 botonBuscar.addEventListener("click", (e) =>
-  filtrarYRenderizar(productos, carrito)
+  filtrarYRenderizar(productos)
 );
 
 let botonVerOcultar = document.getElementById("verOcultar");
