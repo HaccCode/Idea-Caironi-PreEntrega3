@@ -550,6 +550,7 @@ function generarCamposDeEntrada() {
   for (let i = 1; i <= cantidadEntradas; i++) {
     // Crea un div para agrupar los campos de cada entrada
     let entradaDiv = document.createElement("div");
+    entradaDiv.className = "entradaDiv"
 
     // Crea campos de entrada para nombre, apellido, DNI y edad
     let nombreInput = document.createElement("input");
@@ -648,6 +649,22 @@ function agregarProductoAlCarrito(productos, e) {
       localStorage.setItem("carrito", JSON.stringify(carrito));
     }
     renderizarCarrito(carrito);
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 2500,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+    })
+    
+    Toast.fire({
+      icon: 'success',
+      title: 'Producto Agregado al Carrito!'
+    })
   }
 }
 
@@ -722,7 +739,7 @@ function finalizarCompra() {
     text: "Confirma para continuar",
     icon: 'question',
     showCancelButton: true,
-    confirmButtonColor: '#3085d6',
+    confirmButtonColor: '#13d152',
     cancelButtonColor: '#d33',
     confirmButtonText: 'Si, confirmo!'
   }).then((result) => {

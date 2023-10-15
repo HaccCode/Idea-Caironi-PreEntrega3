@@ -1,6 +1,11 @@
 /* Generalidades */
 * {
-  box-sizing: border-box;
+  box-sizing: border-box;  
+  font-family: "Exo 2", sans-serif;
+  margin: 0;
+}
+
+body, header{
   background: rgb(2, 0, 36);
   background: linear-gradient(
     322deg,
@@ -10,8 +15,6 @@
   );
   background-attachment: fixed;
   background-size: contain;
-  font-family: "Exo 2", sans-serif;
-  margin: 0;
 }
 
 a {
@@ -117,19 +120,19 @@ nav ul li{
   text-align: center;
   padding: 10px;
   flex-wrap: wrap;
-  border: 5px solid black;
+  /* border: 5px solid black; */
 }
 
 .imagenEnCarrito{
-  border: 2px solid black;
+  /* border: 2px solid black; */
   border-radius: 5%;
   max-width: 105px;
   
 }
 
 .cajaBusqueda{
-/*   border : 2px solid black;
- */  display: flex;
+/*   border : 2px solid black;*/  
+  display: flex;
   justify-content: space-around;
   margin: 20px;
 }
@@ -166,7 +169,8 @@ margin-bottom: 10px;
 }
 
 #formularioEntradas{
-  display: none;
+    display: flex;
+    justify-content: left;
   padding: 10px;
 }
 
@@ -174,31 +178,31 @@ margin-bottom: 10px;
   padding: 6px;
 }
 
-.carousel-inner{
-border: 2px solid black;
-
-
+.carousel-inner {
+  border: 2px solid black;
 
 }
 
 .carousel-item{
-  width: 70%;
-}
+  width: 100%;
+  }
 
 
 
 .carousel-container {
-  width: 80%;
+  display: flex;
+  width: 100%;
   margin: 0 auto;
   overflow: hidden;
   position: relative;
-  z-index: 999
+  z-index: 999;
 }
 
 .carousel {
   display: flex;
   overflow: hidden;
-  width: 100%;
+  width: 85%;
+  
 }
 
 .carousel-slide {
@@ -220,6 +224,29 @@ border: 2px solid black;
 }
 
 .botonFinalizar{
-  border: 2px solid white;
+  background-color: rgb(208, 86, 175);
   height: 50px;
+}
+
+.resumenCompra{
+  display: flex;
+  color: black;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  background-image: url(../images/recibo.png);
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+}
+
+.carouselImagenes{
+  display: flex;
+  justify-content: center;
+
+}
+
+.container{
+  display: flex;
+  flex-direction: ;
 }
