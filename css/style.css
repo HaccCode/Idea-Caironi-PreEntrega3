@@ -218,3 +218,8 @@ border: 2px solid black;
   width: 25vh;
 
 }
+
+.botonFinalizar{
+  border: 2px solid white;
+  height: 50px;
+}
