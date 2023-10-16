@@ -502,7 +502,7 @@ opcionDefecto.value = "0";
 opcionDefecto.innerText = "Seleccionar";
 entradas.appendChild(opcionDefecto);
 
-for (let i = 1; i <= 10; i++) {
+for (let i = 1; i <= 5; i++) {
   let option = document.createElement("option");
   option.value = i.toString();
   option.innerText = i.toString();

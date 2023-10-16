@@ -9,9 +9,9 @@ body,
 header {
   background: rgb(2, 0, 36);
   background: linear-gradient(322deg,
-  rgba(2, 0, 36, 1) 0%,
-  rgba(121, 9, 118, 1) 13%,
-  rgba(0, 212, 255, 1) 79%);
+      rgba(2, 0, 36, 1) 0%,
+      rgba(121, 9, 118, 1) 13%,
+      rgba(0, 212, 255, 1) 79%);
   background-attachment: fixed;
   background-size: contain;
 }
@@ -133,11 +133,8 @@ nav ul li {
   margin: 20px;
 }
 
-.buscar {
-  display: flex;
-  align-items: center;
-  width: 30%;
-  padding: 20px;
+.buscar label {
+  padding: 15px;
 }
 
 .precio {
@@ -155,7 +152,6 @@ nav ul li {
 #contenedorReservas {
   display: flex;
   flex-direction: row-reverse;
-  flex-wrap: wrap;
   margin: 20px;
   justify-content: space-between;
 
@@ -164,20 +160,23 @@ nav ul li {
 #formularioEntradas {
   display: flex;
   padding: 5px;
-  
-  }
+  width: 100%;
+}
+
 #formularioEntradas button {
   display: flex;
   padding: 5px;
-justify-content: end;
-align-items:center;
-  
-  }
+}
 
-  .btn-reserva{
-margin-left: auto;
-  
-      }
+#formularioEntradas input{
+  width: 20%;
+  margin: 2px;
+}
+
+.btn-reserva {
+  margin-left: auto;
+
+}
 
 
 
@@ -219,13 +218,14 @@ margin-left: auto;
   padding: 40px;
 }
 
-.resumenCompra p{
+.resumenCompra p {
   color: black;
   width: 100%;
   padding-top: 45%;
   font-style: italic;
   font-weight: bold;
-  font-size: 13px;;
+  font-size: 13px;
+  ;
 }
 
 .compradorYCantidad {
@@ -240,30 +240,24 @@ margin-left: auto;
   justify-content: center;
 }
 
-.formularioEntradas {
-  display: flex;
-}
-
-button{
+button {
   background-color: rgb(65, 153, 235);
   color: white;
 }
 
-input{
+input {
   background-color: rgb(155, 214, 243);
   border-radius: 7px;
 }
 
-.section{
+.section {
   margin: 30px;
 }
 
-.entradaDiv{
+.entradaDiv {
   margin: 10px;
 }
 
-.saludo{
-  padding: 30px;
-  
-  }
-
+.saludo {
+  padding: 10px;
+}
