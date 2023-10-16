@@ -1,5 +1,3 @@
-/* Variables */ //////////////////////////
-
 let productos = [
   {
     id: "1001",
@@ -461,14 +459,8 @@ renderizarCarrito(carrito);
 
 renderizarProductos(productos);
 
-/////////////////////////////////
-/* Reserva de Entradas */ ////////////////////////////
 
-//Precios Entradas segun edad
-let entradaGral = 2200;
-let descMayores = 0.75; //-75% de descuento
-let descMenores = 0.5; //-50% de descuento
-let descInfantes = "Entrada Gratuita";
+/* 
 
 let dniEntrada, nombreEntrada, apellidoEntrada, edadEntrada;
 let valorEntrada = entradaGral;
@@ -481,6 +473,158 @@ if (edadEntrada < 6) {
 } else if (edadEntrada >= 65) {
   valorEntrada = entradaGral - entradaGral * descMayores;
 }
+
+//VALIDACION CAMPO EDAD
+
+function validarEdadInput() {
+  let valor = parseInt(edadInput.value);
+  if (isNaN(valor) || valor < 1) {
+    valor = 1;
+  } else if (valor > 100) {
+    valor = 100;
+  }
+  edadInput.value = valor;
+
+  if (isNaN(valor) || valor <= 0 || valor >= 100) {
+    alert("La edad debe ser un número mayor que 0 y menor que 100.");
+  }
+}
+ */
+let entradaGral = 2200;
+let descMayores = 0.75; //-75% de descuento
+let descMenores = 0.5; //-50% de descuento
+let descInfantes = "Entrada Gratuita";
+
+let entradas = document.getElementById("listaEntradas"); 
+
+let opcionDefecto = document.createElement("option");
+opcionDefecto.value = "0";
+opcionDefecto.innerText = "Seleccionar";
+entradas.appendChild(opcionDefecto);
+
+for (let i = 1; i <= 10; i++) {
+  let option = document.createElement("option");
+  option.value = i.toString();
+  option.innerText = i.toString();
+  entradas.appendChild(option);
+}
+
+function mostrarFormulario() {
+  let cantidadEntradas = parseInt(entradas.value);
+
+  let formularioDiv = document.getElementById("formularioEntradas");
+
+  if (cantidadEntradas > 0) {
+    formularioDiv.style.display = "block";
+  } else {
+    formularioDiv.style.display = "none";
+  }
+}
+
+entradas.addEventListener("change", mostrarFormulario);
+
+mostrarFormulario();
+
+function generarCamposDeEntrada() {
+  let cantidadEntradas = parseInt(entradas.value);
+  let formularioDiv = document.getElementById("formularioEntradas");
+  formularioDiv.className = "formulario"
+
+
+  formularioDiv.innerHTML = "";
+
+  for (let i = 1; i <= cantidadEntradas; i++) {
+    let entradaDiv = document.createElement("div");
+    entradaDiv.className = "entradaDiv"
+
+    let numeroEntrada = document.createElement("p");
+    numeroEntrada.innerText = `Entrada ${i}`;
+    entradaDiv.appendChild(numeroEntrada);
+
+    let nombreInput = document.createElement("input");
+    nombreInput.type = "text";
+    nombreInput.placeholder = "Nombre";
+    nombreInput.id = `nombre${i}`;
+
+    let apellidoInput = document.createElement("input");
+    apellidoInput.type = "text";
+    apellidoInput.placeholder = "Apellido";
+    apellidoInput.id = `apellido${i}`;
+
+    let dniInput = document.createElement("input");
+    dniInput.type = "text";
+    dniInput.placeholder = "DNI";
+    dniInput.id = `dni${i}`;
+
+    let edadInput = document.createElement("input");
+    edadInput.type = "text";
+    edadInput.placeholder = "Edad";
+    edadInput.id = `edad${i}`
+    edadInput.min = 1;
+    edadInput.max = 99;
+
+
+    entradaDiv.appendChild(nombreInput);
+    entradaDiv.appendChild(apellidoInput);
+    entradaDiv.appendChild(dniInput);
+    entradaDiv.appendChild(edadInput);
+
+    formularioDiv.appendChild(entradaDiv);
+
+    
+  
+  }
+  let botonReserva = document.createElement('button');
+  botonReserva.className = 'btn-reserva';
+botonReserva.innerHTML = "Reservar Entradas";
+
+    botonReserva.addEventListener("click", finalizarReserva)
+    formularioDiv.appendChild(botonReserva);
+}
+
+entradas.addEventListener("change", generarCamposDeEntrada);
+
+generarCamposDeEntrada();
+
+
+/* function validarEdadInput(event) {
+  const edadInput = event.target;
+  const valor = parseInt(edadInput.value);
+
+  if (isNaN(valor) || valor < 1 || valor > 99) {
+    alert("La edad debe ser un número mayor que 0 y menor que 100.");
+    edadInput.value = '';
+    edadInput.focus();
+  } else {
+    const precioEntrada = calcularPrecioEntrada(valor);
+    mostrarPrecioEntrada(precioEntrada);
+  }
+} */
+
+function calcularPrecioEntrada(edad) {
+  let valorEntrada = entradaGral;
+
+  if (edad < 6) {
+    valorEntrada = descInfantes;
+  } else if (edad < 13) {
+    valorEntrada = entradaGral - entradaGral * descMenores;
+  } else if (edad >= 65) {
+    valorEntrada = entradaGral - entradaGral * descMayores;
+  }
+
+  return valorEntrada;
+}
+
+function mostrarPrecioEntrada(precio) {
+  const mensajePrecio = document.getElementById("mensajePrecio");
+  mensajePrecio.innerText = `Precio de la entrada: ${precio}`;
+}
+
+
+
+
+
+
 
 let select = document.getElementById("listaFiltro");
 select.addEventListener("change", () => {
@@ -498,105 +642,10 @@ subcategorias.forEach((text) => {
   select.appendChild(option);
 });
 
-
-
-let entradas = document.getElementById("listaEntradas"); 
-
-
-let opcionDefecto = document.createElement("option");
-opcionDefecto.value = "0";
-opcionDefecto.innerText = "Seleccionar";
-select.appendChild(opcionDefecto);
-
-// Crear opciones para números del 1 al 10
-for (let i = 1; i <= 10; i++) {
-  let option = document.createElement("option");
-  option.value = i.toString(); // Convertir el número a una cadena
-  option.innerText = i.toString();
-  entradas.appendChild(option);
-}
-
-// Función para mostrar u ocultar el formulario de entradas
-function mostrarFormulario() {
-  let cantidadEntradas = parseInt(entradas.value);
-
-  // Obtener el div del formulario
-  let formularioDiv = document.getElementById("formularioEntradas");
-
-  // Si la cantidad de entradas es mayor que 0, mostrar el formulario, de lo contrario, ocultarlo
-  if (cantidadEntradas > 0) {
-    formularioDiv.style.display = "block";
-  } else {
-    formularioDiv.style.display = "none";
-  }
-}
-
-// Agrega un evento al cambio de selección en la lista de entradas
-entradas.addEventListener("change", mostrarFormulario);
-
-// Llama a la función una vez para asegurarte de que el formulario se muestre u oculte según la selección inicial (0 por defecto)
-mostrarFormulario();
-
-
-// Función para generar campos de entrada dinámicos
-function generarCamposDeEntrada() {
-  let cantidadEntradas = parseInt(entradas.value);
-  let formularioDiv = document.getElementById("formularioEntradas");
-
-  // Limpia cualquier contenido previo en el formulario
-  formularioDiv.innerHTML = "";
-
-  // Genera los campos de entrada según la cantidad de entradas seleccionadas
-  for (let i = 1; i <= cantidadEntradas; i++) {
-    // Crea un div para agrupar los campos de cada entrada
-    let entradaDiv = document.createElement("div");
-    entradaDiv.className = "entradaDiv"
-
-    // Crea campos de entrada para nombre, apellido, DNI y edad
-    let nombreInput = document.createElement("input");
-    nombreInput.type = "text";
-    nombreInput.placeholder = "Nombre";
-    nombreInput.id = `nombre${i}`;
-
-    let apellidoInput = document.createElement("input");
-    apellidoInput.type = "text";
-    apellidoInput.placeholder = "Apellido";
-    apellidoInput.id = `apellido${i}`;
-
-    let dniInput = document.createElement("input");
-    dniInput.type = "text";
-    dniInput.placeholder = "DNI";
-    dniInput.id = `dni${i}`;
-
-    let edadInput = document.createElement("input");
-    edadInput.type = "number";
-    edadInput.placeholder = "Edad";
-    edadInput.id = `edad${i}`;
-
-    // Agrega los campos al div de entrada
-    entradaDiv.appendChild(nombreInput);
-    entradaDiv.appendChild(apellidoInput);
-    entradaDiv.appendChild(dniInput);
-    entradaDiv.appendChild(edadInput);
-
-    // Agrega el div de entrada al formulario
-    formularioDiv.appendChild(entradaDiv);
-  }
-}
-
-// Agrega un evento al cambio de selección en la lista de entradas
-entradas.addEventListener("change", generarCamposDeEntrada);
-
-// Llama a la función una vez para asegurarte de que los campos se generen correctamente
-generarCamposDeEntrada();
-
 ///////////////////////////
 /* Funciones */ //////////////////////////////////
 
-//Funciones de validación de datos
-function validarDatoNum(dato) {
-  if (isNaN(dato) || dato <= 0) alert("Debe ser un número mayor que 0.");
-}
+
 
 
 
@@ -618,10 +667,23 @@ function agregarProductoAlCarrito(productos, e) {
     (producto) => producto.id === productoBuscado.id
   );
 
-  if (!productoBuscado) {
-    /* alert("El ID del producto ingresado no es válido."); */
-  } else if (productoBuscado.stock === 0) {
-    /* alert("No hay stock disponible para este producto."); */
+  if (productoBuscado.stock === 0) {
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 2500,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+    })
+    
+    Toast.fire({
+      icon: 'error',
+      title: 'Producto sin stock momentaneo'
+    })
   } else {
     productoEnCarrito = carrito.find(
       (producto) => producto.id === productoBuscado.id
@@ -691,8 +753,8 @@ function renderizarCarrito(productosEnCarrito) {
     let resumenCompra = document.createElement("div");
     resumenCompra.className = "resumenCompra"
     resumenCompra.innerHTML= `
-    <p>Unidades a comprar: ${calcularTotalUnidades(carrito)}</p>
-    <p>Total de la Compra: $${calcularImporteFinal(carrito)}</p>
+    <p>Unidades a comprar: ${calcularTotalUnidades(carrito)}<br>
+    Total de la Compra: $${calcularImporteFinal(carrito)}</p>
     `
     divCarrito.appendChild(resumenCompra)
 
@@ -745,6 +807,7 @@ function finalizarCompra() {
   }).then((result) => {
     if (result.isConfirmed) {
       let carritoFinal = document.getElementById("carrito");
+      carritoFinal.className = "carritoFinal"
       carritoFinal.innerHTML =
         "El Carrito esta vacío y esperando que elijas lo que más te guste!";
         carrito = []
@@ -752,6 +815,32 @@ function finalizarCompra() {
       renderizarCarrito(carrito);
       Swal.fire(
         'Compra Exitosa!',
+        'En breve recibiras la orden de pago',
+        'success'
+      )
+    }
+  })
+}
+
+let reservaEntradas
+
+function finalizarReserva() {
+  Swal.fire({
+    title: 'Finalizar Reserva',
+    text: "Confirma para continuar",
+    icon: 'question',
+    showCancelButton: true,
+    confirmButtonColor: '#13d152',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Si, confirmo!'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      let reservaFinal = document.getElementById("reservaEntradas");
+      reservaFinal.className = "reservaFinal"
+      reservaEntradas = []
+      localStorage.setItem("reservaEntradas", JSON.stringify(reservaEntradas));
+      Swal.fire(
+        'Reserva Exitosa!',
         'En breve recibiras la orden de pago',
         'success'
       )
@@ -845,14 +934,21 @@ function validarDatoStr() {
 //SALUDAR COMPRADOR
 function saludoComprador() {
   let saludo = document.createElement("div")
+  saludo.className = "saludo"
   saludo.innerHTML = `
   <h3>Hola ${nombreComprador.value}!</h3>
   <p>Estamos listos para empezar la reserva!</p>
-
+<p>Te recordamos los precios de las Entradas:</p>
+<p>Entrada General: $${entradaGral}<br>
+Mayores de 65 años: $${entradaGral * descMayores} **75% off**<br>
+Menores de 13 años: $${entradaGral * descMenores} **50% off**<br>
+Menores de 6 años: ${descInfantes}!
+</p>
     `;
 
-  contenedorReservas.appendChild(saludo);
-  
+    contenedorReservas.appendChild(saludo);
+
+
   
 }
 

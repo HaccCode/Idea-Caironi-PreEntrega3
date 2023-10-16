@@ -1,24 +1,28 @@
 /* Generalidades */
 * {
-  box-sizing: border-box;  
+  box-sizing: border-box;
   font-family: "Exo 2", sans-serif;
   margin: 0;
 }
 
-body, header{
+body,
+header {
   background: rgb(2, 0, 36);
-  background: linear-gradient(
-    322deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(121, 9, 118, 1) 13%,
-    rgba(0, 212, 255, 1) 79%
-  );
+  background: linear-gradient(322deg,
+  rgba(2, 0, 36, 1) 0%,
+  rgba(121, 9, 118, 1) 13%,
+  rgba(0, 212, 255, 1) 79%);
   background-attachment: fixed;
   background-size: contain;
 }
 
+label {
+  color: white;
+}
+
 a {
   text-decoration: none;
+  color: white;
 }
 
 h1,
@@ -46,7 +50,6 @@ p {
 }
 
 .tarjeta {
-  /* border: 10px solid yellow; */
   display: flex;
   margin: 2px;
   flex-direction: column;
@@ -64,10 +67,9 @@ p {
   flex-direction: row;
   flex-wrap: wrap;
   align-content: center;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
   width: 100%;
   min-height: 100%;
-  /* border: 3px solid red; */
   padding: 15px;
   margin: 15px;
 }
@@ -76,7 +78,7 @@ p {
   display: none !important;
 }
 
-header{
+header {
   display: flex;
   justify-content: space-evenly;
   position: sticky;
@@ -85,150 +87,115 @@ header{
   align-items: center;
   padding: 20px;
   z-index: 1000
-/* border: 10px solid yellow; 
- */}
+}
 
 
 section {
-  /* border: 5px solid pink; */
   padding: 40px;
   padding-top: 40px;
   scroll-margin-top: 80px
-} 
+}
 
 
-nav ul{
+nav ul {
   display: flex;
   flex-direction: row;
   align-items: center;
   list-style: none;
   padding: 30px;
   margin: 0;
-  /* border: 10px solid green; */
   height: 50px;
 
 }
 
 
-nav ul li{
+nav ul li {
   margin: 10px;
 }
 
-.tarjProdCarrito{
+.tarjProdCarrito {
   display: flex;
   flex-direction: column;
   text-align: center;
   padding: 10px;
   flex-wrap: wrap;
-  /* border: 5px solid black; */
 }
 
-.imagenEnCarrito{
-  /* border: 2px solid black; */
+.imagenEnCarrito {
   border-radius: 5%;
   max-width: 105px;
-  
+
 }
 
-.cajaBusqueda{
-/*   border : 2px solid black;*/  
+.cajaBusqueda {
   display: flex;
   justify-content: space-around;
   margin: 20px;
 }
 
-.buscar{
-  /* border: 2px solid red; */
+.buscar {
   display: flex;
+  align-items: center;
   width: 30%;
   padding: 20px;
-  align-items: center;
-  justify-content: space-around;
 }
 
-.precio{
-margin: 5px;
-margin-bottom: 10px;
+.precio {
+  margin: 5px;
+  margin-bottom: 10px;
 }
 
-#footer{
+#footer {
   display: flex;
   justify-content: center;
   text-align: center;
   padding: 10px;
 }
 
-#contenedorReservas{
+#contenedorReservas {
   display: flex;
   flex-direction: row-reverse;
   flex-wrap: wrap;
-  margin: 50px;
-  justify-content: space-evenly;
-  align-items: center;
+  margin: 20px;
+  justify-content: space-between;
+
+}
+
+#formularioEntradas {
+  display: flex;
+  padding: 5px;
   
-}
+  }
+#formularioEntradas button {
+  display: flex;
+  padding: 5px;
+justify-content: end;
+align-items:center;
+  
+  }
 
-#formularioEntradas{
-    display: flex;
-    justify-content: left;
-  padding: 10px;
-}
+  .btn-reserva{
+margin-left: auto;
+  
+      }
 
-#listaEntradas{
+
+
+#listaEntradas {
   padding: 6px;
 }
 
-.carousel-inner {
-  border: 2px solid black;
-
-}
-
-.carousel-item{
-  width: 100%;
-  }
-
-
-
-.carousel-container {
-  display: flex;
-  width: 100%;
-  margin: 0 auto;
-  overflow: hidden;
-  position: relative;
-  z-index: 999;
-}
-
-.carousel {
-  display: flex;
-  overflow: hidden;
-  width: 85%;
-  
-}
-
-.carousel-slide {
-  flex: 0 0 100%;
-  display: flex;
-  align-items: center;
-  position: relative;
-}
-
-.carousel-slide img {
-  max-width: 100%;
-  max-height: 400px; /* Ajusta la altura según tu diseño */
-}
-
-
-.logo img{
+.logo img {
   width: 25vh;
 
 }
 
-.botonFinalizar{
+.botonFinalizar {
   background-color: rgb(208, 86, 175);
   height: 50px;
 }
 
-.resumenCompra{
+.resumenCompra {
   display: flex;
   color: black;
   justify-content: center;
@@ -240,13 +207,63 @@ margin-bottom: 10px;
   padding: 20px;
 }
 
-.carouselImagenes{
+.resumenCompra {
   display: flex;
+  color: black;
   justify-content: center;
-
+  align-content: center;
+  flex-direction: column;
+  background-image: url(../images/recibo.png);
+  background-size: cover;
+  background-position: center;
+  padding: 40px;
 }
 
-.container{
+.resumenCompra p{
+  color: black;
+  width: 100%;
+  padding-top: 45%;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 13px;;
+}
+
+.compradorYCantidad {
   display: flex;
-  flex-direction: ;
+  justify-content: space-around;
+  align-items: center;
 }
+
+.divReservas {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.formularioEntradas {
+  display: flex;
+}
+
+button{
+  background-color: rgb(65, 153, 235);
+  color: white;
+}
+
+input{
+  background-color: rgb(155, 214, 243);
+  border-radius: 7px;
+}
+
+.section{
+  margin: 30px;
+}
+
+.entradaDiv{
+  margin: 10px;
+}
+
+.saludo{
+  padding: 30px;
+  
+  }
+
