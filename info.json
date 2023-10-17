@@ -1,0 +1,814 @@
+[
+    {
+        "id": "1001",
+        "categoria": "Indumentaria",
+        "subcategoria": "Remeras",
+        "nombre": "Remera Agua",
+        "modelo": [
+            "xx",
+            "xy",
+            "ch"
+        ],
+        "talle": [
+            "xs",
+            "s",
+            "m",
+            "l",
+            "xl",
+            "xxl"
+        ],
+        "precio": 7000,
+        "stock": 5,
+        "color": "Azul",
+        "rutaImagen": "remera_agua.png"
+    },
+    {
+        "id": "1002",
+        "categoria": "Indumentaria",
+        "subcategoria": "Remeras",
+        "nombre": "Remera Aire",
+        "modelo": [
+            "xx",
+            "xy",
+            "ch"
+        ],
+        "talle": [
+            "xs",
+            "s",
+            "m",
+            "l",
+            "xl",
+            "xxl"
+        ],
+        "precio": 7000,
+        "stock": 5,
+        "color": "Gris",
+        "rutaImagen": "remera_aire.png"
+    },
+    {
+        "id": "1003",
+        "categoria": "Indumentaria",
+        "subcategoria": "Remeras",
+        "nombre": "Remera Tierra",
+        "modelo": [
+            "xx",
+            "xy",
+            "ch"
+        ],
+        "talle": [
+            "xs",
+            "s",
+            "m",
+            "l",
+            "xl",
+            "xxl"
+        ],
+        "precio": 7000,
+        "stock": 5,
+        "color": "Marron",
+        "rutaImagen": "remera_tierra.png"
+    },
+    {
+        "id": "1004",
+        "categoria": "Indumentaria",
+        "subcategoria": "Remeras",
+        "nombre": "Remera Fuego",
+        "modelo": [
+            "xx",
+            "xy",
+            "ch"
+        ],
+        "talle": [
+            "xs",
+            "s",
+            "m",
+            "l",
+            "xl",
+            "xxl"
+        ],
+        "precio": 7000,
+        "stock": 5,
+        "color": "Rojo",
+        "rutaImagen": "remera_fuego.png"
+    },
+    {
+        "id": "1005",
+        "categoria": "Indumentaria",
+        "subcategoria": "Remeras",
+        "nombre": "Remera Luz",
+        "modelo": [
+            "xx",
+            "xy",
+            "ch"
+        ],
+        "talle": [
+            "xs",
+            "s",
+            "m",
+            "l",
+            "xl",
+            "xxl"
+        ],
+        "precio": 7000,
+        "stock": 5,
+        "color": "Blanco",
+        "rutaImagen": "remera_luz.png"
+    },
+    {
+        "id": "1006",
+        "categoria": "Indumentaria",
+        "subcategoria": "Remeras",
+        "nombre": "Remera Sombra",
+        "modelo": [
+            "xx",
+            "xy",
+            "ch"
+        ],
+        "talle": [
+            "xs",
+            "s",
+            "m",
+            "l",
+            "xl",
+            "xxl"
+        ],
+        "precio": 7000,
+        "stock": 5,
+        "color": "Negro",
+        "rutaImagen": "remera_dark.png"
+    },
+    {
+        "id": "1007",
+        "categoria": "Indumentaria",
+        "subcategoria": "Remeras",
+        "nombre": "Remera Nature",
+        "modelo": [
+            "xx",
+            "xy",
+            "ch"
+        ],
+        "talle": [
+            "xs",
+            "s",
+            "m",
+            "l",
+            "xl",
+            "xxl"
+        ],
+        "precio": 7000,
+        "stock": 5,
+        "color": "Verde",
+        "rutaImagen": "remera_nature.png"
+    },
+    {
+        "id": "1008",
+        "categoria": "Indumentaria",
+        "subcategoria": "Remeras",
+        "nombre": "Remera Sol",
+        "modelo": [
+            "xx",
+            "xy",
+            "ch"
+        ],
+        "talle": [
+            "xs",
+            "s",
+            "m",
+            "l",
+            "xl",
+            "xxl"
+        ],
+        "precio": 7000,
+        "stock": 5,
+        "color": "Amarillo",
+        "rutaImagen": "remera_sol.png"
+    },
+    {
+        "id": "1101",
+        "categoria": "Indumentaria",
+        "subcategoria": "Buzos",
+        "nombre": "Buzo Agua",
+        "modelo": [
+            "xx",
+            "xy",
+            "ch"
+        ],
+        "talle": [
+            "xs",
+            "s",
+            "m",
+            "l",
+            "xl",
+            "xxl"
+        ],
+        "precio": 11000,
+        "stock": 5,
+        "color": "Azul",
+        "rutaImagen": "buzo_agua.png"
+    },
+    {
+        "id": "1102",
+        "categoria": "Indumentaria",
+        "subcategoria": "Buzos",
+        "nombre": "Buzo Aire",
+        "modelo": [
+            "xx",
+            "xy",
+            "ch"
+        ],
+        "talle": [
+            "xs",
+            "s",
+            "m",
+            "l",
+            "xl",
+            "xxl"
+        ],
+        "precio": 11000,
+        "stock": 5,
+        "color": "Gris",
+        "rutaImagen": "buzo_aire.png"
+    },
+    {
+        "id": "1103",
+        "categoria": "Indumentaria",
+        "subcategoria": "Buzos",
+        "nombre": "Buzo Tierra",
+        "modelo": [
+            "xx",
+            "xy",
+            "ch"
+        ],
+        "talle": [
+            "xs",
+            "s",
+            "m",
+            "l",
+            "xl",
+            "xxl"
+        ],
+        "precio": 11000,
+        "stock": 5,
+        "color": "Marron",
+        "rutaImagen": "buzo_tierra.png"
+    },
+    {
+        "id": "1104",
+        "categoria": "Indumentaria",
+        "subcategoria": "Buzos",
+        "nombre": "Buzo Fuego",
+        "modelo": [
+            "xx",
+            "xy",
+            "ch"
+        ],
+        "talle": [
+            "xs",
+            "s",
+            "m",
+            "l",
+            "xl",
+            "xxl"
+        ],
+        "precio": 11000,
+        "stock": 5,
+        "color": "Rojo",
+        "rutaImagen": "buzo_fuego.png"
+    },
+    {
+        "id": "1105",
+        "categoria": "Indumentaria",
+        "subcategoria": "Buzos",
+        "nombre": "Buzo Luz",
+        "modelo": [
+            "xx",
+            "xy",
+            "ch"
+        ],
+        "talle": [
+            "xs",
+            "s",
+            "m",
+            "l",
+            "xl",
+            "xxl"
+        ],
+        "precio": 11000,
+        "stock": 5,
+        "color": "Blanco",
+        "rutaImagen": "buzo_luz.png"
+    },
+    {
+        "id": "1106",
+        "categoria": "Indumentaria",
+        "subcategoria": "Buzos",
+        "nombre": "Buzo Sombra",
+        "modelo": [
+            "xx",
+            "xy",
+            "ch"
+        ],
+        "talle": [
+            "xs",
+            "s",
+            "m",
+            "l",
+            "xl",
+            "xxl"
+        ],
+        "precio": 11000,
+        "stock": 5,
+        "color": "Negro",
+        "rutaImagen": "buzo_dark.png"
+    },
+    {
+        "id": "1107",
+        "categoria": "Indumentaria",
+        "subcategoria": "Buzos",
+        "nombre": "Buzo Nature",
+        "modelo": [
+            "xx",
+            "xy",
+            "ch"
+        ],
+        "talle": [
+            "xs",
+            "s",
+            "m",
+            "l",
+            "xl",
+            "xxl"
+        ],
+        "precio": 11000,
+        "stock": 5,
+        "color": "Verde",
+        "rutaImagen": "buzo_nature.png"
+    },
+    {
+        "id": "1108",
+        "categoria": "Indumentaria",
+        "subcategoria": "Buzos",
+        "nombre": "Buzo Sol",
+        "modelo": [
+            "xx",
+            "xy",
+            "ch"
+        ],
+        "talle": [
+            "xs",
+            "s",
+            "m",
+            "l",
+            "xl",
+            "xxl"
+        ],
+        "precio": 11000,
+        "stock": 5,
+        "color": "Amarillo",
+        "rutaImagen": "buzo_sol.png"
+    },
+    {
+        "id": "1201",
+        "categoria": "Indumentaria",
+        "subcategoria": "Camperitas",
+        "nombre": "Camperita Agua",
+        "modelo": [
+            "xx",
+            "xy",
+            "ch"
+        ],
+        "talle": [
+            "xs",
+            "s",
+            "m",
+            "l",
+            "xl",
+            "xxl"
+        ],
+        "precio": 18000,
+        "stock": 5,
+        "color": "Azul",
+        "rutaImagen": "camperita_agua.png"
+    },
+    {
+        "id": "1202",
+        "categoria": "Indumentaria",
+        "subcategoria": "Camperitas",
+        "nombre": "Camperita Aire",
+        "modelo": [
+            "xx",
+            "xy",
+            "ch"
+        ],
+        "talle": [
+            "xs",
+            "s",
+            "m",
+            "l",
+            "xl",
+            "xxl"
+        ],
+        "precio": 18000,
+        "stock": 5,
+        "color": "Gris",
+        "rutaImagen": "camperita_aire.png"
+    },
+    {
+        "id": "1203",
+        "categoria": "Indumentaria",
+        "subcategoria": "Camperitas",
+        "nombre": "Camperita Tierra",
+        "modelo": [
+            "xx",
+            "xy",
+            "ch"
+        ],
+        "talle": [
+            "xs",
+            "s",
+            "m",
+            "l",
+            "xl",
+            "xxl"
+        ],
+        "precio": 18000,
+        "stock": 5,
+        "color": "Marron",
+        "rutaImagen": "camperita_tierra.png"
+    },
+    {
+        "id": "1204",
+        "categoria": "Indumentaria",
+        "subcategoria": "Camperitas",
+        "nombre": "Camperita Fuego",
+        "modelo": [
+            "xx",
+            "xy",
+            "ch"
+        ],
+        "talle": [
+            "xs",
+            "s",
+            "m",
+            "l",
+            "xl",
+            "xxl"
+        ],
+        "precio": 18000,
+        "stock": 5,
+        "color": "Rojo",
+        "rutaImagen": "camperita_fuego.png"
+    },
+    {
+        "id": "1205",
+        "categoria": "Indumentaria",
+        "subcategoria": "Camperitas",
+        "nombre": "Camperita Luz",
+        "modelo": [
+            "xx",
+            "xy",
+            "ch"
+        ],
+        "talle": [
+            "xs",
+            "s",
+            "m",
+            "l",
+            "xl",
+            "xxl"
+        ],
+        "precio": 18000,
+        "stock": 5,
+        "color": "Blanco",
+        "rutaImagen": "camperita_luz.png"
+    },
+    {
+        "id": "1206",
+        "categoria": "Indumentaria",
+        "subcategoria": "Camperitas",
+        "nombre": "Camperita Sombra",
+        "modelo": [
+            "xx",
+            "xy",
+            "ch"
+        ],
+        "talle": [
+            "xs",
+            "s",
+            "m",
+            "l",
+            "xl",
+            "xxl"
+        ],
+        "precio": 18000,
+        "stock": 5,
+        "color": "Negro",
+        "rutaImagen": "camperita_dark.png"
+    },
+    {
+        "id": "1207",
+        "categoria": "Indumentaria",
+        "subcategoria": "Camperitas",
+        "nombre": "Camperita Nature",
+        "modelo": [
+            "xx",
+            "xy",
+            "ch"
+        ],
+        "talle": [
+            "xs",
+            "s",
+            "m",
+            "l",
+            "xl",
+            "xxl"
+        ],
+        "precio": 18000,
+        "stock": 5,
+        "color": "Verde",
+        "rutaImagen": "camperita_nature.png"
+    },
+    {
+        "id": "1208",
+        "categoria": "Indumentaria",
+        "subcategoria": "Camperitas",
+        "nombre": "Camperita Sol",
+        "modelo": [
+            "xx",
+            "xy",
+            "ch"
+        ],
+        "talle": [
+            "xs",
+            "s",
+            "m",
+            "l",
+            "xl",
+            "xxl"
+        ],
+        "precio": 18000,
+        "stock": 5,
+        "color": "Amarillo",
+        "rutaImagen": "camperita_sol.png"
+    },
+    {
+        "id": "2001",
+        "categoria": "Accesorios",
+        "subcategoria": "Lentes",
+        "nombre": "Lentes Sol Agua",
+        "modelo": [
+            "xx",
+            "xy",
+            "ch"
+        ],
+        "talle": [
+            "-",
+            "-"
+        ],
+        "precio": 22000,
+        "stock": 3,
+        "color": "Azul",
+        "rutaImagen": "lentes_agua.png"
+    },
+    {
+        "id": "2002",
+        "categoria": "Accesorios",
+        "subcategoria": "Lentes",
+        "nombre": "Lentes Sol Aire",
+        "modelo": [
+            "xx",
+            "xy",
+            "ch"
+        ],
+        "talle": [
+            "-",
+            "-"
+        ],
+        "precio": 22000,
+        "stock": 3,
+        "color": "Gris",
+        "rutaImagen": "lentes_aire.png"
+    },
+    {
+        "id": "2003",
+        "categoria": "Accesorios",
+        "subcategoria": "Lentes",
+        "nombre": "Lentes Sol Tierra",
+        "modelo": [
+            "xx",
+            "xy",
+            "ch"
+        ],
+        "talle": [
+            "-",
+            "-"
+        ],
+        "precio": 22000,
+        "stock": 3,
+        "color": "Marron",
+        "rutaImagen": "lentes_tierra.png"
+    },
+    {
+        "id": "2004",
+        "categoria": "Accesorios",
+        "subcategoria": "Lentes",
+        "nombre": "Lentes Sol Fuego",
+        "modelo": [
+            "xx",
+            "xy",
+            "ch"
+        ],
+        "talle": [
+            "-",
+            "-"
+        ],
+        "precio": 22000,
+        "stock": 3,
+        "color": "Rojo",
+        "rutaImagen": "lentes_fuego.png"
+    },
+    {
+        "id": "2005",
+        "categoria": "Accesorios",
+        "subcategoria": "Lentes",
+        "nombre": "Lentes Sol Luz",
+        "modelo": [
+            "xx",
+            "xy",
+            "ch"
+        ],
+        "talle": [
+            "-",
+            "-"
+        ],
+        "precio": 22000,
+        "stock": 3,
+        "color": "Blanco",
+        "rutaImagen": "lentes_luz.png"
+    },
+    {
+        "id": "2006",
+        "categoria": "Accesorios",
+        "subcategoria": "Lentes",
+        "nombre": "Lentes Sol Sombra",
+        "modelo": [
+            "xx",
+            "xy",
+            "ch"
+        ],
+        "talle": [
+            "-",
+            "-"
+        ],
+        "precio": 22000,
+        "stock": 3,
+        "color": "Negro",
+        "rutaImagen": "lentes_dark.png"
+    },
+    {
+        "id": "2007",
+        "categoria": "Accesorios",
+        "subcategoria": "Lentes",
+        "nombre": "Lentes Sol Nature",
+        "modelo": [
+            "xx",
+            "xy",
+            "ch"
+        ],
+        "talle": [
+            "-",
+            "-"
+        ],
+        "precio": 22000,
+        "stock": 3,
+        "color": "Verde",
+        "rutaImagen": "lentes_nature.png"
+    },
+    {
+        "id": "2008",
+        "categoria": "Accesorios",
+        "subcategoria": "Lentes",
+        "nombre": "Lentes Sol Sol",
+        "modelo": [
+            "xx",
+            "xy",
+            "ch"
+        ],
+        "talle": [
+            "-",
+            "-"
+        ],
+        "precio": 22000,
+        "stock": 3,
+        "color": "Amarillo",
+        "rutaImagen": "lentes_sol.png"
+    },
+    {
+        "id": "2101",
+        "categoria": "Accesorios",
+        "subcategoria": "Collares",
+        "nombre": "Oxitocina",
+        "modelo": [
+            "xx",
+            "xy",
+            "ch"
+        ],
+        "talle": [
+            "-",
+            "-"
+        ],
+        "precio": 14000,
+        "stock": 3,
+        "rutaImagen": "oxitocina.png"
+    },
+    {
+        "id": "2102",
+        "categoria": "Accesorios",
+        "subcategoria": "Collares",
+        "nombre": "Dopamina",
+        "modelo": [
+            "xx",
+            "xy",
+            "ch"
+        ],
+        "talle": [
+            "-",
+            "-"
+        ],
+        "precio": 14000,
+        "stock": 3,
+        "rutaImagen": "dopamina.png"
+    },
+    {
+        "id": "2103",
+        "categoria": "Accesorios",
+        "subcategoria": "Collares",
+        "nombre": "Serotonina",
+        "modelo": [
+            "xx",
+            "xy",
+            "ch"
+        ],
+        "talle": [
+            "-",
+            "-"
+        ],
+        "precio": 14000,
+        "stock": 3,
+        "rutaImagen": "serotonina.png"
+    },
+    {
+        "id": "2104",
+        "categoria": "Accesorios",
+        "subcategoria": "Collares",
+        "nombre": "THC",
+        "modelo": [
+            "xx",
+            "xy",
+            "ch"
+        ],
+        "talle": [
+            "-",
+            "-"
+        ],
+        "precio": 14000,
+        "stock": 3,
+        "rutaImagen": "thc.png"
+    },
+    {
+        "id": "2105",
+        "categoria": "Accesorios",
+        "subcategoria": "Collares",
+        "nombre": "LSD",
+        "modelo": [
+            "xx",
+            "xy",
+            "ch"
+        ],
+        "talle": [
+            "-",
+            "-"
+        ],
+        "precio": 14000,
+        "stock": 3,
+        "rutaImagen": "lsd.png"
+    },
+    {
+        "id": "2106",
+        "categoria": "Accesorios",
+        "subcategoria": "Collares",
+        "nombre": "DMT",
+        "modelo": [
+            "xx",
+            "xy",
+            "ch"
+        ],
+        "talle": [
+            "-",
+            "-"
+        ],
+        "precio": 14000,
+        "stock": 3,
+        "rutaImagen": "dmt.png"
+    }
+]
