@@ -18,7 +18,7 @@
     rel="stylesheet" />
 
   <!-- Link FontAwesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- Link Pushbar -->
 
@@ -44,7 +44,7 @@
       </ul>
     </nav>
 
-    <button id="verOcultar"><i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i></button>
+    <button id="verOcultar"><i class="fa fa-shopping-cart" style="color: #ffffff;"></i></button>
   </header>
 
   <main>
@@ -102,14 +102,14 @@
         <div id="contenedorReservas"">
 
           <div>
-            <div id="mensaje" class="mensaje"></div>
-            <div id="reservaEntradas"></div>
+            <div id=" mensaje" class="mensaje"></div>
+        <div id="reservaEntradas"></div>
 
 
-            <div id="formularioEntradas"></div>
+        <div id="formularioEntradas"></div>
 
-          </div>
-        </div>
+      </div>
+      </div>
       </div>
 
     </section>
@@ -170,32 +170,177 @@
       <h2>Contacto</h2>
       <!-- Seccion Contacto -->
       <p class="section">
-        ¿Tienes alguna pregunta o comentario? Estamos aquí para ayudarte.
-        Ponte en contacto con nuestro equipo de atención al cliente para
-        obtener asistencia. Estamos disponibles por teléfono, correo
-        electrónico y redes sociales.
+      <p>¡Tu Opinión es Importante! <br>
+        Valoramos tus comentarios y sugerencias. Tu retroalimentación nos ayuda a mejorar continuamente la experiencia
+        en Parque Teqno. Si tienes alguna inquietud, comentario o solicitud especial, no dudes en ponerte en contacto
+        con nosotros. Nuestro equipo de atención al cliente está dedicado a brindarte la mejor experiencia posible y
+        para responder a todas tus preguntas y atender tus comentarios. No dudes en contactarnos, estamos aquí para
+        hacer que tu visita sea inolvidable.
       </p>
+
+      <p>
+        Horario de Atención: <br>
+        Nuestro equipo de atención al cliente está disponible durante nuestro horario de funcionamiento regular, que es
+        de <strong>Lunes a Viernes de 9 a 19hs</strong>. Por favor, ten en cuenta que los tiempos de respuesta
+        pueden variar según el método de contacto, pero haremos todo lo posible por atenderte de manera oportuna.
+      </p>
+
+      <p>Ubicación: <br>
+        Si deseas visitarnos en persona, nuestra dirección es <strong>Av. de Los Lagos 370, Nordelta, Buenos Aires,
+          Argentina</strong>, y estaremos
+        encantados de recibirte y atenderte en nuestras instalaciones.
+      </p>
+
+      <div class="baseContactos">
+        <div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52667.89287292997!2d-58.70001967545673!3d-34.407869915654906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bca141d4279f95%3A0xe04c023895a15ca2!2sNordelta%2C%20Benavidez%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1697678872737!5m2!1ses-419!2sar"
+            width="350" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <div class="formularioContacto">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="well well-sm">
+                  <form class="form-horizontal" method="post">
+                    <fieldset>
+                      <legend class="header">Escribinos</legend>
+
+                      <div class="form-group">
+                        <span class="col-md-1 col-md-offset-2 text-center"></span>
+                        <div class="col-md-8 mt-3">
+                          <input id="fname" name="name" type="text" placeholder="Nombre"
+                            class="form-control small-input">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <span class="col-md-1 col-md-offset-2 text-center"></span>
+                        <div class="col-md-8 mt-2">
+                          <input id="lname" name="name" type="text" placeholder="Apellido"
+                            class="form-control small-input">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <span class="col-md-1 col-md-offset-2 text-center"></span>
+                        <div class="col-md-8 mt-2">
+                          <input id="email" name="email" type="text" placeholder="Email"
+                            class="form-control small-input">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <span class="col-md-1 col-md-offset-2 text-center"></span>
+                        <div class="col-md-8 mt-2">
+                          <input id="phone" name="phone" type="text" placeholder="Teléfono"
+                            class="form-control small-input">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <span class="col-md-1 col-md-offset-2 text-center"></i></span>
+                        <div class="col-md-8 mt-2">
+                          <textarea class="form-control" id="message" name="message"
+                            placeholder="Dejanos tu comentario..." rows="2"></textarea>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <div class="col-md-12 mt-2">
+                          <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="redes">
+          <i class="fa fa-facebook" style="color: #ffffff;"></i>
+
+          <i class="fa fa-instagram" style="color: #ffffff;"></i>
+        </div>
+      </div>
+
+
+
+      </p>
+
     </section>
 
     <section id="nosotros">
       <h2>Sobre Nosotros</h2>
       <!-- Seccion Sobre Nosotros -->
       <p class="section">
-        En Parque Teqno, estamos comprometidos a ofrecer experiencias
-        emocionantes y educativas para todas las edades. Con una pasión por la
-        tecnología y la diversión, nuestro equipo trabaja incansablemente para
-        crear momentos inolvidables.
+        Sobre Nosotros: Nuestra Historia y Compromiso
+
+En Parque Teqno, nuestro compromiso es claro: brindar experiencias emocionantes y educativas para personas de todas las edades. Desde nuestros humildes comienzos hasta el presente, nuestra pasión por la tecnología y la diversión ha sido el motor de nuestro éxito, y nuestro equipo trabaja incansablemente para crear momentos inolvidables para todos nuestros visitantes.
+
+Nuestros Humildes Comienzos:
+
+La historia de Parque Teqno comenzó hace [indicar el año de fundación] cuando un grupo de entusiastas de la tecnología se reunió con un sueño audaz: combinar la maravilla de la ciencia y la tecnología con la diversión en un entorno accesible para todos. Nuestra visión era crear un lugar donde las mentes jóvenes y curiosas, así como las familias enteras, pudieran descubrir el asombroso mundo de la innovación de una manera lúdica y emocionante.
+
+Creando Momentos Inolvidables:
+
+A lo largo de los años, hemos crecido y evolucionado, ampliando nuestras instalaciones y atracciones para ofrecer una experiencia más rica y diversa. Hoy en día, Parque Teqno es un lugar donde la ciencia cobra vida, la tecnología se vuelve tangible y la diversión es contagiosa. Desde experimentos interactivos hasta emocionantes atracciones y presentaciones, estamos dedicados a fomentar la curiosidad, el aprendizaje y la creatividad en un entorno seguro y acogedor.
+
+Nuestra Misión:
+
+Nuestra misión es inspirar a las generaciones presentes y futuras a explorar el mundo de la tecnología y la ciencia. Creemos que la innovación y la educación van de la mano, y buscamos desafiar y estimular las mentes de nuestros visitantes mientras los divertimos y entretenemos.
+
+Compromiso con la Diversidad e Inclusión:
+
+En Parque Teqno, la diversidad y la inclusión son fundamentales para nuestra filosofía. Nuestras instalaciones están diseñadas para ser accesibles para personas de todas las edades y habilidades. Creemos que la tecnología y la ciencia son para todos, y estamos comprometidos a hacer que nuestra experiencia sea inclusiva y enriquecedora para cada visitante.
+
+El Futuro de Parque Teqno:
+
+A medida que avanzamos, estamos emocionados por lo que depara el futuro. Continuaremos expandiendo nuestras ofertas, explorando nuevas tecnologías y asociaciones educativas, y trabajando para mantenernos a la vanguardia de la innovación en el campo de los parques de diversiones científicos y tecnológicos.
+
+En Parque Teqno, nuestro compromiso con la emoción, la educación y la accesibilidad sigue siendo tan fuerte como el día en que comenzamos. Te invitamos a unirte a nosotros en este emocionante viaje de descubrimiento y diversión. ¡Esperamos verte pronto en Parque Teqno, donde la aventura y el aprendizaje se unen de una manera única!
       </p>
     </section>
 
     <section id="disclaimer">
-      <h3>Disclaimer</h3>
+      <h5>Disclaimer</h5>
       <!-- Seccion Disclaimer -->
       <p>
-        Todos los visitantes deben seguir las reglas y pautas de seguridad del
-        parque en todo momento. Parque Teqno no se hace responsable por
-        lesiones o daños causados por un incumplimiento de estas reglas.
-        Consulta nuestras políticas y términos antes de tu visita.
+        En Parque Teqno, la seguridad y la diversión de nuestros visitantes son nuestras principales preocupaciones.
+        Para garantizar una experiencia segura y agradable para todos, te pedimos que sigas las reglas y pautas de
+        seguridad del parque en todo momento. Estas medidas son esenciales para prevenir lesiones y asegurar que todos
+        los visitantes disfruten plenamente de su tiempo en nuestras instalaciones.
+      </p>
+
+      <h6>Reglas y Pautas de Seguridad:</h6>
+
+      <ul>
+        <li>Supervisión de Menores: Los niños deben estar bajo supervisión de un adulto en todo momento. Nuestro parque
+          cuenta con áreas específicas para diferentes edades, asegurando que tanto los más pequeños como los más
+          grandes disfruten de manera segura.</li>
+
+        <li>Accesibilidad: Contamos con áreas y atracciones diseñadas para personas con movilidad reducida, así como
+          atención especializada para garantizar que todos los visitantes puedan participar plenamente en la diversión.
+        </li>
+        <li>Patio de Comidas: Por favor, ten en cuenta que se aplican reglas de higiene y limpieza en nuestras áreas de
+          comida. Ayúdanos a mantener un ambiente limpio y seguro.</li>
+        <li>Auditorio y Eventos: Disfruta de nuestros eventos y presentaciones en el auditorio siguiendo las
+          indicaciones del personal. Asegúrate de respetar el espacio de otros asistentes y las normas de cortesía.</li>
+        <li>Tienda de Merchandising y Productos Tecnológicos: Cuando compres productos en nuestra tienda, ten en cuenta
+          las instrucciones y garantías de los productos. Consulta a nuestro personal en caso de duda.</li>
+        <li>Cumpleaños y Eventos Especiales: Si planeas celebrar un cumpleaños u otro evento especial en nuestro parque,
+          contáctanos para obtener información detallada sobre paquetes y servicios personalizados.</li>
+        <li>Fotografías y Recuerdos: Ofrecemos la posibilidad de adquirir fotografías tomadas durante tu visita.
+          Consulta nuestras opciones y recuerdos especiales en nuestro puesto de fotografías.</li>
+      </ul>
+      <p>
+        Por favor, ten en cuenta que Parque Teqno no se hace responsable de lesiones, daños o pérdidas causados por el
+        incumplimiento de estas reglas y pautas de seguridad. Al ingresar a nuestras instalaciones, aceptas nuestra
+        política de seguridad y términos de responsabilidad. Antes de tu visita, te recomendamos revisar detenidamente
+        estas políticas y términos para garantizar una experiencia segura y agradable.
       </p>
     </section>
   </main>

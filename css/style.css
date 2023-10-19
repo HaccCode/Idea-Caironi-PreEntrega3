@@ -261,3 +261,32 @@ input {
 .saludo {
   padding: 10px;
 }
+
+#disclaimer li{
+  color: white;
+  font-size: small;
+}
+
+#disclaimer p{
+  font-size: small;
+}
+
+.baseContactos{
+  display: flex;
+}
+
+.formularioContacto{
+margin-left: 60px;
+
+width: 400px;
+}
+
+.small-input {
+  height: 25px;
+}
+
+.header {
+  font-size: 24px;
+  color: #ffffff;
+  
+}
