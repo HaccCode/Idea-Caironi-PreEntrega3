@@ -338,6 +338,14 @@ function validarEdadInput() {
 
     let reservaEntradas;
 
+    function formatearFecha() {
+      const ahora = new Date();
+      const opciones = { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+      return ahora.toLocaleString('es-ES', opciones).replace(/\D/g, '');
+    }
+    
+    const fechaEntrada = formatearFecha();
+    
     function finalizarReserva() {
       Swal.fire({
         title: "Finalizar Reserva",
@@ -352,18 +360,18 @@ function validarEdadInput() {
           let reservaFinal = document.getElementById("reservaEntradas");
           reservaFinal.className = "reservaFinal";
           reservaEntradas = [];
-          localStorage.setItem(
-            "reservaEntradas",
-            JSON.stringify(reservaEntradas)
-          );
-          Swal.fire(
-            "Reserva Exitosa!",
-            "En breve recibiras la orden de pago",
-            "success"
-          );
+          localStorage.setItem("reservaEntradas", JSON.stringify(reservaEntradas));
+          reservaFinal.innerHTML = `
+            <p>El código de reserva es: ${nombreComprador.value}${dniComprador.value}${entradas.value}${fechaEntrada}</p>
+          `;
+    
+          // Mostrar un mensaje con SweetAlert
+          Swal.fire("Reserva Exitosa!", "En breve recibirás la orden de pago", "success");
         }
       });
     }
+    
+    
 
     //CREA GALERIA DE PRODUCTOS
     function renderizarProductos(productos) {
