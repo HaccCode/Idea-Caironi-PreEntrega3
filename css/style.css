@@ -294,3 +294,13 @@ width: 400px;
 .carritoFinal{
   color: white;
   }
+
+  .toastError{
+    background: rgb(249, 84, 84);
+  }
+
+  .campo-vacio:required:invalid {
+    border: 2px solid red; /* Cambia el borde a rojo */
+    background-color: #ffeeee; /* Cambia el fondo a un color claro */
+  }
+  

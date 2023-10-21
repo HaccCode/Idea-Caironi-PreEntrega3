@@ -17,40 +17,9 @@ fetch("./info.json")
 
     renderizarProductos(productos);
 
-    /* 
-
-let dniEntrada, nombreEntrada, apellidoEntrada, edadEntrada;
-let valorEntrada = entradaGral;
-
-
-if (edadEntrada < 6) {
-  valorEntrada = descInfantes;
-} else if (edadEntrada < 13) {
-  valorEntrada = entradaGral - entradaGral * descMenores;
-} else if (edadEntrada >= 65) {
-  valorEntrada = entradaGral - entradaGral * descMayores;
-}
-
-//VALIDACION CAMPO EDAD
-
-function validarEdadInput() {
-  let valor = parseInt(edadInput.value);
-  if (isNaN(valor) || valor < 1) {
-    valor = 1;
-  } else if (valor > 100) {
-    valor = 100;
-  }
-  edadInput.value = valor;
-  
-  if (isNaN(valor) || valor <= 0 || valor >= 100) {
-    alert("La edad debe ser un número mayor que 0 y menor que 100.");
-  }
-}
-*/
-
     let entradaGral = 2200;
-    let descMayores = 0.75; //-75% de descuento
-    let descMenores = 0.5; //-50% de descuento
+    let descMayores = 0.75;
+    let descMenores = 0.5;
     let descInfantes = "Entrada Gratuita";
 
     let entradas = document.getElementById("listaEntradas");
@@ -102,24 +71,56 @@ function validarEdadInput() {
         nombreInput.type = "text";
         nombreInput.placeholder = "Nombre";
         nombreInput.id = `nombre${i}`;
+        nombreInput.required = true
+        nombreInput.classList.add("campo-vacio");
+        nombreInput.addEventListener("input", function () {
+          sessionStorage.setItem(
+            `nombre${i}`,
+            JSON.stringify(nombreInput.value)
+          );
+        });
 
         let apellidoInput = document.createElement("input");
         apellidoInput.type = "text";
         apellidoInput.placeholder = "Apellido";
         apellidoInput.id = `apellido${i}`;
+        apellidoInput.required = true
+        apellidoInput.classList.add("campo-vacio");
+        apellidoInput.addEventListener("input", function () {
+        sessionStorage.setItem(
+          `apellido${i}`,
+          JSON.stringify(apellidoInput.value)
+        );
+        })
 
         let dniInput = document.createElement("input");
         dniInput.type = "text";
         dniInput.placeholder = "DNI";
         dniInput.id = `dni${i}`;
+        dniInput.required = true
+        dniInput.classList.add("campo-vacio");
+        dniInput.addEventListener("input", function () {
+        sessionStorage.setItem(
+          `dni${i}`,
+          JSON.stringify(dniInput.value)
+        );
+        });
 
         let edadInput = document.createElement("input");
         edadInput.type = "text";
         edadInput.placeholder = "Edad";
         edadInput.id = `edad${i}`;
+        edadInput.required = true
+        edadInput.classList.add("campo-vacio");
         edadInput.min = 1;
         edadInput.max = 99;
-
+        edadInput.addEventListener("input", function () {
+          sessionStorage.setItem(
+            `edad${i}`,
+            JSON.stringify(edadInput.value)
+          );
+          })
+        
         entradaDiv.appendChild(nombreInput);
         entradaDiv.appendChild(apellidoInput);
         entradaDiv.appendChild(dniInput);
@@ -139,25 +140,6 @@ function validarEdadInput() {
 
     generarCamposDeEntrada();
 
-    function calcularPrecioEntrada(edad) {
-      let valorEntrada = entradaGral;
-
-      if (edad < 6) {
-        valorEntrada = descInfantes;
-      } else if (edad < 13) {
-        valorEntrada = entradaGral - entradaGral * descMenores;
-      } else if (edad >= 65) {
-        valorEntrada = entradaGral - entradaGral * descMayores;
-      }
-
-      return valorEntrada;
-    }
-
-    function mostrarPrecioEntrada(precio) {
-      const mensajePrecio = document.getElementById("mensajePrecio");
-      mensajePrecio.innerText = `Precio de la entrada: ${precio}`;
-    }
-
     let select = document.getElementById("listaFiltro");
     select.addEventListener("change", () => {
       let productosFiltrados = productos.filter((producto) =>
@@ -173,9 +155,6 @@ function validarEdadInput() {
       option.value = `${text}`;
       select.appendChild(option);
     });
-
-    ///////////////////////////
-    /* Funciones */ //////////////////////////////////
 
     // Crea Tarjetas ya Filtradas
     function filtrarYRenderizar(productos) {
@@ -302,12 +281,6 @@ function validarEdadInput() {
       return carrito.reduce((total, producto) => total + producto.subtotal, 0);
     }
 
-    // Llamamos a esta función cuando se agrega o quita un producto del carrito
-    function actualizarCarritoYResumen(carrito) {
-      localStorage.setItem("carrito", JSON.stringify(carrito));
-      renderizarCarrito(carrito);
-    }
-
     //FINALIZAR COMPRA
     function finalizarCompra() {
       Swal.fire({
@@ -340,12 +313,19 @@ function validarEdadInput() {
 
     function formatearFecha() {
       const ahora = new Date();
-      const opciones = { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' };
-      return ahora.toLocaleString('es-ES', opciones).replace(/\D/g, '');
+      const opciones = {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+      };
+      return ahora.toLocaleString("es-ES", opciones).replace(/\D/g, "");
     }
-    
+
     const fechaEntrada = formatearFecha();
-    
+
     function finalizarReserva() {
       Swal.fire({
         title: "Finalizar Reserva",
@@ -360,18 +340,32 @@ function validarEdadInput() {
           let reservaFinal = document.getElementById("reservaEntradas");
           reservaFinal.className = "reservaFinal";
           reservaEntradas = [];
-          localStorage.setItem("reservaEntradas", JSON.stringify(reservaEntradas));
+          localStorage.setItem(
+            "reservaEntradas",
+            JSON.stringify(reservaEntradas)
+          );
+          Swal.fire({
+            title: 'Sweet!',
+            text: 'Modal with a custom image.',
+            imageUrl: '../images/qr parque tecno.png',
+            imageWidth: 400,
+            imageHeight: 200,
+            imageAlt: 'Custom image',
+          })
+          
           reservaFinal.innerHTML = `
             <p>El código de reserva es: ${nombreComprador.value}${dniComprador.value}${entradas.value}${fechaEntrada}</p>
           `;
-    
+
           // Mostrar un mensaje con SweetAlert
-          Swal.fire("Reserva Exitosa!", "En breve recibirás la orden de pago", "success");
+          Swal.fire(
+            "Reserva Exitosa!",
+            "En breve recibirás la orden de pago",
+            "success"
+          );
         }
       });
     }
-    
-    
 
     //CREA GALERIA DE PRODUCTOS
     function renderizarProductos(productos) {
@@ -422,19 +416,24 @@ function validarEdadInput() {
     let mensajeErrorDNI = null;
     let ejecutado = false;
     let errorMostrado = false;
+    let saludoCompradorTrue = false;
 
-    
     nombreComprador.addEventListener("keydown", (e) => {
-      if (!ejecutado && e.key === "Enter") {
-        if (validarDatoStr(nombreComprador)) {
-          ejecutado = true;
-                    
+      ejecutado = false;
+      if (e.key === "Enter") {
+        if (validarDatoStr(nombreComprador) && !saludoCompradorTrue) {
+          saludoCompradorTrue = true;
+
           if (mensajeErrorMostrado) {
             mensajeErrorMostrado.remove();
             mensajeErrorMostrado = null;
           }
+
+          let okNombre = document.getElementById("okNombre");
+          okNombre.style.display = "inline";
+
           saludoComprador();
-          
+
           localStorage.setItem(
             "nombreComprador",
             JSON.stringify(nombreComprador.value)
@@ -449,16 +448,19 @@ function validarEdadInput() {
     });
 
     //DNIComprador-Enter
-      dniComprador.addEventListener("keydown", (e) => {
+    dniComprador.addEventListener("keydown", (e) => {
       if (!ejecutado && e.key === "Enter") {
         if (validarDatoNumerico(dniComprador)) {
-          ejecutado = true
-          
+          ejecutado = true;
+
           if (mensajeErrorDNI) {
             mensajeErrorDNI.remove();
             mensajeErrorDNI = null;
           }
-          
+
+          let okDni = document.getElementById("okDni");
+          okDni.style.display = "inline";
+
           sessionStorage.setItem(
             "dniComprador",
             JSON.stringify(dniComprador.value)
@@ -511,17 +513,12 @@ Menores de 6 años: ${descInfantes}!
       contenedorReservas.appendChild(saludo);
     }
 
-    //FUNCION DATO INCORRECTO
     function mensajeError() {
-      let mensajeError = document.createElement("div");
-      mensajeError.innerHTML = `
-  <h3>Dato Incorrecto</h3>
-  <p>Por favor, ingrese un dato válido</p>
-  `;
-
-      contenedorReservas.appendChild(mensajeError);
-
-     mensajeErrorMostrado = mensajeError;
-      return mensajeError
+      Toastify({
+        className: "toastError",
+        text: "Dato incorrecto. Por favor, ingrese un dato válido",
+        duration: 2000,
+        position: "center",
+      }).showToast();
     }
   });

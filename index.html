@@ -20,7 +20,8 @@
   <!-- Link FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <!-- Link Pushbar -->
+  <!-- Link Toastify -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
   <!-- Link CSS -->
   <link rel="stylesheet" href="./css/style.css" />
@@ -89,9 +90,11 @@
         <div class="compradorYCantidad" style="border: 2px solid rgb(217, 255, 0)">
           <label for="nombreComprador">Ingrese su Nombre</label>
           <input id="nombreComprador" type="text" placeholder="Su Nombre" required>
+          <span id="okNombre" style="display: none;">✓</span>
 
           <label for="dniComprador">Ingrese su DNI</label>
           <input id="dniComprador" type="text" placeholder="Su DNI" required>
+          <span id="okDni" style="display: none;">✓</span>
 
           <label for="listaEntradas">Cantidad de Entradas</label>
           <select id="listaEntradas" name="opcion"></select>
@@ -381,7 +384,8 @@
   <!-- Script SweetAlert -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-  <!-- Script Pushbar -->
+  <!-- Script Toastify -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
   <!-- Script QR -->
   <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
