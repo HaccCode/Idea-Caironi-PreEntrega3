@@ -168,7 +168,7 @@ nav ul li {
   padding: 5px;
 }
 
-#formularioEntradas input{
+#formularioEntradas input {
   width: 20%;
   margin: 2px;
 }
@@ -262,23 +262,23 @@ input {
   padding: 10px;
 }
 
-#disclaimer li{
+#disclaimer li {
   color: white;
   font-size: small;
 }
 
-#disclaimer p{
+#disclaimer p {
   font-size: small;
 }
 
-.baseContactos{
+.baseContactos {
   display: flex;
 }
 
-.formularioContacto{
-margin-left: 60px;
+.formularioContacto {
+  margin-left: 60px;
 
-width: 400px;
+  width: 400px;
 }
 
 .small-input {
@@ -288,19 +288,18 @@ width: 400px;
 .header {
   font-size: 24px;
   color: #ffffff;
-  
+
 }
 
-.carritoFinal{
+.carritoFinal {
   color: white;
-  }
+}
 
-  .toastError{
-    background: rgb(249, 84, 84);
-  }
+.toastError {
+  background: rgb(249, 84, 84);
+}
 
-  .campo-vacio:required:invalid {
-    border: 2px solid red; /* Cambia el borde a rojo */
-    background-color: #ffeeee; /* Cambia el fondo a un color claro */
-  }
-  
+.campo-vacio:required:invalid {
+  border: 2px solid red;
+  background-color: #ffeeee;
+}
