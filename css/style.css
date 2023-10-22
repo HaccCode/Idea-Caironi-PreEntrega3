@@ -278,7 +278,7 @@ input {
 .formularioContacto {
   margin-left: 60px;
 
-  width: 400px;
+  width: 500px;
 }
 
 .small-input {
@@ -302,4 +302,15 @@ input {
 .campo-vacio:required:invalid {
   border: 2px solid red;
   background-color: #ffeeee;
+}
+
+.redes{
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+
+.redes img{
+width: 25%;
+
 }
